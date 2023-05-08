@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>games</title>
+    <!-- library slick slider (css) -->
+    <link
+      href="
+    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+    "
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="url-to-cdn/splide.min.css" />
+    <!-- link game-style -->
+    <link rel="stylesheet" href="games-style.css" />
+    <link rel="stylesheet" href="loaders.css" />
+    <!-- library goggle font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Lilita+One&family=Poppins&family=Secular+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- library font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="load">
+      <div class="loadingspinner">
+        <div id="square1"></div>
+        <div id="square2"></div>
+        <div id="square3"></div>
+        <div id="square4"></div>
+        <div id="square5"></div>
+      </div>
+    </div>
+    <p><i class="fas fa-edit"></i></p>
+    <div class="user-experience">
+      <div class="edit-content">
+        <div class="edit-name">
+          <form id="myForm" onsubmit="editContent(event)">
+            <div class="succesInput">Game Storage kosong 🔓</div>
+            <label for="player"
+              >Player 1 :
+              <input type="text" name="teks" data-name="0" />
+            </label>
+            <label for="player"
+              >Player 2 :
+              <input type="text" name="teks" data-name="1" />
+            </label>
+            <label for="player"
+              >Player 3 :
+              <input type="text" name="teks" data-name="2" />
+            </label>
+            <label for="player"
+              >Player 4 :
+              <input type="text" name="teks" data-name="3" />
+            </label>
+            <label for="player"
+              >Player 5 :
+              <input type="text" name="teks" data-name="4" />
+            </label>
+            <div class="edit-question">
+              <label for="question"
+                >pertanyaan A :
+                <textarea name="pertanyaan" data-question="0"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="0" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan B :
+                <textarea name="pertanyaan" data-question="1"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option2="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option2="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option2="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option2="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="1" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan C :
+                <textarea name="pertanyaan" data-question="2"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option3="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option3="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option3="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option3="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="2" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan D :
+                <textarea name="pertanyaan" data-question="3"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option4="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option4="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option4="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option4="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="3" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan E :
+                <textarea name="pertanyaan" data-question="4"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option5="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option5="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option5="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option5="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="4" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan F :
+                <textarea name="pertanyaan" data-question="5"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option6="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option6="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option6="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option6="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="5" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan G :
+                <textarea name="pertanyaan" data-question="6"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option7="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option7="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option7="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option7="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="6" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan H :
+                <textarea name="pertanyaan" data-question="7"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option8="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option8="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option8="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option8="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="7" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan I :
+                <textarea name="pertanyaan" data-question="8"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option9="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option9="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option9="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option9="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="8" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan J :
+                <textarea name="pertanyaan" data-question="9"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option10="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option10="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option10="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option10="3" />
+                  </p>
+                </label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="9" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan K :
+                <textarea name="pertanyaan" data-question="10"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option11="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option11="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option11="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option11="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="10" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan L :
+                <textarea name="pertanyaan" data-question="11"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option12="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option12="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option12="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option12="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="11" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan M :
+                <textarea name="pertanyaan" data-question="12"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option13="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option13="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option13="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option13="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="12" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan N :
+                <textarea name="pertanyaan" data-question="13"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option14="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option14="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option14="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option14="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="13" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan O :
+                <textarea name="pertanyaan" data-question="14"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option15="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option15="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option15="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option15="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="14" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan P :
+                <textarea name="pertanyaan" data-question="15"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option16="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option16="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option16="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option16="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="15" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan Q :
+                <textarea name="pertanyaan" data-question="16"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option17="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option17="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option17="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option17="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="16" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan R :
+                <textarea name="pertanyaan" data-question="17"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option18="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option18="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option18="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option18="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="17" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan S :
+                <textarea name="pertanyaan" data-question="18"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option19="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option19="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option19="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option19="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="18" />
+                </label>
+              </label>
+              <label for="question"
+                >pertanyaan T :
+                <textarea name="pertanyaan" data-question="19"></textarea>
+                <label for="option">
+                  <p>
+                    A
+                    <input type="text" name="option" data-option20="0" />
+                  </p>
+                  <p>
+                    B
+                    <input type="text" name="option" data-option20="1" />
+                  </p>
+                  <p>
+                    C
+                    <input type="text" name="option" data-option20="2" />
+                  </p>
+                  <p>
+                    D
+                    <input type="text" name="option" data-option20="3" /></p
+                ></label>
+                <label for="select" id="select">
+                  Jawaban yang benar :
+                  <input type="text" name="trueOption" data-trueOption="19" />
+                </label>
+              </label>
+            </div>
+            <center>
+              <button id="create" type="submit">Create</button>
+            </center>
+          </form>
+        </div>
+      </div>
+      <center>
+        <button id="reset">Create New</button>
+      </center>
+    </div>
+
+    <center>
+      <h1 class="chooseSkin">Choose Skin</h1>
+    </center>
+    <center>
+      <div class="setting">
+        <button class="smooth">smooth</button>
+        <button class="height">height</button>
+      </div>
+    </center>
+    <div class="flex-skin">
+      <div class="playerSkin">
+        <h2 class="nameSkinPlayer">Player 1</h2>
+        <div
+          class="splide spl1"
+          role="group"
+          aria-label="Splide Basic HTML Example"
+        >
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide skin choose1 pilihan1"></li>
+              <li class="splide__slide skin choose2 pilihan1"></li>
+              <li class="splide__slide skin choose3 pilihan1"></li>
+              <li class="splide__slide skin choose4 pilihan1"></li>
+              <li class="splide__slide skin choose5 pilihan1"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="playerSkin">
+        <h2 class="nameSkinPlayer">Player 2</h2>
+        <div
+          class="splide spl2"
+          role="group"
+          aria-label="Splide Basic HTML Example"
+        >
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide skin choose1 pilihan2"></li>
+              <li class="splide__slide skin choose2 pilihan2"></li>
+              <li class="splide__slide skin choose3 pilihan2"></li>
+              <li class="splide__slide skin choose4 pilihan2"></li>
+              <li class="splide__slide skin choose5 pilihan2"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="playerSkin">
+        <h2 class="nameSkinPlayer">Player 3</h2>
+        <div
+          class="splide spl3"
+          role="group"
+          aria-label="Splide Basic HTML Example"
+        >
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide skin choose1 pilihan3"></li>
+              <li class="splide__slide skin choose2 pilihan3"></li>
+              <li class="splide__slide skin choose3 pilihan3"></li>
+              <li class="splide__slide skin choose4 pilihan3"></li>
+              <li class="splide__slide skin choose5 pilihan3"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="playerSkin">
+        <h2 class="nameSkinPlayer">Player 4</h2>
+        <div
+          class="splide spl4"
+          role="group"
+          aria-label="Splide Basic HTML Example"
+        >
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide skin choose1 pilihan4"></li>
+              <li class="splide__slide skin choose2 pilihan4"></li>
+              <li class="splide__slide skin choose3 pilihan4"></li>
+              <li class="splide__slide skin choose4 pilihan4"></li>
+              <li class="splide__slide skin choose5 pilihan4"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="playerSkin">
+        <h2 class="nameSkinPlayer">Player 5</h2>
+        <div
+          class="splide spl5"
+          role="group"
+          aria-label="Splide Basic HTML Example"
+        >
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide skin choose1 pilihan5"></li>
+              <li class="splide__slide skin choose2 pilihan5"></li>
+              <li class="splide__slide skin choose3 pilihan5"></li>
+              <li class="splide__slide skin choose4 pilihan5"></li>
+              <li class="splide__slide skin choose5 pilihan5"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="open" onclick="openFullscreen()">Play</button>
+    <div class="board" onload="openFullscreen()">
+      <div class="rotate-smartphone">
+        <img src="img/rotate-smartphone.png" alt="please rotate your phone" />
+      </div>
+      <button class="exit" onclick="exitFullscreen()">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <button class="volume"><i class="fas fa-volume-up"></i></button>
+
+      <div class="rollDice">
+        <img id="dice" src="img/Dadu1.png" alt="roll-dice" />
+        <button id="rollButton"><p class="player">player1</p></button>
+      </div>
+
+      <div class="boxCard">
+        <div class="shakeCard">
+          <img class="front" src="img/cardFront1.jpeg" alt="card" />
+          <img class="back" src="img/cardBack1.jpeg" alt="card" />
+        </div>
+        <button id="closeCard">
+          <p><i class="fas fa-times card"></i></p>
+        </button>
+      </div>
+      <button id="shakeCard"></button>
+
+      <div class="objek" id="cursor5" data-sentuhan="5"></div>
+      <div class="objek" id="cursor4" data-sentuhan="4"></div>
+      <div class="objek" id="cursor3" data-sentuhan="3"></div>
+      <div class="objek" id="cursor2" data-sentuhan="2"></div>
+      <div class="objek" id="cursor1" data-sentuhan="1"></div>
+      <button class="showQuestion">?</button>
+      <div class="flex-point">
+        <button onclick="tampilPertanyaan(0)"></button>
+        <button onclick="tampilPertanyaan(1)"></button>
+        <button onclick="tampilPertanyaan(2)"></button>
+        <button onclick="tampilPertanyaan(3)"></button>
+        <button onclick="tampilPertanyaan(4)"></button>
+        <button onclick="tampilPertanyaan(5)"></button>
+        <button onclick="tampilPertanyaan(6)"></button>
+        <button onclick="tampilPertanyaan(7)"></button>
+        <button onclick="tampilPertanyaan(8)"></button>
+        <button onclick="tampilPertanyaan(9)"></button>
+        <button onclick="tampilPertanyaan(10)"></button>
+        <button onclick="tampilPertanyaan(11)"></button>
+        <button onclick="tampilPertanyaan(12)"></button>
+        <button onclick="tampilPertanyaan(13)"></button>
+        <button onclick="tampilPertanyaan(14)"></button>
+        <button onclick="tampilPertanyaan(15)"></button>
+        <button onclick="tampilPertanyaan(16)"></button>
+        <button onclick="tampilPertanyaan(17)"></button>
+        <button onclick="tampilPertanyaan(18)"></button>
+        <button onclick="tampilPertanyaan(19)"></button>
+      </div>
+
+      <div class="questionShadow">
+        <div class="questionBox">
+          <div class="labelWaktuMundur">
+            <div class="countDownTime"></div>
+          </div>
+          <div id="pertanyaan"></div>
+          <div id="opsiJawaban"></div>
+          <button id="jawab" onclick="cekJawaban()">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+      <p id="result"></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      const splides = document.querySelectorAll(".splide");
+      splides.forEach((splide) => {
+        new Splide(splide, {
+          type: "loop",
+          perPage: 1,
+          focus: "center",
+        }).mount();
+      });
+    </script>
+    <script src="games-script.js"></script>
+    <script src="games-script=input-file&rollDice&bidak.js"></script>
+    <script src="games-script=quiz.js"></script>
+    <script src="loading-script.js"></script>
+  </body>
+</html>
