@@ -136,7 +136,7 @@ function updateCardfront(value) {
 // Mendefinisikan fungsi untuk mengambil elemen HTML dadu dan memperbarui gambarnya dengan nilai dadu yang baru
 function updateCardback(value) {
   var card = document.querySelector(".back");
-  card.src = "img/CardBack" + value + ".jpeg";
+  card.src = "img/cardBack" + value + ".jpeg";
 }
 
 const boxCard = document.querySelector(".boxCard");
