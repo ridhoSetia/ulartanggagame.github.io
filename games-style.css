@@ -273,6 +273,21 @@ input[name="trueOption"]:focus {
   border: 10px solid #252525;
 }
 
+@keyframes hapus {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
 .nameSkinPlayer {
   display: flex;
   justify-content: center;
@@ -378,24 +393,33 @@ input[name="trueOption"]:focus {
   background-size: 95%;
 }
 
-.hapus {
-  color: #fff;
+.hapus3,
+.hapus4,
+.hapus5 {
+  color: #ff0000;
   background: transparent;
   font-size: 25px;
-  margin: -0.2px -10px;
   padding-left: 10px;
-  padding-right: 3px;
-  padding-bottom: 15px;
-  width: 33px;
-  height: 33px;
+  padding-right: 11px;
+  padding-bottom: 5px;
+  margin-left: -9.5px;
+  margin-top: -0.5px;
   display: flex;
   position: absolute;
   cursor: pointer;
   border: none;
 }
-.hapus:focus {
-  background: #fff;
-  color: #ff0000;
+
+.hapus3,
+.hapus4 {
+  display: none;
+}
+
+.hapus3:hover,
+.hapus4:hover,
+.hapus5:hover {
+  background: #ff0000;
+  color: #fff;
 }
 
 /* Gaya tombol slide */
@@ -986,26 +1010,44 @@ input[type="radio"]:checked {
   color: #333;
   background: #fff;
   box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
-  font-size: 50px;
+  font-size: 35px;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 5px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   display: none;
   z-index: 3;
+  border: 5px solid #252525;
 }
 
-#result::before {
-  content: "x";
+@keyframes hapusResult {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+}
+
+.x {
   color: #ff0000;
   margin: -5px 5px;
-  font-size: 30px;
+  font-size: 40px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 46%;
+  right: 32%;
+  transform: translate(-50%, -50%);
   cursor: pointer;
+  z-index: 4;
+  display: none;
 }
 
 .objek {

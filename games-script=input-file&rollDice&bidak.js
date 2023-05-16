@@ -1,7 +1,7 @@
-function pop() {
-  const pop = new Audio("sfx/pop.mp3");
-  pop.play();
-  pop.volume = 0.1;
+function popIp() {
+  const popIp = new Audio("sfx/pop.mp3");
+  popIp.play();
+  popIp.volume = 0.1;
 }
 
 function klik() {
@@ -124,7 +124,7 @@ skinElements.forEach((element) => {
       pickSkin.style.backgroundPosition = `center`;
       pickSkin.style.border = `5px solid #fff`;
       saveSkinIndex(element.bidak, skinIndex); // menyimpan indeks skinIndex ke localStorage
-      pop();
+      popIp();
     };
 
     // jika ada nilai skinIndex yang disimpan di localStorage untuk elemen saat ini
@@ -216,3 +216,99 @@ function rollButtonClick() {
 // Mengaitkan fungsi rollButtonClick dengan tombol "kocok dadu"
 var rollButton = document.getElementById("rollButton");
 rollButton.addEventListener("click", rollButtonClick);
+
+const players = [
+  {
+    skinClass: "skinPlayer3",
+    deleteButtonClass: "hapus3",
+    cursor: "cursor3",
+  },
+  {
+    skinClass: "skinPlayer4",
+    deleteButtonClass: "hapus4",
+    cursor: "cursor4",
+  },
+  {
+    skinClass: "skinPlayer5",
+    deleteButtonClass: "hapus5",
+    cursor: "cursor5",
+  },
+];
+
+for (let i = players.length - 1; i >= 0; i--) {
+  const player = players[i];
+
+  const deleteButton = document.querySelector(`.${player.deleteButtonClass}`);
+  deleteButton.onclick = () => {
+    klik();
+    const skinPlayer = document.querySelector(`.${player.skinClass}`);
+    const cursorPlayer = document.querySelector(`#${player.cursor}`);
+    skinPlayer.style.animation = "hapus 0.2s 0.1s forwards";
+
+    setTimeout(() => {
+      skinPlayer.style.display = "none";
+      cursorPlayer.style.display = "none";
+      popIp();
+
+      if (words.length > 0) {
+        words.pop();
+        color.pop();
+      }
+
+      if (i > 0) {
+        const prevDeleteButton = document.querySelector(
+          `.${players[i - 1].deleteButtonClass}`
+        );
+        prevDeleteButton.style.display = "block";
+      }
+    }, 500);
+  };
+}
+
+// const deleteBidak5 = document.querySelector(".hapus5");
+// deleteBidak5.onclick = () => {
+//   klik();
+//   document.querySelector(".skinPlayer5").style.animation =
+//     "hapus 0.2s 0.1s forwards";
+//   setTimeout(() => {
+//     document.querySelector(".skinPlayer5").style.display = "none";
+
+//     popIp();
+//     if (words.length > 0) {
+//       words.pop();
+//       color.pop();
+//     }
+//     document.querySelector(".hapus4").style.display = "block";
+//   }, 500);
+// };
+
+// const deleteBidak4 = document.querySelector(".hapus4");
+// deleteBidak4.onclick = () => {
+//   klik();
+//   document.querySelector(".skinPlayer4").style.animation =
+//     "hapus 0.2s 0.1s forwards";
+//   setTimeout(() => {
+//     document.querySelector(".skinPlayer4").style.display = "none";
+//     popIp();
+//     if (words.length > 0) {
+//       words.pop();
+//       color.pop();
+//     }
+//     document.querySelector(".hapus3").style.display = "block";
+//   }, 500);
+// };
+
+// const deleteBidak3 = document.querySelector(".hapus3");
+// deleteBidak3.onclick = () => {
+//   klik();
+//   document.querySelector(".skinPlayer3").style.animation =
+//     "hapus 0.2s 0.1s forwards";
+//   setTimeout(() => {
+//     document.querySelector(".skinPlayer3").style.display = "none";
+//     popIp();
+//     if (words.length > 0) {
+//       words.pop();
+//       color.pop();
+//     }
+//   }, 500);
+// };

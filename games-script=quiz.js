@@ -282,9 +282,13 @@ function tampilPertanyaan(nomor) {
 }
 
 document.querySelector("#shakeCard").disabled = true;
+const xResult = document.querySelector(".x");
 
 // Cek jawaban
 function cekJawaban() {
+  setTimeout(() => {
+    xResult.style.display = "block";
+  }, 500);
   document.querySelector(".showQuestion").disabled = true;
 
   let jawabanUser = document.querySelector(
@@ -307,9 +311,13 @@ function cekJawaban() {
 
   hideQuestionBox();
 
-  result.onclick = () => {
+  xResult.onclick = () => {
+    xResult.style.display = "none";
     document.querySelector("#shakeCard").disabled = false;
-    result.style.display = "none";
+    result.style.animation = "hapusResult 0.2s 0.1s forwards";
+    setTimeout(() => {
+      result.style.display = "none";
+    }, 500);
   };
 }
 
