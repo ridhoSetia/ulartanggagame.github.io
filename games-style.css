@@ -282,32 +282,32 @@ input[name="trueOption"]:focus {
 
 .playerSkin:nth-child(1) {
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 5px;
   background: #ff0000;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
 .playerSkin:nth-child(2) {
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 5px;
   background: #0000ff;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
 .playerSkin:nth-child(3) {
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 5px;
   background: #00ff00;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
 .playerSkin:nth-child(4) {
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 5px;
   background: #800080;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
 
 .playerSkin:nth-child(5) {
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 5px;
   background: #00a5a7;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
@@ -336,7 +336,7 @@ input[name="trueOption"]:focus {
 }
 
 .splide {
-  width: 180px;
+  width: 140px;
   margin: 50px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
 }
@@ -346,7 +346,7 @@ input[name="trueOption"]:focus {
   background-image: url(img/bidak1.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 85%;
+  background-size: 95%;
 }
 
 .choose2 {
@@ -354,28 +354,28 @@ input[name="trueOption"]:focus {
   background-image: url(img/bidak2.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 85%;
+  background-size: 95%;
 }
 .choose3 {
   background: transparent;
   background-image: url(img/bidak3.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 85%;
+  background-size: 95%;
 }
 .choose4 {
   background: transparent;
   background-image: url(img/bidak4.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 85%;
+  background-size: 95%;
 }
 .choose5 {
   background: transparent;
   background-image: url(img/bidak5.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 85%;
+  background-size: 95%;
 }
 
 /* Gaya tombol slide */
@@ -383,7 +383,7 @@ input[name="trueOption"]:focus {
   background-color: #fff;
   color: #333;
   padding: 8px;
-  border-radius: 10px;
+  border-radius: 2px;
   width: 32px;
   height: 100%;
   margin: 0 -50px;
@@ -401,7 +401,7 @@ input[name="trueOption"]:focus {
 .splide__pagination__page.splide__pagination__page--active {
   background-color: #333;
   color: #fff;
-  border-radius: 15px;
+  border-radius: 1px;
   width: 15px;
   height: 15px;
   display: flex;
@@ -415,13 +415,13 @@ input[name="trueOption"]:focus {
 .splide__pagination__page {
   background-color: #fff;
   color: #333;
-  border-radius: 5px;
-  width: 15px;
-  height: 15px;
+  border-radius: 1px;
+  width: 10px;
+  height: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 10px;
+  font-size: 8px;
   margin: 0 5px;
   cursor: pointer;
 }
@@ -483,7 +483,6 @@ input[name="trueOption"]:focus {
   color: #fff;
   font-weight: bold;
   font-size: 30px;
-  margin-top: 20px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, -150px);
@@ -571,7 +570,7 @@ button:focus {
   width: 55px;
   height: 55px;
   border: 5px solid #252525;
-  border-radius: 20px;
+  border-radius: 15px;
   transition: transform 0.5s ease;
   box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
 }
@@ -581,7 +580,7 @@ button:focus {
   border: none;
   padding: 5px;
   font-size: 15px;
-  border-radius: 10px;
+  border-radius: 8px;
   background: #ff0000;
   display: flex;
   justify-content: center;
@@ -664,6 +663,7 @@ button:focus {
   scale: 0.9;
   transition: all 0.1s ease;
   cursor: pointer;
+  display: none;
 }
 #shakeCard:hover {
   opacity: 1;
@@ -699,7 +699,7 @@ button:focus {
 .showQuestion {
   cursor: pointer;
   position: relative;
-  display: flex;
+  display: none;
   margin: 10px;
   padding: 15px;
   font-size: 30px;
@@ -732,13 +732,13 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
-  width: 40px;
-  font-size: 20px;
+  padding: 0px 10px;
+  width: 60px;
+  font-size: 50px;
   z-index: 3;
   bottom: 0;
   right: 0;
-  margin: 15px;
+  margin: 20px;
   border-radius: 50%;
   border: none;
 }
@@ -950,7 +950,7 @@ input[type="radio"]:checked {
   bottom: 0;
   right: 0;
   margin: 10px;
-  padding: 10px 14.5px;
+  padding: 10px 12.5px;
   border-radius: 50%;
   border: none;
   background: #643a6b;
@@ -967,8 +967,8 @@ input[type="radio"]:checked {
   color: #333;
   background: #fff;
   box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
-  font-size: 30px;
-  padding: 15px;
+  font-size: 50px;
+  padding: 25px;
   border-radius: 10px;
   position: absolute;
   left: 50%;
@@ -978,22 +978,40 @@ input[type="radio"]:checked {
   z-index: 3;
 }
 
+#result::before {
+  content: "x";
+  color: #ff0000;
+  margin: -5px 5px;
+  font-size: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
 .objek {
   position: absolute;
-  width: 70px;
-  height: 70px;
-  background: rgb(0, 0, 0, 0);
-  margin-top: -2.7rem;
-  margin-left: -2.2rem;
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background: rgb(0, 0, 255, 0);
+  margin-top: -3rem;
+  margin-left: -3.2rem;
   cursor: grab;
   left: 40%;
   top: 40%;
   z-index: 2;
   transform: translateY(-2px);
+}
+
+#cursor1,
+#cursor2,
+#cursor3,
+#cursor4,
+#cursor5 {
+  background-position: center;
+  background-size: 95%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
 }
 
 .objek:active {
@@ -1016,19 +1034,6 @@ input[type="radio"]:checked {
   animation: bidakAnimation 2s 1s infinite alternate;
 }
 
-.cursor1,
-.cursor2,
-.cursor3,
-.cursor4,
-.cursor5 {
-  background: transparent;
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  top: -3.8rem;
-  left: -1.4rem;
-}
-
 @keyframes bidakAnimation {
   0% {
     transform: translateY(-2px);
@@ -1044,7 +1049,7 @@ input[type="radio"]:checked {
     width: 45px;
     height: 45px;
     border: 3px solid #252525;
-    border-radius: 15px;
+    border-radius: 10px;
   }
   #rollButton {
     margin-top: 85px;
@@ -1052,9 +1057,13 @@ input[type="radio"]:checked {
     padding: 5px;
     font-size: 12px;
     border: 3px solid #252525;
-    border-radius: 10px;
+    border-radius: 5px;
   }
   .board {
     background-size: contain;
+  }
+  .objek {
+    width: 70px;
+    height: 70px;
   }
 }

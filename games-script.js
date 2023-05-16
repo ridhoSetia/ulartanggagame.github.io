@@ -12,8 +12,19 @@ function openFullscreen() {
       /* IE11 */
       board.msRequestFullscreen();
     }
+
+    const buttonResume = (buttonPlay.textContent = "Resume");
+    localStorage.setItem("buttonResume", buttonResume);
   }, 500);
 }
+const buttonPlay = document.querySelector(".open");
+
+window.addEventListener("load", () => {
+  const resume = localStorage.getItem("buttonResume");
+  if (resume) {
+    buttonPlay.textContent = resume;
+  }
+});
 
 function exitFullscreen() {
   if (document.exitFullscreen) {
@@ -136,7 +147,7 @@ function updateCardfront(value) {
 // Mendefinisikan fungsi untuk mengambil elemen HTML dadu dan memperbarui gambarnya dengan nilai dadu yang baru
 function updateCardback(value) {
   var card = document.querySelector(".back");
-  card.src = "img/CardBack" + value + ".jpeg";
+  card.src = "img/cardBack" + value + ".jpeg";
 }
 
 const boxCard = document.querySelector(".boxCard");
@@ -180,6 +191,7 @@ shakeCard.addEventListener("click", rollCardclick);
 const closeCard = document.querySelector("#closeCard");
 closeCard.onclick = () => {
   boxCard.style.display = "none";
+  shakeCard.style.display = "none";
 };
 
 const parentElement = document.querySelector(".flex-point");

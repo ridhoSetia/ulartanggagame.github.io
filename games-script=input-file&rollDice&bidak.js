@@ -104,12 +104,14 @@ const skinElements = [
 ];
 
 function saveSkinIndex(element, skinIndex) {
-  localStorage.setItem(`skinIndex-${element}`, skinIndex);
+  const bidakClass = element.getAttribute("id");
+  localStorage.setItem(`skinIndex-${bidakClass}`, skinIndex);
 }
+
 skinElements.forEach((element) => {
   // mendapatkan indeks skinIndex yang disimpan di localStorage jika ada
   const savedSkinIndex = localStorage.getItem(
-    `skinIndex-${element.bidak.classList[0]}`
+    `skinIndex-${element.bidak.getAttribute("id")}`
   );
 
   for (let i = 0; i < element.pilihSkin.length; i++) {
@@ -118,10 +120,10 @@ skinElements.forEach((element) => {
 
     pickSkin.onclick = () => {
       element.bidak.style.backgroundImage = `url(img/bidak${skinIndex}.png)`;
-      pickSkin.style.backgroundSize = `100%`;
-      pickSkin.style.backgroundPosition = `top`;
+      pickSkin.style.backgroundSize = `120%`;
+      pickSkin.style.backgroundPosition = `center`;
       pickSkin.style.border = `5px solid #fff`;
-      saveSkinIndex(element.bidak.classList[0], skinIndex); // menyimpan indeks skinIndex ke localStorage
+      saveSkinIndex(element.bidak, skinIndex); // menyimpan indeks skinIndex ke localStorage
       pop();
     };
 
@@ -131,7 +133,7 @@ skinElements.forEach((element) => {
     }
 
     function borderChooseSkin() {
-      pickSkin.style.backgroundSize = `85%`;
+      pickSkin.style.backgroundSize = `95%`;
       pickSkin.style.backgroundPosition = `center`;
       pickSkin.style.border = `none`;
     }
@@ -176,6 +178,7 @@ function rollButtonClick() {
     // mengubah teks tombol menjadi kata selanjutnya dalam array
     rollButton.innerHTML = words[currentWordIndex];
     rollButton.style.background = color[currentColorIndex];
+    document.querySelector(".showQuestion").style.display = "flex";
   }, 1800);
 
   // menambahkan satu ke indeks kata saat ini

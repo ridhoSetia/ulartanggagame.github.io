@@ -283,6 +283,8 @@ function tampilPertanyaan(nomor) {
 
 // Cek jawaban
 function cekJawaban() {
+  document.querySelector(".showQuestion").style.display = "none";
+
   let jawabanUser = document.querySelector(
     'input[name="jawaban"]:checked'
   ).value;
@@ -303,9 +305,10 @@ function cekJawaban() {
 
   hideQuestionBox();
 
-  setTimeout(() => {
+  result.onclick = () => {
+    document.querySelector("#shakeCard").style.display = "block";
     result.style.display = "none";
-  }, 6000);
+  };
 }
 
 // set semua radio button menjadi unchecked
