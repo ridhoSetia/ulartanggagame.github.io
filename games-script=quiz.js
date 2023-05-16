@@ -281,9 +281,11 @@ function tampilPertanyaan(nomor) {
   document.querySelector(".flex-point").classList.remove("show");
 }
 
+document.querySelector("#shakeCard").disabled = true;
+
 // Cek jawaban
 function cekJawaban() {
-  document.querySelector(".showQuestion").style.display = "none";
+  document.querySelector(".showQuestion").disabled = true;
 
   let jawabanUser = document.querySelector(
     'input[name="jawaban"]:checked'
@@ -306,7 +308,7 @@ function cekJawaban() {
   hideQuestionBox();
 
   result.onclick = () => {
-    document.querySelector("#shakeCard").style.display = "block";
+    document.querySelector("#shakeCard").disabled = false;
     result.style.display = "none";
   };
 }

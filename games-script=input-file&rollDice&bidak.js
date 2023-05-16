@@ -165,6 +165,8 @@ function updateDice(value) {
   dice.src = "img/Dadu" + value + ".png";
 }
 
+document.querySelector(".showQuestion").disabled = true;
+
 // Mendefinisikan fungsi untuk mengklik tombol "kocok dadu"
 function rollButtonClick() {
   rollSound();
@@ -178,7 +180,7 @@ function rollButtonClick() {
     // mengubah teks tombol menjadi kata selanjutnya dalam array
     rollButton.innerHTML = words[currentWordIndex];
     rollButton.style.background = color[currentColorIndex];
-    document.querySelector(".showQuestion").style.display = "flex";
+    document.querySelector(".showQuestion").disabled = false;
   }, 1800);
 
   // menambahkan satu ke indeks kata saat ini

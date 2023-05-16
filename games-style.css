@@ -378,6 +378,26 @@ input[name="trueOption"]:focus {
   background-size: 95%;
 }
 
+.hapus {
+  color: #fff;
+  background: transparent;
+  font-size: 25px;
+  margin: -0.2px -10px;
+  padding-left: 10px;
+  padding-right: 3px;
+  padding-bottom: 15px;
+  width: 33px;
+  height: 33px;
+  display: flex;
+  position: absolute;
+  cursor: pointer;
+  border: none;
+}
+.hapus:focus {
+  background: #fff;
+  color: #ff0000;
+}
+
 /* Gaya tombol slide */
 .splide__arrow {
   background-color: #fff;
@@ -651,11 +671,10 @@ button:focus {
   margin: 5px;
   position: absolute;
   z-index: 2;
-  background: #fff;
   border: none;
   width: 60px;
   height: 60px;
-  background-image: url(img/card-game.png);
+  background-image: url(img/card-games.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 90%;
@@ -663,7 +682,7 @@ button:focus {
   scale: 0.9;
   transition: all 0.1s ease;
   cursor: pointer;
-  display: none;
+  display: block;
 }
 #shakeCard:hover {
   opacity: 1;
@@ -699,7 +718,7 @@ button:focus {
 .showQuestion {
   cursor: pointer;
   position: relative;
-  display: none;
+  display: flex;
   margin: 10px;
   padding: 15px;
   font-size: 30px;

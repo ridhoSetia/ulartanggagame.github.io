@@ -139,12 +139,12 @@ function rollCardback() {
   return Math.floor(Math.random() * 6) + 1;
 }
 
-// Mendefinisikan fungsi untuk mengambil elemen HTML dadu dan memperbarui gambarnya dengan nilai dadu yang baru
+// Mendefinisikan fungsi untuk mengambil elemen HTML kartu dan memperbarui gambarnya dengan nilai kartu yang baru
 function updateCardfront(value) {
   var card = document.querySelector(".front");
   card.src = "img/cardFront" + value + ".jpeg";
 }
-// Mendefinisikan fungsi untuk mengambil elemen HTML dadu dan memperbarui gambarnya dengan nilai dadu yang baru
+// Mendefinisikan fungsi untuk mengambil elemen HTML kartu dan memperbarui gambarnya dengan nilai kartu yang baru
 function updateCardback(value) {
   var card = document.querySelector(".back");
   card.src = "img/cardBack" + value + ".jpeg";
@@ -152,17 +152,17 @@ function updateCardback(value) {
 
 const boxCard = document.querySelector(".boxCard");
 
-// Mendefinisikan fungsi untuk mengklik tombol "kocok dadu"
+// Mendefinisikan fungsi untuk mengklik tombol "kocok kartu"
 function rollCardclick() {
   boxCard.style.display = "block";
   spin();
-  // Mendapatkan elemen HTML dadu dan tombol
+  // Mendapatkan elemen HTML kartu dan tombol
   var rollButton = document.getElementById("shakeCard");
 
   // Menonaktifkan tombol selama animasi berlangsung
   rollButton.disabled = true;
 
-  // Mengulangi animasi dadu selama 10 frame dengan interval 50 ms
+  // Mengulangi animasi kartu selama 10 frame dengan interval 50 ms
   var frames = 48;
   var interval = 50;
   var currentFrame = 0;
@@ -179,7 +179,6 @@ function rollCardclick() {
     // Menghentikan animasi setelah 10 frame dan mengaktifkan kembali tombol
     if (currentFrame === frames) {
       clearInterval(rollInterval);
-      rollButton.disabled = false;
     }
   }, interval);
 }
@@ -188,10 +187,12 @@ function rollCardclick() {
 const shakeCard = document.getElementById("shakeCard");
 shakeCard.addEventListener("click", rollCardclick);
 
+shakeCard.disabled = false;
+
 const closeCard = document.querySelector("#closeCard");
 closeCard.onclick = () => {
   boxCard.style.display = "none";
-  shakeCard.style.display = "none";
+  shakeCard.disabled = true;
 };
 
 const parentElement = document.querySelector(".flex-point");
