@@ -1,3 +1,21 @@
+function pop() {
+  const pop = new Audio("sfx/pop.mp3");
+  pop.play();
+  pop.volume = 0.3;
+}
+
+function klik() {
+  const klik = new Audio("sfx/klik.mp3");
+  klik.play();
+  klik.volume = 0.3;
+}
+
+function spin() {
+  const spin = new Audio("sfx/spiningSfx.mp3");
+  spin.play();
+  spin.volume = 0.5;
+}
+
 const board = document.querySelector(".board");
 
 function openFullscreen() {
@@ -63,24 +81,6 @@ window.addEventListener("resize", () => {
     // lakukan tindakan tertentu untuk orientasi potrait
   }
 });
-
-function pop() {
-  const pop = new Audio("sfx/pop.mp3");
-  pop.play();
-  pop.volume = 0.5;
-}
-
-function klik() {
-  const klik = new Audio("sfx/klik.mp3");
-  klik.play();
-  klik.volume = 0.7;
-}
-
-function spin() {
-  const spin = new Audio("sfx/spiningSfx.mp3");
-  spin.play();
-  spin.volume = 0.5;
-}
 
 const backsound = new Audio("sfx/backsound.mp3");
 
@@ -193,6 +193,7 @@ const closeCard = document.querySelector("#closeCard");
 closeCard.onclick = () => {
   boxCard.style.display = "none";
   shakeCard.disabled = true;
+  document.querySelector(".showQuestion").disabled = false;
 };
 
 const parentElement = document.querySelector(".flex-point");

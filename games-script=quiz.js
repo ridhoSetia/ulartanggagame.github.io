@@ -281,6 +281,7 @@ function tampilPertanyaan(nomor) {
   document.querySelector(".flex-point").classList.remove("show");
 }
 
+const result = document.getElementById("result");
 document.querySelector("#shakeCard").disabled = true;
 const xResult = document.querySelector(".x");
 
@@ -295,7 +296,6 @@ function cekJawaban() {
     'input[name="jawaban"]:checked'
   ).value;
 
-  const result = document.getElementById("result");
   result.style.display = "block";
 
   if (jawabanUser == pertanyaan[nomorSoal].jawabanBenar) {
@@ -310,16 +310,16 @@ function cekJawaban() {
   document.getElementById("opsiJawaban").innerHTML = "";
 
   hideQuestionBox();
-
-  xResult.onclick = () => {
-    xResult.style.display = "none";
-    document.querySelector("#shakeCard").disabled = false;
-    result.style.animation = "hapusResult 0.2s 0.1s forwards";
-    setTimeout(() => {
-      result.style.display = "none";
-    }, 500);
-  };
 }
+
+xResult.onclick = () => {
+  xResult.style.display = "none";
+  document.querySelector("#shakeCard").disabled = false;
+  result.style.animation = "hapusResult 0.2s 0.1s forwards";
+  setTimeout(() => {
+    result.style.display = "none";
+  }, 500);
+};
 
 // set semua radio button menjadi unchecked
 var jawaban = document.querySelectorAll("input[type='radio']:checked");

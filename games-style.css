@@ -393,6 +393,11 @@ input[name="trueOption"]:focus {
   background-size: 95%;
 }
 
+.skin.pick {
+  background-size: 120%;
+  border: 5px solid #fff;
+}
+
 .hapus3,
 .hapus4,
 .hapus5 {
@@ -718,7 +723,7 @@ button:focus {
   z-index: 6;
   top: 0;
   right: 0;
-  margin: 100px;
+  margin: 20px;
   width: 55px;
   height: 65px;
   border: none;
@@ -729,8 +734,9 @@ button:focus {
   font-size: 40px;
   margin: 0;
   z-index: 6;
-  padding: 15px;
+  padding: 15px 20px;
   background: #fff;
+  color: #252525;
   border: none;
   border-radius: 5px;
 }
@@ -1038,13 +1044,14 @@ input[type="radio"]:checked {
 }
 
 .x {
-  color: #ff0000;
-  margin: -5px 5px;
-  font-size: 40px;
   position: absolute;
-  top: 46%;
-  right: 32%;
+  left: 50%;
+  top: 30%;
   transform: translate(-50%, -50%);
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+  font-size: 80px;
+  margin-top: 20px;
   cursor: pointer;
   z-index: 4;
   display: none;

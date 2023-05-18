@@ -1,7 +1,7 @@
 function popIp() {
   const popIp = new Audio("sfx/pop.mp3");
   popIp.play();
-  popIp.volume = 0.1;
+  popIp.volume = 0.3;
 }
 
 function klik() {

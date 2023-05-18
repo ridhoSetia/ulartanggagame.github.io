@@ -4,7 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>webGame</title>
+    <!-- link box icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- library goggle font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Lilita+One&family=Poppins&family=Secular+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- library font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="loaders.css" />
   </head>
@@ -12,7 +30,140 @@
     <div class="load">
       <div class="loader"></div>
     </div>
-    <a href="permainan-ular-tangga.html">new game</a>
+
+    <header>
+      <a href="index.html" class="logo">Web Games</a>
+      <div class="bx bx-menu" id="menu-icon"></div>
+
+      <ul class="navbar">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </header>
+
+    <!-- home start -->
+
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>Game Web</h1>
+        <h2>
+          Mainkan Game nya <br />
+          dapat kan experience nya
+        </h2>
+        <a href="#" class="btn">Today Games</a>
+      </div>
+
+      <div class="home-img">
+        <img src="img/board-game.png" alt="home-img" />
+      </div>
+    </section>
+
+    <!-- about us start -->
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="img/board-game (1).png" alt="about-img" />
+      </div>
+
+      <div class="about-text">
+        <span>About Us</span>
+        <h2>
+          Website ini merupakan <br />
+          website game edukasi
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae error
+          voluptatibus, quisquam hic accusantium vitae libero nemo nesciunt,
+          tenetur alias sit delectus dolor magni. Magni velit hic dolorum
+          numquam natus!
+        </p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
+    </section>
+
+    <!-- games menu start -->
+    <section class="menu" id="games">
+      <div class="heading">
+        <span>Our Games</span>
+        <h2>Education games</h2>
+      </div>
+
+      <div class="menu-container">
+        <div class="box">
+          <div class="box-img">
+            <img src="img/logic-game.png" alt="menu-game" />
+          </div>
+          <h2>Game Ular Tangga</h2>
+          <h3>Simple Education Games</h3>
+          <a href="permainan-ular-tangga.html"><span>Play Now</span></a>
+          <i class="fa fa-gamepad" aria-hidden="true"></i>
+        </div>
+      
+      <div class="box">
+        <div class="box-img">
+          <img src="img/board-game (3).png" alt="menu-game" />
+        </div>
+        <h2>Soon</h2>
+        <h3>Simple Education Games</h3>
+        <a href="permainan-ular-tangga.html"><span>Play Now</span></a>
+       <i class="fa fa-gamepad" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-img">
+        <img src="img/board-game (4).png" alt="menu-game" />
+      </div>
+      <h2>Soon</h2>
+      <h3>Simple Education Games</h3>
+      <a href="permainan-ular-tangga.html"><span>Play Now</span></a>
+     <i class="fa fa-gamepad" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- call action -->
+<section class="cta" id="contact">
+  <h2>We create a simple games for education </h2>
+  <a href="https://wa.me/6282241559607" class="btn">Let's Talk <i class="fab fa-whatsapp"></i> </a>
+</section>
+
+<footer>
+  <h2>Web Games</h2>
+  <div class="social-media">
+    <a href="https://www.facebook.com/profile.php?id=100078160665406&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://instagram.com/ridho.setia_wan_" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/ridho-setiawan-60768a270" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+  </div>
+  <p class="copyright">
+    &copy; copyrigth 2023 Web Games. All rights reserved.
+  </p>
+</footer>
+
+
+<script>
+  const hamburgerMenu = document.querySelector("#menu-icon")
+  const navbar = document.querySelector(".navbar")
+  const bx = document.querySelector(".bx")
+
+  hamburgerMenu.onclick = () => {
+    navbar.classList.toggle("open");
+    bx.classList.toggle('bx-x')
+  }
+
+  window.onscroll = () => {
+    navbar.classList.remove("open")
+  }
+</script>
+
     <script src="loading-script.js"></script>
   </body>
 </html>
