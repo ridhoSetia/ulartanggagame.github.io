@@ -16,7 +16,7 @@ html.showEdit {
 }
 
 body {
-  background: #f2f2f2;
+  background: rgb(242, 242, 242);
   font-family: "Acme", sans-serif;
   letter-spacing: 0.5px;
 }
@@ -41,14 +41,6 @@ body {
   text-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
   cursor: pointer;
   font-size: 30px;
-  transition: all 0.1s ease;
-}
-.fas.fa-edit:hover {
-  background: #333;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 15px;
 }
 
 .fas.fa-times {
@@ -58,16 +50,8 @@ body {
   color: #c2c2c2;
   cursor: pointer;
   font-size: 30px;
-  transition: all 0.1s ease;
-  margin: 20px;
+  margin: 15px;
   z-index: 4;
-}
-
-.fas.fa-times:hover {
-  background: #ff0000;
-  padding: 20px;
-  border-radius: 0 0 0 5px;
-  margin: 0px;
 }
 
 .user-experience {
@@ -78,14 +62,15 @@ body {
   display: flex;
   flex-wrap: wrap;
   color: #fff;
-  display: none;
   z-index: 3;
-  top: 0;
+  top: 100%;
   left: 0;
+  display: block;
+  transition: all 0.2s ease;
 }
 
 .user-experience.showEdit {
-  display: block;
+  top: 0;
 }
 
 .edit-content {
@@ -95,11 +80,16 @@ body {
   height: 90%;
   overflow: auto;
   left: 50%;
-  top: 50%;
+  top: 150%;
   transform: translate(-50%, -50%);
   margin-top: 10px;
   border: 5px solid #252525;
+  transition: all 0.2s ease;
 }
+.edit-content.showEdit {
+  top: 50%;
+}
+
 .edit-content::-webkit-scrollbar {
   width: 14px; /* Lebar scrollbar */
 }

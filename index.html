@@ -43,6 +43,19 @@
       </ul>
     </header>
 
+    <!-- gameShow Pop Up -->
+
+    <div class="gameShowUlarTangga">
+      <center>
+        <div class="longLine"></div>
+        <i class="fas fa-caret-down"></i>
+      </center>
+      <div class="imgUlarTangga">
+        <img src="img/logic-game.png" width="100px" alt="img ular tangga">
+      </div>
+      <a href="permainan-ular-tangga.html">New Game</a>
+    </div>
+
     <!-- home start -->
 
     <section class="home" id="home">
@@ -96,7 +109,7 @@
           </div>
           <h2>Game Ular Tangga</h2>
           <h3>Simple Education Games</h3>
-          <a href="permainan-ular-tangga.html"><span>Play Now</span></a>
+          <span><button class="buttonShowGame1">Play Now</button></span>
           <i class="fa fa-gamepad" aria-hidden="true"></i>
         </div>
       
@@ -106,7 +119,7 @@
         </div>
         <h2>Soon</h2>
         <h3>Simple Education Games</h3>
-        <a href="permainan-ular-tangga.html"><span>Play Now</span></a>
+        <span><button>Play Now</button></span>
        <i class="fa fa-gamepad" aria-hidden="true"></i>
       </div>
     </div>
@@ -117,7 +130,7 @@
       </div>
       <h2>Soon</h2>
       <h3>Simple Education Games</h3>
-      <a href="permainan-ular-tangga.html"><span>Play Now</span></a>
+      <span><button>Play Now</button></span>
      <i class="fa fa-gamepad" aria-hidden="true"></i>
     </div>
   </div>
@@ -162,8 +175,24 @@
   window.onscroll = () => {
     navbar.classList.remove("open")
   }
-</script>
+      
+const buttonShowGame = document.querySelector(".buttonShowGame1");
+const showGame = document.querySelector(".gameShowUlarTangga");
+const buttonCloseShowGame = document.querySelector('.fa-caret-down')
 
-    <script src="loading-script.js"></script>
-  </body>
+buttonShowGame.onclick = () => {
+  showGame.classList.add("active");
+  document.querySelector('html').classList.add('hide')
+};
+
+buttonCloseShowGame.onclick = () => {
+  showGame.classList.remove("active");
+  document.querySelector('html').classList.remove('hide')
+}
+
+    </script>
+
+      <script src="loading-script.js"></script>
+
+</body>
 </html>

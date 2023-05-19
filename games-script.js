@@ -121,6 +121,7 @@ userEdit.onclick = () => {
   userEdit.classList.toggle("fa-times");
   document.querySelector(".user-experience").classList.toggle("showEdit");
   document.querySelector("html").classList.toggle("showEdit");
+  document.querySelector(".edit-content").classList.toggle("showEdit");
 };
 
 const card = document.querySelector(".shakeCard");
@@ -131,23 +132,16 @@ card.onclick = () => {
 };
 
 // Mendefinisikan fungsi untuk menghasilkan angka acak dari 1 hingga 6
-function rollCardfront() {
-  return Math.floor(Math.random() * 6) + 1;
-}
-// Mendefinisikan fungsi untuk menghasilkan angka acak dari 1 hingga 6
-function rollCardback() {
+function rollCard() {
   return Math.floor(Math.random() * 6) + 1;
 }
 
 // Mendefinisikan fungsi untuk mengambil elemen HTML kartu dan memperbarui gambarnya dengan nilai kartu yang baru
-function updateCardfront(value) {
-  var card = document.querySelector(".front");
-  card.src = "img/cardFront" + value + ".jpeg";
-}
-// Mendefinisikan fungsi untuk mengambil elemen HTML kartu dan memperbarui gambarnya dengan nilai kartu yang baru
-function updateCardback(value) {
-  var card = document.querySelector(".back");
-  card.src = "img/cardBack" + value + ".jpeg";
+function updateCard(value) {
+  var cardFront = document.querySelector(".front");
+  cardFront.src = "img/cardFront" + value + ".jpeg";
+  var cardBack = document.querySelector(".back");
+  cardBack.src = "img/cardBack" + value + ".jpeg";
 }
 
 const boxCard = document.querySelector(".boxCard");
@@ -168,10 +162,8 @@ function rollCardclick() {
   var currentFrame = 0;
   var rollInterval = setInterval(function () {
     // Mengubah gambar dadu secara acak setiap frame
-    var frontValue = rollCardfront();
-    updateCardfront(frontValue);
-    var value = rollCardback();
-    updateCardback(value);
+    var value = rollCard();
+    updateCard(value);
 
     // Meningkatkan frame saat ini
     currentFrame++;
