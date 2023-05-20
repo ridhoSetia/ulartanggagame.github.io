@@ -280,6 +280,21 @@ function tampilPertanyaan(nomor) {
 
   showPoint.classList.remove("showQ");
   document.querySelector(".flex-point").classList.remove("show");
+  // Mendapatkan referensi elemen radio button dan tombol submit
+  const radioButtons = document.querySelectorAll('input[type="radio"]');
+  const submitButton = document.getElementById("jawab");
+
+  // Tambahkan event listener untuk setiap radio button
+  radioButtons.forEach((radioButton) => {
+    radioButton.addEventListener("change", () => {
+      if (radioButton.checked) {
+        submitButton.disabled = false;
+        console.log("berhasil!");
+      } else {
+        submitButton.disabled = true;
+      }
+    });
+  });
 }
 
 const result = document.getElementById("result");
@@ -310,22 +325,6 @@ function cekJawaban() {
 
   hideQuestionBox();
 }
-// Mendapatkan referensi elemen radio button dan tombol submit
-const radioButtons = document.querySelectorAll('input[type="radio"]');
-const submitButton = document.getElementById("jawab");
-
-// Tambahkan event listener untuk setiap radio button
-radioButtons.forEach((radioButton) => {
-  radioButton.addEventListener("change", () => {
-    if (radioButton.checked) {
-      submitButton.disabled = false;
-      console.log("berhasil!");
-    } else {
-      submitButton.disabled = true;
-    }
-  });
-});
-console.log(radioButtons);
 
 xResult.onclick = () => {
   xResult.classList.remove("on");
@@ -342,7 +341,7 @@ for (var i = 0; i < jawaban.length; i++) {
 const pointQuestion = document.querySelectorAll(".flex-point button");
 pointQuestion.forEach((pointQuestion) => {
   pointQuestion.addEventListener("mouseover", () => {
-    pop();
+    klik();
   });
 });
 
@@ -546,7 +545,7 @@ function editContent(event) {
 }
 
 // Memeriksa apakah ada nilai di localStorage saat halaman dimuat
-window.addEventListener("load", function () {
+window.addEventListener("load", () => {
   for (let i = 0; i < words.length; i++) {
     const storedText = localStorage.getItem(`replacementText${i}`);
     if (storedText) {

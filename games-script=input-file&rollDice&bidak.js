@@ -171,7 +171,6 @@ document.querySelector(".showQuestion").disabled = true;
 function rollButtonClick() {
   rollSound();
   // Mendapatkan elemen HTML dadu dan tombol
-  var dice = document.getElementById("dice");
   var rollButton = document.getElementById("rollButton");
 
   // Menonaktifkan tombol selama animasi berlangsung
@@ -202,6 +201,8 @@ function rollButtonClick() {
     var value = rollDice();
     updateDice(value);
 
+    // Menyimpan nilai value ke localStorage
+    localStorage.setItem("diceValue", value);
     // Meningkatkan frame saat ini
     currentFrame++;
 
@@ -212,6 +213,18 @@ function rollButtonClick() {
     }
   }, interval);
 }
+
+window.onload = () => {
+  // Mendapatkan nilai rollInterval dari localStorage
+  var storedDiceValue = localStorage.getItem("diceValue");
+
+  // Menggunakan nilai storedrollInterval jika ada
+  if (storedDiceValue) {
+    var dice = document.getElementById("dice");
+    dice.src = "img/Dadu" + storedDiceValue + ".png";
+  }
+};
+console.log(dice.src);
 
 // Mengaitkan fungsi rollButtonClick dengan tombol "kocok dadu"
 var rollButton = document.getElementById("rollButton");
@@ -264,51 +277,3 @@ for (let i = players.length - 1; i >= 0; i--) {
     }, 500);
   };
 }
-
-// const deleteBidak5 = document.querySelector(".hapus5");
-// deleteBidak5.onclick = () => {
-//   klik();
-//   document.querySelector(".skinPlayer5").style.animation =
-//     "hapus 0.2s 0.1s forwards";
-//   setTimeout(() => {
-//     document.querySelector(".skinPlayer5").style.display = "none";
-
-//     popIp();
-//     if (words.length > 0) {
-//       words.pop();
-//       color.pop();
-//     }
-//     document.querySelector(".hapus4").style.display = "block";
-//   }, 500);
-// };
-
-// const deleteBidak4 = document.querySelector(".hapus4");
-// deleteBidak4.onclick = () => {
-//   klik();
-//   document.querySelector(".skinPlayer4").style.animation =
-//     "hapus 0.2s 0.1s forwards";
-//   setTimeout(() => {
-//     document.querySelector(".skinPlayer4").style.display = "none";
-//     popIp();
-//     if (words.length > 0) {
-//       words.pop();
-//       color.pop();
-//     }
-//     document.querySelector(".hapus3").style.display = "block";
-//   }, 500);
-// };
-
-// const deleteBidak3 = document.querySelector(".hapus3");
-// deleteBidak3.onclick = () => {
-//   klik();
-//   document.querySelector(".skinPlayer3").style.animation =
-//     "hapus 0.2s 0.1s forwards";
-//   setTimeout(() => {
-//     document.querySelector(".skinPlayer3").style.display = "none";
-//     popIp();
-//     if (words.length > 0) {
-//       words.pop();
-//       color.pop();
-//     }
-//   }, 500);
-// };
