@@ -264,6 +264,7 @@ let nomorSoal = 0;
 function tampilPertanyaan(nomor) {
   nomorSoal = nomor;
   showQuestion();
+
   question.innerHTML = pertanyaan[nomorSoal].soal;
 
   let opsiJawaban = "";
@@ -287,16 +288,14 @@ const xResult = document.querySelector(".x");
 
 // Cek jawaban
 function cekJawaban() {
-  setTimeout(() => {
-    xResult.style.display = "block";
-  }, 500);
+  xResult.classList.add("on");
   document.querySelector(".showQuestion").disabled = true;
 
   let jawabanUser = document.querySelector(
     'input[name="jawaban"]:checked'
   ).value;
 
-  result.style.display = "block";
+  result.classList.add("on");
 
   if (jawabanUser == pertanyaan[nomorSoal].jawabanBenar) {
     result.innerHTML = "Benar! naik ke tangga";
@@ -311,14 +310,27 @@ function cekJawaban() {
 
   hideQuestionBox();
 }
+// Mendapatkan referensi elemen radio button dan tombol submit
+const radioButtons = document.querySelectorAll('input[type="radio"]');
+const submitButton = document.getElementById("jawab");
+
+// Tambahkan event listener untuk setiap radio button
+radioButtons.forEach((radioButton) => {
+  radioButton.addEventListener("change", () => {
+    if (radioButton.checked) {
+      submitButton.disabled = false;
+      console.log("berhasil!");
+    } else {
+      submitButton.disabled = true;
+    }
+  });
+});
+console.log(radioButtons);
 
 xResult.onclick = () => {
-  xResult.style.display = "none";
+  xResult.classList.remove("on");
   document.querySelector("#shakeCard").disabled = false;
-  result.style.animation = "hapusResult 0.2s 0.1s forwards";
-  setTimeout(() => {
-    result.style.display = "none";
-  }, 500);
+  result.classList.remove("on");
 };
 
 // set semua radio button menjadi unchecked

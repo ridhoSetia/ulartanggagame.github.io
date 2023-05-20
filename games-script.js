@@ -173,6 +173,10 @@ function rollCardclick() {
       clearInterval(rollInterval);
     }
   }, interval);
+
+  setTimeout(() => {
+    closeCard.style.display = "block";
+  }, 2500);
 }
 
 // Mengaitkan fungsi rollButtonClick dengan tombol "kocok dadu"
@@ -186,6 +190,7 @@ closeCard.onclick = () => {
   boxCard.style.display = "none";
   shakeCard.disabled = true;
   document.querySelector(".showQuestion").disabled = false;
+  card.classList.remove("flip");
 };
 
 const parentElement = document.querySelector(".flex-point");
@@ -200,7 +205,7 @@ function shuffleChildren() {
 }
 
 // panggil fungsi di atas setiap kali halaman dimuat ulang
-window.onload = shuffleChildren;
+window.onload = shuffleChildren();
 
 // Mengambil semua elemen input
 const progressInput = document.querySelectorAll('input[type="text"]');

@@ -714,14 +714,15 @@ button:focus {
   top: 0;
   right: 0;
   margin: 20px;
-  width: 55px;
-  height: 65px;
+  width: 40px;
+  height: 50px;
   border: none;
   border-radius: 5px;
+  display: none;
 }
 .fas.fa-times.card {
   position: absolute;
-  font-size: 40px;
+  font-size: 25px;
   margin: 0;
   z-index: 6;
   padding: 15px 20px;
@@ -1005,46 +1006,43 @@ input[type="radio"]:checked {
 #result {
   color: #333;
   background: #fff;
-  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
   font-size: 35px;
   padding: 25px;
   border-radius: 5px;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: -50%;
   transform: translate(-50%, -50%);
-  display: none;
   z-index: 3;
-  border: 5px solid #252525;
+  transition: all 0.3s ease;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: auto;
 }
 
-@keyframes hapusResult {
-  0% {
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(-50%, -100%);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, 100%);
-    opacity: 0;
-  }
+#result.on {
+  top: 50%;
 }
 
 .x {
   position: absolute;
   left: 50%;
-  top: 30%;
+  top: -50%;
   transform: translate(-50%, -50%);
   color: #fff;
   text-shadow: 0 0 10px #000;
-  font-size: 80px;
+  font-size: 70px;
   margin-top: 20px;
   cursor: pointer;
   z-index: 4;
-  display: none;
+  transition: all 0.3s ease;
+}
+
+.x.on {
+  top: 25%;
 }
 
 .objek {
