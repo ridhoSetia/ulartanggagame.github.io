@@ -99,9 +99,31 @@ header {
   margin-top: -10px;
   cursor: pointer;
 }
-/* .gameShowUlarTangga a {
-  color: #1e1c2a;
-} */
+.ularTanggaContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+  grid-gap: 1.5rem;
+  align-items: center;
+}
+.boxUlarTangga {
+  background: #feeee7;
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px;
+}
+.imgUlarTangga {
+  width: 220px;
+  height: 220px;
+}
+.imgUlarTangga img {
+  width: 100%;
+}
 
 section {
   padding: 70px 17%;

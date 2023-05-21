@@ -163,15 +163,19 @@ function rollDice() {
 function updateDice(value) {
   var dice = document.getElementById("dice");
   dice.src = "img/Dadu" + value + ".png";
+
+  // Menyimpan nilai value ke localStorage
+  localStorage.setItem("diceValue", value);
 }
 
 document.querySelector(".showQuestion").disabled = true;
 
+// Mendapatkan elemen HTML tombol
+var rollButton = document.getElementById("rollButton");
+
 // Mendefinisikan fungsi untuk mengklik tombol "kocok dadu"
 function rollButtonClick() {
   rollSound();
-  // Mendapatkan elemen HTML dadu dan tombol
-  var rollButton = document.getElementById("rollButton");
 
   // Menonaktifkan tombol selama animasi berlangsung
   rollButton.disabled = true;
@@ -185,6 +189,12 @@ function rollButtonClick() {
   // menambahkan satu ke indeks kata saat ini
   currentWordIndex++;
   currentColorIndex++;
+
+  // Menyimpan nilai indexWord ke localStorage
+  localStorage.setItem("currentWordIndex", currentWordIndex);
+
+  // Menyimpan nilai indexColor ke localStorage
+  localStorage.setItem("currentColorIndex", currentColorIndex);
   // jika sudah mencapai kata terakhir, mengulang dari awal
   if (currentWordIndex >= words.length) {
     currentWordIndex = 0;
@@ -201,8 +211,6 @@ function rollButtonClick() {
     var value = rollDice();
     updateDice(value);
 
-    // Menyimpan nilai value ke localStorage
-    localStorage.setItem("diceValue", value);
     // Meningkatkan frame saat ini
     currentFrame++;
 
@@ -214,17 +222,22 @@ function rollButtonClick() {
   }, interval);
 }
 
-window.onload = () => {
-  // Mendapatkan nilai rollInterval dari localStorage
-  var storedDiceValue = localStorage.getItem("diceValue");
+// Mendapatkan nilai rollInterval dari localStorage
+var storedDiceValue = localStorage.getItem("diceValue");
+var storedcurrentWordIndex = localStorage.getItem("currentWordIndex");
+var storedcurrentColorIndex = localStorage.getItem("currentColorIndex");
 
-  // Menggunakan nilai storedrollInterval jika ada
-  if (storedDiceValue) {
-    var dice = document.getElementById("dice");
-    dice.src = "img/Dadu" + storedDiceValue + ".png";
-  }
-};
-console.log(dice.src);
+// Menggunakan nilai storedrollInterval jika ada
+if (storedDiceValue) {
+  var dice = document.getElementById("dice");
+  dice.src = `img/Dadu${storedDiceValue}.png`;
+}
+if (storedcurrentWordIndex) {
+  rollButton.innerHTML = words[storedcurrentWordIndex];
+}
+if (storedcurrentColorIndex) {
+  rollButton.style.background = color[storedcurrentColorIndex];
+}
 
 // Mengaitkan fungsi rollButtonClick dengan tombol "kocok dadu"
 var rollButton = document.getElementById("rollButton");
@@ -263,9 +276,16 @@ for (let i = players.length - 1; i >= 0; i--) {
       cursorPlayer.style.display = "none";
       popIp();
 
+      localStorage.setItem(`skinPlayer${i}`, skinPlayer.style.display);
+      localStorage.setItem(`cursorPlayer${i}`, cursorPlayer.style.display);
+
       if (words.length > 0) {
         words.pop();
         color.pop();
+
+        // Menyimpan ke localStorage
+        localStorage.setItem("words", JSON.stringify(words));
+        localStorage.setItem("color", JSON.stringify(color));
       }
 
       if (i > 0) {
@@ -276,4 +296,27 @@ for (let i = players.length - 1; i >= 0; i--) {
       }
     }, 500);
   };
+  const savedSkinPlayer = localStorage.getItem(`skinPlayer${i}`);
+  const savedCursorPlayer = localStorage.getItem(`cursorPlayer${i}`);
+
+  if (savedSkinPlayer) {
+    const skinPlayer = document.querySelector(`.${player.skinClass}`);
+    skinPlayer.style.display = savedSkinPlayer;
+  }
+
+  if (savedCursorPlayer) {
+    const cursorPlayer = document.querySelector(`#${player.cursor}`);
+    cursorPlayer.style.display = savedCursorPlayer;
+  }
+
+  const savedWords = localStorage.getItem("words");
+  const savedColor = localStorage.getItem("color");
+
+  if (savedWords) {
+    words = JSON.parse(savedWords);
+  }
+
+  if (savedColor) {
+    color = JSON.parse(savedColor);
+  }
 }

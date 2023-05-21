@@ -697,7 +697,7 @@ button:focus {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 90%;
-  border-radius: 50%;
+  border-radius: 5px;
   scale: 0.9;
   transition: all 0.1s ease;
   cursor: pointer;
@@ -772,8 +772,8 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 10px;
-  width: 60px;
+  padding: 0;
+  width: 63px;
   font-size: 50px;
   z-index: 3;
   bottom: 0;
@@ -928,7 +928,7 @@ button:focus {
 .questionBox {
   background: #333;
   padding: 10px;
-  width: 50%;
+  width: 70%;
   height: auto;
   padding-bottom: 100px;
   display: none;
