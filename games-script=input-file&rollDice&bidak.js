@@ -148,7 +148,7 @@ skinElements.forEach((element) => {
 
 // membuat sebuah array yang berisi kata-kata yang ingin ditampilkan
 let words = ["player1", "player2", "player3", "player4", "player5"];
-let color = ["#ff0000", "#0000ff", "#00ff00", "#800080", "#00a5a7"];
+let color = ["#e20000", "#1919e2", "#11e211", "#800080", "#00a5a7"];
 
 // membuat variabel untuk menunjukkan indeks kata saat ini
 let currentWordIndex = 0;

@@ -16,7 +16,7 @@ html.showEdit {
 }
 
 body {
-  background: rgb(242, 242, 242);
+  background: #1e1c2a;
   font-family: "Acme", sans-serif;
   letter-spacing: 0.5px;
 }
@@ -237,30 +237,33 @@ input[name="trueOption"]:focus {
 .smooth,
 .height {
   margin: 5px 6px;
-  background: #eee;
+  background: #262333;
   padding: 5px;
-  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.25);
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.5);
   font-size: 16px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  color: #fff;
 }
 .smooth:focus,
 .height:focus {
-  background: #181818;
-  color: #eee;
+  background: #fff;
+  color: #262333;
 }
 
 /* styling choose skin */
 
 .chooseSkin {
   margin-top: 30px;
+  color: #fff;
 }
 
 .playerSkin {
   margin: 5px;
   height: 240px;
-  border: 10px solid #252525;
+  border: 10px solid #feeee7;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.25);
 }
 
 @keyframes hapus {
@@ -288,33 +291,28 @@ input[name="trueOption"]:focus {
 .playerSkin:nth-child(1) {
   padding: 10px;
   border-radius: 5px;
-  background: #ff0000;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+  background: #e20000;
 }
 .playerSkin:nth-child(2) {
   padding: 10px;
   border-radius: 5px;
-  background: #0000ff;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+  background: #1919e2;
 }
 .playerSkin:nth-child(3) {
   padding: 10px;
   border-radius: 5px;
-  background: #00ff00;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+  background: #11e211;
 }
 .playerSkin:nth-child(4) {
   padding: 10px;
   border-radius: 5px;
   background: #800080;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
 
 .playerSkin:nth-child(5) {
   padding: 10px;
   border-radius: 5px;
   background: #00a5a7;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
 
 .flex-skin {
@@ -525,18 +523,18 @@ input[name="trueOption"]:focus {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -150px);
-  background: #957777;
+  background: #f45050;
   border: none;
   padding: 15px;
   border-radius: 5px;
-  box-shadow: 0 10px 0 0 #252525;
+  box-shadow: 0 10px 0 0 #feeee7;
   transition: all 0.2s ease;
   cursor: pointer;
-  border: 5px solid #252525;
+  border: 5px solid #feeee7;
 }
 .open:active {
   transform: translate(-50%, -140px);
-  box-shadow: 0 0 0 #252525;
+  box-shadow: 0 0 0 #feeee7;
 }
 
 .exit {
@@ -620,7 +618,7 @@ button:focus {
   padding: 5px;
   font-size: 15px;
   border-radius: 8px;
-  background: #ff0000;
+  background: #e20000;
   display: flex;
   justify-content: center;
   color: #fff;
@@ -1068,6 +1066,21 @@ input[type="radio"]:checked {
   background-size: 95%;
   background-repeat: no-repeat;
   border-radius: 50%;
+}
+#cursor1 {
+  filter: drop-shadow(0 0 5px #e20000);
+}
+#cursor2 {
+  filter: drop-shadow(0 0 5px #1919e2);
+}
+#cursor3 {
+  filter: drop-shadow(0 0 5px #11e211);
+}
+#cursor4 {
+  filter: drop-shadow(0 0 5px #800080);
+}
+#cursor5 {
+  filter: drop-shadow(0 0 5px #00a5a7);
 }
 
 .objek:active {
