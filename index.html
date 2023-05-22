@@ -43,24 +43,6 @@
       </ul>
     </header>
 
-    <!-- gameShow Pop Up -->
-
-    <div class="gameShowUlarTangga">
-      <center>
-        <div class="longLine"></div>
-        <i class="fas fa-caret-down"></i>
-      </center>
-      <div class="ularTanggaContainer">
-        <div class="boxUlarTangga">
-          <h2></h2>
-          <div class="imgUlarTangga">
-            <img src="img/logic-game.png" alt="img ular tangga">
-          </div>
-          <a href="permainan-ular-tangga.html">New Game</a>
-        </div>
-      </div>
-    </div>
-
     <!-- home start -->
 
     <section class="home" id="home">
@@ -110,11 +92,11 @@
       <div class="menu-container">
         <div class="box">
           <div class="box-img">
-            <img src="img/logic-game.png" alt="menu-game" />
+            <img src="img/snakes.png" alt="menu-game" />
           </div>
           <h2>Game Ular Tangga</h2>
           <h3>Simple Education Games</h3>
-          <span><button class="buttonShowGame1">Play Now</button></span>
+          <span><button><a href="permainan-ular-tangga.html">Play Now</a></button></span>
           <i class="fa fa-gamepad" aria-hidden="true"></i>
         </div>
       
@@ -166,7 +148,25 @@
   </p>
 </footer>
 
-      <script src="loading-script.js"></script>
+
+    <script>
+      
+const hamburgerMenu = document.querySelector("#menu-icon");
+const navbar = document.querySelector(".navbar");
+const bx = document.querySelector(".bx");
+
+hamburgerMenu.onclick = () => {
+  navbar.classList.toggle("open");
+  bx.classList.toggle("bx-x");
+};
+
+window.onscroll = () => {
+  navbar.classList.remove("open");
+  bx.classList.remove("bx-x");
+};
+    </script>
+
+<script src="loading-script.js"></script>
 
 </body>
 </html>

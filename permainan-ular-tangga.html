@@ -39,11 +39,48 @@
         <div id="square5"></div>
       </div>
     </div>
+
+    <!-- gameShow Pop Up -->
+
+    <div class="gameShowUlarTangga">
+      <center>
+        <div class="longLine"></div>
+        <h2>Select Your Favorite Mode</h2>
+      </center>
+      <div class="ularTanggaContainer">
+          <div class="boxUlarTangga" onclick="direct()">
+            <div class="imgUlarTangga">
+              <img src="img/direct-game.png" alt="img ular tangga">
+            </div>
+            <h3>Langsung main</h3>
+            <input type="radio" name="pickTypeGame">
+          </div>
+        
+          <div class="boxUlarTangga" onclick="edit()">
+            <div class="imgUlarTangga">
+              <img src="img/edit-game.png" alt="img ular tangga">
+            </div>
+            <h3>Edit sendiri</h3>
+            <input type="radio" name="pickTypeGame">
+          </div>
+      </div>
+      <center>
+        <span><button disabled>New Game</button></span>
+        </center>
+    </div>
+
+    <div class="box-panduan">
+      <div class="buku-panduan">
+        
+      </div>
+    </div>
+
     <p><i class="fas fa-edit"></i></p>
+    <p><i class="fas fa-book"></i><i class="fas fa-exclamation-circle"></i></p>
     <div class="user-experience">
       <div class="edit-content">
         <div class="edit-name">
-          <form id="myForm" onsubmit="editContent(event)">
+          <form id="nameForm" onsubmit="editName(event)">
             <div class="succesInput">Game Storage kosong 🔓</div>
             <label for="player"
               >Player 1 :
@@ -65,6 +102,11 @@
               >Player 5 :
               <input type="text" name="teks" data-name="4" />
             </label>
+            <center>
+              <button id="createName" type="submit">New Name</button>
+            </center>
+          </form>
+          <form id="myForm" onsubmit="editContent(event)">
             <div class="edit-question">
               <label for="question"
                 >pertanyaan A :
@@ -88,7 +130,7 @@
                 ></label>
                 <label for="select" id="select">
                   Jawaban yang benar :
-                  <input type="text" name="trueOption" data-trueOption="0" required />
+                  <input type="text" name="trueOption" data-trueOption="0" />
                 </label>
               </label>
               <label for="question"
@@ -569,7 +611,7 @@
               </label>
             </div>
             <center>
-              <button id="create" type="submit">Create</button>
+              <button id="create" type="submit">New Question</button>
             </center>
           </form>
         </div>
@@ -691,6 +733,9 @@
     <div class="board" onload="openFullscreen()">
       <div class="rotate-smartphone">
         <img src="img/rotate-smartphone.png" alt="please rotate your phone" />
+      </div>
+      <div class="video-explain">
+        <video src="Hal yang Harus Kamu Ketahui Tentang BULLYING.mp4" autoplay controls></video>
       </div>
       <button class="exit" onclick="exitFullscreen()">
         <i class="fas fa-arrow-left"></i>

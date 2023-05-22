@@ -17,7 +17,7 @@ function rollSound() {
 }
 
 // array untuk menyimpan elemen kotak dan status dragging-nya
-var boxes = [
+let boxes = [
   { element: document.getElementById("cursor1"), isDragging: false },
   { element: document.getElementById("cursor2"), isDragging: false },
   { element: document.getElementById("cursor3"), isDragging: false },
@@ -32,6 +32,10 @@ function moveBox(event, box) {
     var y = event.clientY;
     box.element.style.left = x + "px";
     box.element.style.top = y + "px";
+
+    // Simpan posisi x dan y ke localStorage
+    localStorage.setItem(box.id + "_posX", x);
+    localStorage.setItem(box.id + "_posY", y);
   }
 }
 
@@ -49,6 +53,14 @@ boxes.forEach(function (box) {
   document.addEventListener("mousemove", function (event) {
     moveBox(event, box);
   });
+
+  // Dapatkan posisi x dan y dari localStorage dan atur ulang posisi kotak
+  var savedPosX = localStorage.getItem(box.id + "_posX");
+  var savedPosY = localStorage.getItem(box.id + "_posY");
+  if (savedPosX && savedPosY) {
+    box.element.style.left = savedPosX + "px";
+    box.element.style.top = savedPosY + "px";
+  }
 });
 
 // Membuat variabel untuk objek dan halaman
@@ -76,6 +88,26 @@ halaman.addEventListener("touchmove", (event) => {
     if (objTarget) {
       objTarget.style.top = y + "px";
       objTarget.style.left = x + "px";
+
+      // Menyimpan koordinat sentuhan ke dalam localStorage
+      localStorage.setItem(`koordinatX${i}`, x);
+      localStorage.setItem(`koordinatY${i}`, y);
+    }
+  }
+});
+
+// Memuat koordinat sentuhan sebelumnya dari localStorage saat halaman dimuat
+window.addEventListener("DOMContentLoaded", () => {
+  // Looping melalui setiap sentuhan
+  for (let i = 0; i < objCursor.length; i++) {
+    // Mendapatkan koordinat sentuhan dari localStorage
+    let savedX = localStorage.getItem(`koordinatX${i}`);
+    let savedY = localStorage.getItem(`koordinatY${i}`);
+
+    // Jika koordinat sentuhan tersimpan, mengatur posisi objek cursor sesuai dengan koordinat tersebut
+    if (savedX && savedY) {
+      objCursor[i].style.top = savedY + "px";
+      objCursor[i].style.left = savedX + "px";
     }
   }
 });

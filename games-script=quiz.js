@@ -289,7 +289,6 @@ function tampilPertanyaan(nomor) {
     radioButton.addEventListener("change", () => {
       if (radioButton.checked) {
         submitButton.disabled = false;
-        console.log("berhasil!");
       } else {
         submitButton.disabled = true;
       }
@@ -348,14 +347,9 @@ pointQuestion.forEach((pointQuestion) => {
 const nameSkinPlayer = document.querySelectorAll(".nameSkinPlayer");
 let succesInput = document.querySelector(".succesInput");
 
-function editContent(event) {
+function editName(event) {
   event.preventDefault(); // Mencegah halaman untuk refresh
   const inputs = document.querySelectorAll('input[name="teks"]');
-  const inputQuestion = document.querySelectorAll(
-    'textarea[name="pertanyaan"]'
-  );
-  const inputOption = document.querySelectorAll('input[name="option"]');
-  const inputTrueoption = document.querySelectorAll('input[name="trueOption"]');
   inputs.forEach((input) => {
     const index = input.getAttribute("data-name");
     const replacementText = input.value;
@@ -366,6 +360,16 @@ function editContent(event) {
       document.querySelector(".player").textContent = replacementText;
     }
   });
+}
+
+function editContent(event) {
+  event.preventDefault(); // Mencegah halaman untuk refresh
+  const inputQuestion = document.querySelectorAll(
+    'textarea[name="pertanyaan"]'
+  );
+  const inputOption = document.querySelectorAll('input[name="option"]');
+  const inputTrueoption = document.querySelectorAll('input[name="trueOption"]');
+
   inputQuestion.forEach((inputQuestion) => {
     const indexQuestion = inputQuestion.getAttribute("data-question");
     const replacementQuestion = inputQuestion.value;

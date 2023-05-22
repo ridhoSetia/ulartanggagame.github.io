@@ -245,3 +245,68 @@ const height = document.querySelector(".height");
 height.onclick = () => {
   board.style.backgroundImage = "url(img/board-hd.jpg)";
 };
+
+const editQuestion = document.querySelector(".edit-question");
+const createButton = document.querySelector("#create");
+
+function direct() {
+  editQuestion.style.display = "none";
+  createButton.style.display = "none";
+  localStorage.setItem("directEditQuestion", editQuestion.style.display);
+  localStorage.setItem("createButtonFalse", createButton.style.display);
+}
+
+function edit() {
+  editQuestion.style.display = "block";
+  createButton.style.display = "block";
+  localStorage.setItem("editEditQuestion", editQuestion.style.display);
+  localStorage.setItem("createButtonTrue", createButton.style.display);
+}
+
+const storedDirect = localStorage.getItem("directEditQuestion");
+const storedFalseButton = localStorage.getItem("createButtonFalse");
+if (storedDirect) {
+  editQuestion.style.display = storedDirect;
+  createButton.style.display = storedFalseButton;
+}
+
+const storedEdit = localStorage.getItem("editEditQuestion");
+const storedTrueButton = localStorage.getItem("createButtonTrue");
+if (storedEdit) {
+  editQuestion.style.display = storedEdit;
+  createButton.style.display = storedTrueButton;
+}
+
+const buttonCloseGame = document.querySelector(".gameShowUlarTangga button");
+const showGame = document.querySelector(".gameShowUlarTangga");
+
+showGame.classList.add("active");
+document.querySelector("html").classList.add("showEdit");
+
+buttonCloseGame.onclick = () => {
+  showGame.classList.remove("active");
+  document.querySelector("html").classList.remove("showEdit");
+
+  // Menyimpan status pengaturan ke localStorage
+  localStorage.setItem("closeShowGame", "true");
+};
+
+const savedCloseShow = localStorage.getItem("closeShowGame");
+if (savedCloseShow === "true") {
+  showGame.classList.remove("active");
+  document.querySelector("html").classList.remove("showEdit");
+}
+
+const radioPickButtons = document.querySelectorAll(
+  'input[name="pickTypeGame"]'
+);
+
+radioPickButtons.forEach((radioPickButtons) => {
+  radioPickButtons.addEventListener("change", () => {
+    if (radioPickButtons.checked) {
+      buttonCloseGame.disabled = false;
+    } else {
+      buttonCloseGame.disabled = true;
+    }
+  });
+});

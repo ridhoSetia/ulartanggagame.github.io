@@ -21,6 +21,95 @@ body {
   letter-spacing: 0.5px;
 }
 
+.gameShowUlarTangga {
+  position: fixed;
+  z-index: 12;
+  background: #feeee7;
+  padding-top: 10px;
+  width: 100%;
+  height: 95%;
+  border-radius: 10px 10px 0 0;
+  bottom: -100vh;
+  left: 0;
+  transition: all 0.3s ease;
+  overflow: auto;
+}
+.gameShowUlarTangga h2 {
+  margin-top: 5px;
+  color: #f45050;
+}
+.gameShowUlarTangga.active {
+  bottom: 0;
+}
+.gameShowUlarTangga .longLine {
+  background: #cfcfcf;
+  width: 80%;
+  height: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+.gameShowUlarTangga i {
+  color: #cfcfcf;
+  font-size: 30px;
+  margin-top: -10px;
+  cursor: pointer;
+}
+.ularTanggaContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+  grid-gap: 1.5rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+.boxUlarTangga {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 20px;
+  background: #feeee7;
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
+}
+.gameShowUlarTangga button:disabled {
+  color: #fff;
+  background: #f45050;
+  padding: 10px;
+  border: none;
+  font-size: 25px;
+  border-radius: 5px;
+  margin: 4rem 0;
+  opacity: 0.3;
+}
+.gameShowUlarTangga button {
+  color: #fff;
+  background: #f45050;
+  padding: 10px;
+  border: none;
+  font-size: 25px;
+  border-radius: 5px;
+  margin: 4rem 0;
+  cursor: pointer;
+}
+.imgUlarTangga {
+  width: 220px;
+  height: 220px;
+}
+.imgUlarTangga img {
+  width: 100%;
+  height: 100%;
+}
+.boxUlarTangga input[name="pickTypeGame"] {
+  margin-top: 10px;
+  width: 70%;
+  border-radius: 5px;
+}
+.boxUlarTangga input[name="pickTypeGame"]:checked {
+  background: #f45050;
+}
+
 .succesInput {
   background: #0de70d;
   padding: 10px;
@@ -37,10 +126,41 @@ body {
   margin: 20px;
   right: 0;
   top: 0;
-  color: #fff;
-  text-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
+  color: #f45050;
   cursor: pointer;
   font-size: 30px;
+  background: #feeee7;
+  padding: 10px 8px;
+  border-radius: 50%;
+}
+
+.fas.fa-book {
+  position: fixed;
+  margin: 20px;
+  left: 0;
+  top: 0;
+  color: #f45050;
+  cursor: pointer;
+  font-size: 30px;
+  background: #feeee7;
+  padding: 10px 12px;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.fas.fa-exclamation-circle {
+  position: fixed;
+  margin: 20px;
+  left: 2rem;
+  top: 0;
+  color: #ff0000;
+  cursor: pointer;
+  font-size: 15px;
+  background: #feeee7;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  z-index: 3;
 }
 
 .fas.fa-times {
@@ -48,6 +168,8 @@ body {
   right: 0;
   top: 0;
   color: #c2c2c2;
+  background: #feeee7;
+  padding: 10px 15px;
   cursor: pointer;
   font-size: 30px;
   margin: 15px;
@@ -75,7 +197,7 @@ body {
 
 .edit-content {
   position: fixed;
-  background: #37306b;
+  background: #66347f;
   width: 90%;
   height: 90%;
   overflow: auto;
@@ -141,7 +263,7 @@ button {
 textarea[name="pertanyaan"] {
   border: 3px solid #252525;
   width: 98%;
-  height: 40px;
+  font-size: 20px;
   overflow: hidden;
   font-family: "Acme", sans-serif;
 
@@ -169,8 +291,8 @@ input[name="option"]:focus {
 
 input[type="text"] {
   border: 3px solid #252525;
-  height: 20px;
   font-family: "Acme", sans-serif;
+  font-size: 20px;
 }
 
 input[name="teks"] {
@@ -204,6 +326,17 @@ input[name="trueOption"]:focus {
 
 #create {
   background: #0bb90b;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+#createName {
+  background: #1919e2;
   cursor: pointer;
   font-size: 20px;
   padding: 5px;
@@ -585,6 +718,24 @@ input[name="trueOption"]:focus {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.video-explain {
+  background: rgb(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.video-explain video {
+  width: 80%;
+  height: auto;
 }
 
 button:focus {
@@ -1068,19 +1219,19 @@ input[type="radio"]:checked {
   border-radius: 50%;
 }
 #cursor1 {
-  filter: drop-shadow(0 0 5px #e20000);
+  filter: drop-shadow(0 0 10px #e20000);
 }
 #cursor2 {
-  filter: drop-shadow(0 0 5px #1919e2);
+  filter: drop-shadow(0 0 10px #1919e2);
 }
 #cursor3 {
-  filter: drop-shadow(0 0 5px #11e211);
+  filter: drop-shadow(0 0 10px #11e211);
 }
 #cursor4 {
-  filter: drop-shadow(0 0 5px #800080);
+  filter: drop-shadow(0 0 10px #800080);
 }
 #cursor5 {
-  filter: drop-shadow(0 0 5px #00a5a7);
+  filter: drop-shadow(0 0 10px #00a5a7);
 }
 
 .objek:active {
