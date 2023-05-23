@@ -18,48 +18,82 @@ function rollSound() {
 
 // array untuk menyimpan elemen kotak dan status dragging-nya
 let boxes = [
-  { element: document.getElementById("cursor1"), isDragging: false },
-  { element: document.getElementById("cursor2"), isDragging: false },
-  { element: document.getElementById("cursor3"), isDragging: false },
-  { element: document.getElementById("cursor4"), isDragging: false },
-  { element: document.getElementById("cursor5"), isDragging: false },
+  {
+    element: document.getElementById("cursor1"),
+    isDragging: false,
+    offsetX: 0,
+    offsetY: 0,
+  },
+  {
+    element: document.getElementById("cursor2"),
+    isDragging: false,
+    offsetX: 0,
+    offsetY: 0,
+  },
+  {
+    element: document.getElementById("cursor3"),
+    isDragging: false,
+    offsetX: 0,
+    offsetY: 0,
+  },
+  {
+    element: document.getElementById("cursor4"),
+    isDragging: false,
+    offsetX: 0,
+    offsetY: 0,
+  },
+  {
+    element: document.getElementById("cursor5"),
+    isDragging: false,
+    offsetX: 0,
+    offsetY: 0,
+  },
 ];
 
-// fungsi untuk mengubah posisi kotak sesuai dengan posisi kursor
-function moveBox(event, box) {
-  if (box.isDragging) {
-    var x = event.clientX;
-    var y = event.clientY;
-    box.element.style.left = x + "px";
-    box.element.style.top = y + "px";
-
-    // Simpan posisi x dan y ke localStorage
-    localStorage.setItem(box.id + "_posX", x);
-    localStorage.setItem(box.id + "_posY", y);
-  }
-}
-
 // loop untuk menambahkan event listener ke setiap kotak
-boxes.forEach(function (box) {
+boxes.forEach(function (box, index) {
   box.element.addEventListener("mousedown", function (event) {
     box.isDragging = true;
-    moveBox(event, box);
+    box.offsetX = event.clientX - box.element.offsetLeft;
+    box.offsetY = event.clientY - box.element.offsetTop;
   });
 
   document.addEventListener("mouseup", function () {
     box.isDragging = false;
+    saveBoxPosition(index);
   });
 
   document.addEventListener("mousemove", function (event) {
     moveBox(event, box);
   });
+});
 
-  // Dapatkan posisi x dan y dari localStorage dan atur ulang posisi kotak
-  var savedPosX = localStorage.getItem(box.id + "_posX");
-  var savedPosY = localStorage.getItem(box.id + "_posY");
-  if (savedPosX && savedPosY) {
-    box.element.style.left = savedPosX + "px";
-    box.element.style.top = savedPosY + "px";
+// Fungsi untuk memindahkan kotak
+function moveBox(event, box) {
+  if (box.isDragging) {
+    box.element.style.left = event.clientX - box.offsetX + "px";
+    box.element.style.top = event.clientY - box.offsetY + "px";
+  }
+}
+
+// Fungsi untuk menyimpan posisi kotak ke localStorage
+function saveBoxPosition(index) {
+  localStorage.setItem(
+    "box" + index,
+    JSON.stringify({
+      left: boxes[index].element.style.left,
+      top: boxes[index].element.style.top,
+    })
+  );
+}
+
+// Memulihkan posisi kotak dari localStorage (jika ada)
+boxes.forEach(function (box, index) {
+  const savedPosition = localStorage.getItem("box" + index);
+  if (savedPosition) {
+    const { left, top } = JSON.parse(savedPosition);
+    box.element.style.left = left;
+    box.element.style.top = top;
   }
 });
 
@@ -89,28 +123,24 @@ halaman.addEventListener("touchmove", (event) => {
       objTarget.style.top = y + "px";
       objTarget.style.left = x + "px";
 
-      // Menyimpan koordinat sentuhan ke dalam localStorage
-      localStorage.setItem(`koordinatX${i}`, x);
-      localStorage.setItem(`koordinatY${i}`, y);
+      // Simpan pergeseran pada localStorage
+      localStorage.setItem(
+        `cursor${event.target.getAttribute("data-sentuhan")}_position`,
+        JSON.stringify({ x, y })
+      );
     }
   }
 });
 
-// Memuat koordinat sentuhan sebelumnya dari localStorage saat halaman dimuat
-window.addEventListener("DOMContentLoaded", () => {
-  // Looping melalui setiap sentuhan
-  for (let i = 0; i < objCursor.length; i++) {
-    // Mendapatkan koordinat sentuhan dari localStorage
-    let savedX = localStorage.getItem(`koordinatX${i}`);
-    let savedY = localStorage.getItem(`koordinatY${i}`);
-
-    // Jika koordinat sentuhan tersimpan, mengatur posisi objek cursor sesuai dengan koordinat tersebut
-    if (savedX && savedY) {
-      objCursor[i].style.top = savedY + "px";
-      objCursor[i].style.left = savedX + "px";
-    }
+// Mengembalikan posisi terakhir dari localStorage saat halaman dimuat
+for (let i = 0; i < objCursor.length; i++) {
+  const cursorPosition = localStorage.getItem(`cursor${i + 1}_position`);
+  if (cursorPosition) {
+    const { x, y } = JSON.parse(cursorPosition);
+    objCursor[i].style.top = y + "px";
+    objCursor[i].style.left = x + "px";
   }
-});
+}
 
 const skinElements = [
   {
@@ -278,67 +308,88 @@ rollButton.addEventListener("click", rollButtonClick);
 const players = [
   {
     skinClass: "skinPlayer3",
-    deleteButtonClass: "hapus3",
     cursor: "cursor3",
+    cursorName: "nameColor3",
   },
   {
     skinClass: "skinPlayer4",
-    deleteButtonClass: "hapus4",
     cursor: "cursor4",
+    cursorName: "nameColor4",
   },
   {
     skinClass: "skinPlayer5",
-    deleteButtonClass: "hapus5",
     cursor: "cursor5",
+    cursorName: "nameColor5",
   },
 ];
 
-for (let i = players.length - 1; i >= 0; i--) {
-  const player = players[i];
-
-  const deleteButton = document.querySelector(`.${player.deleteButtonClass}`);
-  deleteButton.onclick = () => {
+function pickPlayer(count) {
+  const startIndex = players.length - count;
+  for (let i = players.length - 1; i >= startIndex; i--) {
+    const player = players[i];
     klik();
     const skinPlayer = document.querySelector(`.${player.skinClass}`);
     const cursorPlayer = document.querySelector(`#${player.cursor}`);
-    skinPlayer.style.animation = "hapus 0.2s 0.1s forwards";
+    const cursorColor = document.querySelector(`.${player.cursorName}`);
 
     setTimeout(() => {
       skinPlayer.style.display = "none";
       cursorPlayer.style.display = "none";
-      popIp();
+      cursorColor.style.display = "none";
 
       localStorage.setItem(`skinPlayer${i}`, skinPlayer.style.display);
       localStorage.setItem(`cursorPlayer${i}`, cursorPlayer.style.display);
-
-      if (words.length > 0) {
-        words.pop();
-        color.pop();
-
-        // Menyimpan ke localStorage
-        localStorage.setItem("words", JSON.stringify(words));
-        localStorage.setItem("color", JSON.stringify(color));
-      }
-
-      if (i > 0) {
-        const prevDeleteButton = document.querySelector(
-          `.${players[i - 1].deleteButtonClass}`
-        );
-        prevDeleteButton.style.display = "block";
-      }
+      localStorage.setItem(`cursorColor${i}`, cursorColor.style.display);
     }, 500);
-  };
-  const savedSkinPlayer = localStorage.getItem(`skinPlayer${i}`);
-  const savedCursorPlayer = localStorage.getItem(`cursorPlayer${i}`);
+    const savedSkinPlayer = localStorage.getItem(`skinPlayer${i}`);
+    const savedCursorPlayer = localStorage.getItem(`cursorPlayer${i}`);
+    const savedCursorColor = localStorage.getItem(`cursorColor${i}`);
 
-  if (savedSkinPlayer) {
-    const skinPlayer = document.querySelector(`.${player.skinClass}`);
-    skinPlayer.style.display = savedSkinPlayer;
+    if (savedSkinPlayer) {
+      const skinPlayer = document.querySelector(`.${player.skinClass}`);
+      skinPlayer.style.display = savedSkinPlayer;
+    }
+
+    if (savedCursorPlayer) {
+      const cursorPlayer = document.querySelector(`#${player.cursor}`);
+      cursorPlayer.style.display = savedCursorPlayer;
+    }
+
+    if (savedCursorColor) {
+      const cursorColor = document.querySelector(`.${player.cursorName}`);
+      cursorColor.style.display = savedCursorColor;
+    }
   }
+}
 
-  if (savedCursorPlayer) {
-    const cursorPlayer = document.querySelector(`#${player.cursor}`);
-    cursorPlayer.style.display = savedCursorPlayer;
+const pickButton = document.querySelectorAll('input[name="pilihPlayer"]');
+const buttonPick = document.querySelector("#buttonPick");
+
+pickButton.forEach((pickButton) => {
+  pickButton.addEventListener("change", () => {
+    if (pickButton.checked) {
+      buttonPick.disabled = false;
+    } else {
+      buttonPick.disabled = true;
+    }
+  });
+});
+
+buttonPick.onclick = () => {
+  document.querySelector(".pilihBerapaPlayer").classList.remove("active");
+};
+
+const pick1 = document.querySelector("#pick1");
+pick1.onclick = () => {
+  pickPlayer(3);
+
+  if (words.length > 0) {
+    words.splice(words.length - 3, 3);
+    color.splice(color.length - 3, 3);
+
+    // Menyimpan ke localStorage
+    localStorage.setItem("words", JSON.stringify(words));
+    localStorage.setItem("color", JSON.stringify(color));
   }
 
   const savedWords = localStorage.getItem("words");
@@ -351,4 +402,59 @@ for (let i = players.length - 1; i >= 0; i--) {
   if (savedColor) {
     color = JSON.parse(savedColor);
   }
-}
+};
+
+const pick2 = document.querySelector("#pick2");
+pick2.onclick = () => {
+  pickPlayer(2);
+
+  if (words.length > 0) {
+    words.splice(words.length - 2, 2);
+    color.splice(color.length - 2, 2);
+
+    // Menyimpan ke localStorage
+    localStorage.setItem("words", JSON.stringify(words));
+    localStorage.setItem("color", JSON.stringify(color));
+  }
+
+  const savedWords = localStorage.getItem("words");
+  const savedColor = localStorage.getItem("color");
+
+  if (savedWords) {
+    words = JSON.parse(savedWords);
+  }
+
+  if (savedColor) {
+    color = JSON.parse(savedColor);
+  }
+};
+
+const pick3 = document.querySelector("#pick3");
+pick3.onclick = () => {
+  pickPlayer(1);
+
+  if (words.length > 0) {
+    words.pop();
+    color.pop();
+
+    // Menyimpan ke localStorage
+    localStorage.setItem("words", JSON.stringify(words));
+    localStorage.setItem("color", JSON.stringify(color));
+  }
+
+  const savedWords = localStorage.getItem("words");
+  const savedColor = localStorage.getItem("color");
+
+  if (savedWords) {
+    words = JSON.parse(savedWords);
+  }
+
+  if (savedColor) {
+    color = JSON.parse(savedColor);
+  }
+};
+
+const pick4 = document.querySelector("#pick4");
+pick4.onclick = () => {
+  pickPlayer(0);
+};

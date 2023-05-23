@@ -42,6 +42,17 @@
 
     <!-- gameShow Pop Up -->
 
+    <div class="pilihBerapaPlayer">
+      <h2>Pilih Berapa Pemain</h2>
+      <input type="radio" id="pick1" name="pilihPlayer">
+      <input type="radio" id="pick2" name="pilihPlayer">
+      <input type="radio" id="pick3" name="pilihPlayer">
+      <input type="radio" id="pick4" name="pilihPlayer">
+      <center>
+      <button id="buttonPick" disabled>Oke</button>
+    </center>
+  </div>
+
     <div class="gameShowUlarTangga">
       <center>
         <div class="longLine"></div>
@@ -65,18 +76,27 @@
           </div>
       </div>
       <center>
-        <span><button disabled>New Game</button></span>
+      <button disabled>New Game</button>
         </center>
     </div>
 
     <div class="box-panduan">
       <div class="buku-panduan">
-        
+        <h2>Panduan Bermain</h2>
+        <ol>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
+          <img src="img/board-game3.png" alt="">
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
+        </ol>
       </div>
     </div>
 
     <p><i class="fas fa-edit"></i></p>
     <p><i class="fas fa-book"></i><i class="fas fa-exclamation-circle"></i></p>
+    <div class="alertBerhasilSave"><p>Nama Berhasil di Simpan Kedalam Storage</p></div>
     <div class="user-experience">
       <div class="edit-content">
         <div class="edit-name">
@@ -84,26 +104,26 @@
             <div class="succesInput">Game Storage kosong 🔓</div>
             <label for="player"
               >Player 1 :
-              <input type="text" name="teks" data-name="0" />
+              <input type="text" name="teks" data-name="0" required/>
             </label>
             <label for="player"
               >Player 2 :
-              <input type="text" name="teks" data-name="1" />
+              <input type="text" name="teks" data-name="1" required/>
             </label>
             <label for="player"
               >Player 3 :
-              <input type="text" name="teks" data-name="2" />
+              <input type="text" name="teks" data-name="2" required/>
             </label>
             <label for="player"
               >Player 4 :
-              <input type="text" name="teks" data-name="3" />
+              <input type="text" name="teks" data-name="3" required/>
             </label>
             <label for="player"
               >Player 5 :
-              <input type="text" name="teks" data-name="4" />
+              <input type="text" name="teks" data-name="4" required/>
             </label>
             <center>
-              <button id="createName" type="submit">New Name</button>
+              <button id="createName" type="submit">Save Name</button>
             </center>
           </form>
           <form id="myForm" onsubmit="editContent(event)">
@@ -611,7 +631,7 @@
               </label>
             </div>
             <center>
-              <button id="create" type="submit">New Question</button>
+              <button id="create" type="submit">Save Question</button>
             </center>
           </form>
         </div>
@@ -734,8 +754,8 @@
       <div class="rotate-smartphone">
         <img src="img/rotate-smartphone.png" alt="please rotate your phone" />
       </div>
-      <div class="video-explain">
-        <video src="Hal yang Harus Kamu Ketahui Tentang BULLYING.mp4" autoplay controls></video>
+      <div class="video-explain" style="display: none;">
+        <video controls controlsList="nodownload" src="Hal yang Harus Kamu Ketahui Tentang BULLYING.mp4" controls type="video/mp4"></video>
       </div>
       <button class="exit" onclick="exitFullscreen()">
         <i class="fas fa-arrow-left"></i>
@@ -744,7 +764,7 @@
 
       <div class="rollDice">
         <img id="dice" src="img/Dadu1.png" alt="roll-dice" />
-        <button id="rollButton"><p class="player">player1</p></button>
+        <button id="rollButton"><p class="player">Player1</p></button>
       </div>
 
       <div class="boxCard">
@@ -758,11 +778,11 @@
       </div>
       <button id="shakeCard"></button>
 
-      <div class="objek" id="cursor5" data-sentuhan="5"></div>
-      <div class="objek" id="cursor4" data-sentuhan="4"></div>
-      <div class="objek" id="cursor3" data-sentuhan="3"></div>
-      <div class="objek" id="cursor2" data-sentuhan="2"></div>
-      <div class="objek" id="cursor1" data-sentuhan="1"></div>
+      <div class="objek" id="cursor5" data-sentuhan="5"><p class="cursorName nameColor5">Player5</p></div>
+      <div class="objek" id="cursor4" data-sentuhan="4"><p class="cursorName nameColor4">Player4</p></div>
+      <div class="objek" id="cursor3" data-sentuhan="3"><p class="cursorName nameColor3">Player3</p></div>
+      <div class="objek" id="cursor2" data-sentuhan="2"><p class="cursorName nameColor2">Player2</p></div>
+      <div class="objek" id="cursor1" data-sentuhan="1"><p class="cursorName nameColor1">Player1</p></div>
       <button class="showQuestion">?</button>
       <div class="flex-point">
         <button onclick="tampilPertanyaan(0)"></button>

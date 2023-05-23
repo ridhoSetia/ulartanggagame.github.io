@@ -124,6 +124,9 @@ userEdit.onclick = () => {
   document.querySelector(".edit-content").classList.toggle("showEdit");
 };
 
+const createNameButton = document.querySelector("#createName");
+createNameButton.onclick = () => {};
+
 const card = document.querySelector(".shakeCard");
 
 card.onclick = () => {
@@ -284,8 +287,10 @@ showGame.classList.add("active");
 document.querySelector("html").classList.add("showEdit");
 
 buttonCloseGame.onclick = () => {
+  pop();
   showGame.classList.remove("active");
   document.querySelector("html").classList.remove("showEdit");
+  document.querySelector(".pilihBerapaPlayer").classList.add("active");
 
   // Menyimpan status pengaturan ke localStorage
   localStorage.setItem("closeShowGame", "true");
@@ -295,6 +300,7 @@ const savedCloseShow = localStorage.getItem("closeShowGame");
 if (savedCloseShow === "true") {
   showGame.classList.remove("active");
   document.querySelector("html").classList.remove("showEdit");
+  document.querySelector(".piliBerapaPlayer").classList.add("active");
 }
 
 const radioPickButtons = document.querySelectorAll(
@@ -303,6 +309,7 @@ const radioPickButtons = document.querySelectorAll(
 
 radioPickButtons.forEach((radioPickButtons) => {
   radioPickButtons.addEventListener("change", () => {
+    klik();
     if (radioPickButtons.checked) {
       buttonCloseGame.disabled = false;
     } else {
@@ -310,3 +317,9 @@ radioPickButtons.forEach((radioPickButtons) => {
     }
   });
 });
+
+const faBook = document.querySelector(".fa-book");
+faBook.onclick = () => {
+  document.querySelector(".box-panduan").classList.toggle("active");
+  document.querySelector("html").classList.toggle("showEdit");
+};

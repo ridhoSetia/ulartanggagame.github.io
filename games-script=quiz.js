@@ -344,6 +344,13 @@ pointQuestion.forEach((pointQuestion) => {
   });
 });
 
+const cursorName = [
+  document.querySelector(".nameColor1"),
+  document.querySelector(".nameColor2"),
+  document.querySelector(".nameColor3"),
+  document.querySelector(".nameColor4"),
+  document.querySelector(".nameColor5"),
+];
 const nameSkinPlayer = document.querySelectorAll(".nameSkinPlayer");
 let succesInput = document.querySelector(".succesInput");
 
@@ -355,11 +362,20 @@ function editName(event) {
     const replacementText = input.value;
     words[index] = replacementText;
     nameSkinPlayer[index].textContent = replacementText;
+    cursorName[index].textContent = replacementText;
     localStorage.setItem(`replacementText${index}`, replacementText);
     if (index === "0") {
       document.querySelector(".player").textContent = replacementText;
     }
   });
+  userEdit.classList.remove("fa-times");
+  document.querySelector(".user-experience").classList.remove("showEdit");
+  document.querySelector("html").classList.remove("showEdit");
+  document.querySelector(".edit-content").classList.remove("showEdit");
+  document.querySelector(".alertBerhasilSave").classList.add("active");
+  setTimeout(() => {
+    document.querySelector(".alertBerhasilSave").classList.remove("active");
+  }, 3000);
 }
 
 function editContent(event) {
@@ -554,6 +570,8 @@ window.addEventListener("load", () => {
     const storedText = localStorage.getItem(`replacementText${i}`);
     if (storedText) {
       words[i] = storedText;
+      nameSkinPlayer[i].textContent = storedText;
+      cursorName[i].textContent = storedText;
       if (i === 0) {
         document.querySelector(".player").textContent = storedText;
       }
@@ -569,12 +587,6 @@ window.addEventListener("load", () => {
     succesInput.style.background = succesInputColor;
   }
 
-  for (let p = 0; p < nameSkinPlayer.length; p++) {
-    const storedName = localStorage.getItem(`replacementText${p}`);
-    if (storedName) {
-      nameSkinPlayer[p].textContent = storedName;
-    }
-  }
   for (let q = 0; q < pertanyaan.length; q++) {
     const storedQuestion = localStorage.getItem(`replacementQuestion${q}`);
     if (storedQuestion) {

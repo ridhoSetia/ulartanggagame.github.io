@@ -60,6 +60,16 @@ header {
 .navbar a:hover {
   color: var(--main-color);
 }
+.navbar .gamesVip {
+  font-size: 1.2rem;
+  background: var(--main-color);
+  padding: 5px;
+  border-radius: 5px;
+}
+.navbar .gamesVip:hover {
+  background: var(--text-color);
+  color: var(--main-color);
+}
 #menu-icon {
   font-size: 2rem;
   cursor: pointer;
@@ -188,6 +198,9 @@ section {
   background: none;
   color: #fff;
   cursor: pointer;
+}
+.box button a {
+  color: #fff;
 }
 .box i {
   background: var(--main-color);
