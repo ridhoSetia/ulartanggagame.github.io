@@ -209,7 +209,7 @@ skinElements.forEach((element) => {
 });
 
 // membuat sebuah array yang berisi kata-kata yang ingin ditampilkan
-let words = ["player1", "player2", "player3", "player4", "player5"];
+let words = ["Player1", "Player2", "Player3", "Player4", "Player5"];
 let color = ["#e20000", "#1919e2", "#11e211", "#800080", "#00a5a7"];
 
 // membuat variabel untuk menunjukkan indeks kata saat ini
@@ -235,18 +235,11 @@ document.querySelector(".showQuestion").disabled = true;
 // Mendapatkan elemen HTML tombol
 var rollButton = document.getElementById("rollButton");
 
-// Mendefinisikan fungsi untuk mengklik tombol "kocok dadu"
-function rollButtonClick() {
-  rollSound();
-
-  // Menonaktifkan tombol selama animasi berlangsung
-  rollButton.disabled = true;
-  setTimeout(() => {
-    // mengubah teks tombol menjadi kata selanjutnya dalam array
-    rollButton.innerHTML = words[currentWordIndex];
-    rollButton.style.background = color[currentColorIndex];
-    document.querySelector(".showQuestion").disabled = false;
-  }, 1800);
+const pickrollDice = document.querySelector("#dice");
+pickrollDice.onclick = () => {
+  // mengubah teks tombol menjadi kata selanjutnya dalam array
+  rollButton.innerHTML = words[currentWordIndex];
+  rollButton.style.background = color[currentColorIndex];
 
   // menambahkan satu ke indeks kata saat ini
   currentWordIndex++;
@@ -264,6 +257,17 @@ function rollButtonClick() {
   if (currentColorIndex >= color.length) {
     currentColorIndex = 0;
   }
+};
+// Mendefinisikan fungsi untuk mengklik tombol "kocok dadu"
+function rollButtonClick() {
+  rollSound();
+
+  // Menonaktifkan tombol selama animasi berlangsung
+  rollButton.disabled = true;
+  setTimeout(() => {
+    document.querySelector(".showQuestion").disabled = false;
+  }, 1800);
+
   // Mengulangi animasi dadu selama 10 frame dengan interval 50 ms
   var frames = 36;
   var interval = 50;
@@ -307,154 +311,137 @@ rollButton.addEventListener("click", rollButtonClick);
 
 const players = [
   {
+    id: 1,
     skinClass: "skinPlayer3",
     cursor: "cursor3",
-    cursorName: "nameColor3",
   },
   {
+    id: 2,
     skinClass: "skinPlayer4",
     cursor: "cursor4",
-    cursorName: "nameColor4",
   },
   {
+    id: 3,
     skinClass: "skinPlayer5",
     cursor: "cursor5",
-    cursorName: "nameColor5",
   },
 ];
 
-function pickPlayer(count) {
-  const startIndex = players.length - count;
-  for (let i = players.length - 1; i >= startIndex; i--) {
-    const player = players[i];
-    klik();
-    const skinPlayer = document.querySelector(`.${player.skinClass}`);
-    const cursorPlayer = document.querySelector(`#${player.cursor}`);
-    const cursorColor = document.querySelector(`.${player.cursorName}`);
+function handleClick(player) {
+  const skinPlayer = document.querySelector(`.${player.skinClass}`);
+  const cursorPlayer = document.querySelector(`#${player.cursor}`);
 
-    setTimeout(() => {
-      skinPlayer.style.display = "none";
-      cursorPlayer.style.display = "none";
-      cursorColor.style.display = "none";
+  skinPlayer.style.display = "none";
+  cursorPlayer.style.display = "none";
 
-      localStorage.setItem(`skinPlayer${i}`, skinPlayer.style.display);
-      localStorage.setItem(`cursorPlayer${i}`, cursorPlayer.style.display);
-      localStorage.setItem(`cursorColor${i}`, cursorColor.style.display);
-    }, 500);
-    const savedSkinPlayer = localStorage.getItem(`skinPlayer${i}`);
-    const savedCursorPlayer = localStorage.getItem(`cursorPlayer${i}`);
-    const savedCursorColor = localStorage.getItem(`cursorColor${i}`);
+  localStorage.setItem(`skinPlayer${player.id}`, skinPlayer.style.display);
+  localStorage.setItem(`cursorPlayer${player.id}`, cursorPlayer.style.display);
 
-    if (savedSkinPlayer) {
-      const skinPlayer = document.querySelector(`.${player.skinClass}`);
-      skinPlayer.style.display = savedSkinPlayer;
+  let numToRemove = players.length - player.id;
+
+  if (numToRemove > 0) {
+    for (
+      let i = players.length - 1;
+      i > players.length - numToRemove - 1;
+      i--
+    ) {
+      const skinToRemove = document.querySelector(`.${players[i].skinClass}`);
+      const cursorToRemove = document.querySelector(`#${players[i].cursor}`);
+
+      skinToRemove.style.display = "none";
+      cursorToRemove.style.display = "none";
+
+      localStorage.setItem(
+        `skinPlayer${players[i].id}`,
+        skinToRemove.style.display
+      );
+      localStorage.setItem(
+        `cursorPlayer${players[i].id}`,
+        cursorToRemove.style.display
+      );
     }
 
-    if (savedCursorPlayer) {
-      const cursorPlayer = document.querySelector(`#${player.cursor}`);
-      cursorPlayer.style.display = savedCursorPlayer;
+    if (player.id === 1) {
+      words.slice(-3);
+      color.slice(-3);
+    }
+    if (player.id === 1) {
+      words.slice(-2);
+      color.slice(-2);
+    }
+    if (player.id === 1) {
+      words.pop();
+      color.pop();
     }
 
-    if (savedCursorColor) {
-      const cursorColor = document.querySelector(`.${player.cursorName}`);
-      cursorColor.style.display = savedCursorColor;
-    }
+    localStorage.setItem("words", JSON.stringify(words));
+    localStorage.setItem("color", JSON.stringify(color));
   }
 }
 
-const pickButton = document.querySelectorAll('input[name="pilihPlayer"]');
-const buttonPick = document.querySelector("#buttonPick");
+for (let i = players.length - 1; i >= 0; i--) {
+  const player = players[i];
+  const pick = document.querySelector(`#pick${player.id}`);
 
-pickButton.forEach((pickButton) => {
-  pickButton.addEventListener("change", () => {
-    if (pickButton.checked) {
-      buttonPick.disabled = false;
-    } else {
-      buttonPick.disabled = true;
-    }
+  const handleClickPick = () => {
+    handleClick(player);
+    pick.removeEventListener("click", handleClickPick);
+  };
+
+  pick.addEventListener("click", handleClickPick);
+
+  const savedSkinPlayer = localStorage.getItem(`skinPlayer${player.id}`);
+  const savedCursorPlayer = localStorage.getItem(`cursorPlayer${player.id}`);
+
+  if (savedSkinPlayer === "none") {
+    const skinPlayer = document.querySelector(`.${player.skinClass}`);
+    skinPlayer.style.display = savedSkinPlayer;
+  }
+
+  if (savedCursorPlayer) {
+    const cursorPlayer = document.querySelector(`#${player.cursor}`);
+    cursorPlayer.style.display = savedCursorPlayer;
+  }
+}
+
+const savedWords = localStorage.getItem("words");
+const savedColor = localStorage.getItem("color");
+
+if (savedWords) {
+  words = JSON.parse(savedWords);
+}
+
+if (savedColor) {
+  color = JSON.parse(savedColor);
+}
+
+const pick4 = document.querySelector("#pick4");
+
+const handleClickPick4 = () => {
+  pick4.removeEventListener("click", handleClickPick4);
+};
+
+pick4.addEventListener("click", handleClickPick4);
+
+const pickButton = document.querySelectorAll('input[name="pilihPlayer"]');
+
+pickButton.forEach((button) => {
+  button.addEventListener("change", (event) => {
+    klik();
+    const selectedButton = event.target;
+
+    pickButton.forEach((btn) => {
+      btn.disabled = btn !== selectedButton;
+    });
+
+    setTimeout(() => {
+      document.querySelector(".pilihBerapaPlayer").classList.add("active");
+      localStorage.setItem("closePick", "true");
+    }, 100);
   });
 });
 
-buttonPick.onclick = () => {
-  document.querySelector(".pilihBerapaPlayer").classList.remove("active");
-};
-
-const pick1 = document.querySelector("#pick1");
-pick1.onclick = () => {
-  pickPlayer(3);
-
-  if (words.length > 0) {
-    words.splice(words.length - 3, 3);
-    color.splice(color.length - 3, 3);
-
-    // Menyimpan ke localStorage
-    localStorage.setItem("words", JSON.stringify(words));
-    localStorage.setItem("color", JSON.stringify(color));
-  }
-
-  const savedWords = localStorage.getItem("words");
-  const savedColor = localStorage.getItem("color");
-
-  if (savedWords) {
-    words = JSON.parse(savedWords);
-  }
-
-  if (savedColor) {
-    color = JSON.parse(savedColor);
-  }
-};
-
-const pick2 = document.querySelector("#pick2");
-pick2.onclick = () => {
-  pickPlayer(2);
-
-  if (words.length > 0) {
-    words.splice(words.length - 2, 2);
-    color.splice(color.length - 2, 2);
-
-    // Menyimpan ke localStorage
-    localStorage.setItem("words", JSON.stringify(words));
-    localStorage.setItem("color", JSON.stringify(color));
-  }
-
-  const savedWords = localStorage.getItem("words");
-  const savedColor = localStorage.getItem("color");
-
-  if (savedWords) {
-    words = JSON.parse(savedWords);
-  }
-
-  if (savedColor) {
-    color = JSON.parse(savedColor);
-  }
-};
-
-const pick3 = document.querySelector("#pick3");
-pick3.onclick = () => {
-  pickPlayer(1);
-
-  if (words.length > 0) {
-    words.pop();
-    color.pop();
-
-    // Menyimpan ke localStorage
-    localStorage.setItem("words", JSON.stringify(words));
-    localStorage.setItem("color", JSON.stringify(color));
-  }
-
-  const savedWords = localStorage.getItem("words");
-  const savedColor = localStorage.getItem("color");
-
-  if (savedWords) {
-    words = JSON.parse(savedWords);
-  }
-
-  if (savedColor) {
-    color = JSON.parse(savedColor);
-  }
-};
-
-const pick4 = document.querySelector("#pick4");
-pick4.onclick = () => {
-  pickPlayer(0);
-};
+const savedClosePick = localStorage.getItem("closePick");
+if (savedClosePick === "true") {
+  document.querySelector(".pilihBerapaPlayer").classList.add("active");
+}

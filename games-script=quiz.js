@@ -562,10 +562,7 @@ function editContent(event) {
   let succesInputColor = (succesInput.style.background = "#f31414");
   localStorage.setItem(`succesInputText`, succesInputText);
   localStorage.setItem(`succesInputColor`, succesInputColor);
-}
 
-// Memeriksa apakah ada nilai di localStorage saat halaman dimuat
-window.addEventListener("load", () => {
   for (let i = 0; i < words.length; i++) {
     const storedText = localStorage.getItem(`replacementText${i}`);
     if (storedText) {
@@ -578,13 +575,13 @@ window.addEventListener("load", () => {
     }
   }
 
-  const succesInputText = localStorage.getItem(`succesInputText`);
-  if (succesInputText) {
-    succesInput.textContent = succesInputText;
+  const savesuccesInputText = localStorage.getItem(`succesInputText`);
+  if (savesuccesInputText) {
+    succesInput.textContent = savesuccesInputText;
   }
-  const succesInputColor = localStorage.getItem(`succesInputColor`);
-  if (succesInputColor) {
-    succesInput.style.background = succesInputColor;
+  const savesuccesInputColor = localStorage.getItem(`succesInputColor`);
+  if (savesuccesInputColor) {
+    succesInput.style.background = savesuccesInputColor;
   }
 
   for (let q = 0; q < pertanyaan.length; q++) {
@@ -681,7 +678,7 @@ window.addEventListener("load", () => {
       pertanyaan[19].jawaban[o] = storedOption19;
     }
   }
-});
+}
 
 const reset = document.querySelector("#reset");
 reset.onclick = () => {

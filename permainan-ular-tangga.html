@@ -48,9 +48,6 @@
       <input type="radio" id="pick2" name="pilihPlayer">
       <input type="radio" id="pick3" name="pilihPlayer">
       <input type="radio" id="pick4" name="pilihPlayer">
-      <center>
-      <button id="buttonPick" disabled>Oke</button>
-    </center>
   </div>
 
     <div class="gameShowUlarTangga">
@@ -123,7 +120,7 @@
               <input type="text" name="teks" data-name="4" required/>
             </label>
             <center>
-              <button id="createName" type="submit">Save Name</button>
+              <button id="createName" type="submit">Simpan Nama</button>
             </center>
           </form>
           <form id="myForm" onsubmit="editContent(event)">
@@ -631,7 +628,7 @@
               </label>
             </div>
             <center>
-              <button id="create" type="submit">Save Question</button>
+              <button id="create" type="submit">Simpan Soal</button>
             </center>
           </form>
         </div>
@@ -689,7 +686,6 @@
       </div>
       <div class="playerSkin skinPlayer3">
         <h2 class="nameSkinPlayer">Player 3</h2>
-        <button class="hapus3">x</button>
 
         <div
           class="splide spl3"
@@ -709,7 +705,6 @@
       </div>
       <div class="playerSkin skinPlayer4">
         <h2 class="nameSkinPlayer">Player 4</h2>
-        <button class="hapus4">x</button>
 
         <div
           class="splide spl4"
@@ -729,7 +724,6 @@
       </div>
       <div class="playerSkin skinPlayer5">
         <h2 class="nameSkinPlayer">Player 5</h2>
-        <button class="hapus5">x</button>
 
         <div
           class="splide spl5"
@@ -754,8 +748,9 @@
       <div class="rotate-smartphone">
         <img src="img/rotate-smartphone.png" alt="please rotate your phone" />
       </div>
-      <div class="video-explain" style="display: none;">
+      <div class="video-explain">
         <video controls controlsList="nodownload" src="Hal yang Harus Kamu Ketahui Tentang BULLYING.mp4" controls type="video/mp4"></video>
+        <div class="mulai">Mulai Permainan</div>
       </div>
       <button class="exit" onclick="exitFullscreen()">
         <i class="fas fa-arrow-left"></i>
@@ -766,17 +761,6 @@
         <img id="dice" src="img/Dadu1.png" alt="roll-dice" />
         <button id="rollButton"><p class="player">Player1</p></button>
       </div>
-
-      <div class="boxCard">
-        <div class="shakeCard">
-          <img class="front" src="img/cardFront1.jpeg" alt="card" />
-          <img class="back" src="img/cardBack1.jpeg" alt="card" />
-        </div>
-        <button id="closeCard">
-          <p><i class="fas fa-times card"></i></p>
-        </button>
-      </div>
-      <button id="shakeCard"></button>
 
       <div class="objek" id="cursor5" data-sentuhan="5"><p class="cursorName nameColor5">Player5</p></div>
       <div class="objek" id="cursor4" data-sentuhan="4"><p class="cursorName nameColor4">Player4</p></div>
@@ -806,6 +790,17 @@
         <button onclick="tampilPertanyaan(18)"></button>
         <button onclick="tampilPertanyaan(19)"></button>
       </div>
+      
+      <div class="boxCard">
+        <div class="shakeCard">
+          <img class="front" src="img/cardFront1.jpeg" alt="card" />
+          <img class="back" src="img/cardBack1.jpeg" alt="card" />
+        </div>
+        <button id="closeCard">
+          <p><i class="fas fa-times card"></i></p>
+        </button>
+      </div>
+      <button id="shakeCard"></button>
 
       <div class="questionShadow">
         <div class="questionBox">

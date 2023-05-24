@@ -215,7 +215,7 @@ const progressInput = document.querySelectorAll('input[type="text"]');
 const questionInput = document.querySelectorAll('textarea[name="pertanyaan"]');
 
 // Event listener untuk menangani peristiwa sebelum halaman dimuat ulang
-window.addEventListener("unload", () => {
+window.addEventListener("input", () => {
   for (let i = 0; i < progressInput.length; i++) {
     const inputNameValue = progressInput[i].value;
     localStorage.setItem(`player${i}`, inputNameValue);
@@ -290,7 +290,6 @@ buttonCloseGame.onclick = () => {
   pop();
   showGame.classList.remove("active");
   document.querySelector("html").classList.remove("showEdit");
-  document.querySelector(".pilihBerapaPlayer").classList.add("active");
 
   // Menyimpan status pengaturan ke localStorage
   localStorage.setItem("closeShowGame", "true");
@@ -300,7 +299,6 @@ const savedCloseShow = localStorage.getItem("closeShowGame");
 if (savedCloseShow === "true") {
   showGame.classList.remove("active");
   document.querySelector("html").classList.remove("showEdit");
-  document.querySelector(".piliBerapaPlayer").classList.add("active");
 }
 
 const radioPickButtons = document.querySelectorAll(
@@ -322,4 +320,11 @@ const faBook = document.querySelector(".fa-book");
 faBook.onclick = () => {
   document.querySelector(".box-panduan").classList.toggle("active");
   document.querySelector("html").classList.toggle("showEdit");
+};
+
+const videoExplain = document.querySelector(".video-explain video");
+const mulai = document.querySelector(".mulai");
+mulai.onclick = () => {
+  document.querySelector(".video-explain").style.display = "none";
+  videoExplain.pause();
 };
