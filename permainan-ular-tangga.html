@@ -44,9 +44,9 @@
 
     <div class="pilihBerapaPlayer">
       <h2>Pilih Berapa Pemain</h2>
-      <input type="radio" id="pick1" name="pilihPlayer">
-      <input type="radio" id="pick2" name="pilihPlayer">
-      <input type="radio" id="pick3" name="pilihPlayer">
+      <input type="radio" id="pick1" data-count="3" name="pilihPlayer">
+      <input type="radio" id="pick2" data-count="2" name="pilihPlayer">
+      <input type="radio" id="pick3" data-count="1" name="pilihPlayer">
       <input type="radio" id="pick4" name="pilihPlayer">
   </div>
 
@@ -107,17 +107,17 @@
               >Player 2 :
               <input type="text" name="teks" data-name="1" required/>
             </label>
-            <label for="player"
+            <label for="player" id="inputNama3" 
               >Player 3 :
-              <input type="text" name="teks" data-name="2" required/>
+              <input type="text" name="teks" data-name="2"/>
             </label>
-            <label for="player"
+            <label for="player" id="inputNama4" 
               >Player 4 :
-              <input type="text" name="teks" data-name="3" required/>
+              <input type="text" name="teks" data-name="3"/>
             </label>
-            <label for="player"
+            <label for="player" id="inputNama5" 
               >Player 5 :
-              <input type="text" name="teks" data-name="4" required/>
+              <input type="text" name="teks" data-name="4"/>
             </label>
             <center>
               <button id="createName" type="submit">Simpan Nama</button>
@@ -745,6 +745,7 @@
 
     <button class="open" onclick="openFullscreen()">Play</button>
     <div class="board" onload="openFullscreen()">
+      <div class="finish"></div>
       <div class="rotate-smartphone">
         <img src="img/rotate-smartphone.png" alt="please rotate your phone" />
       </div>
@@ -817,7 +818,12 @@
       <p id="result">
         <p class="x">x</p>
       </p>
+      
+    <div class="congratulations">
     </div>
+
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script>

@@ -212,9 +212,10 @@ body {
   height: 100%;
   position: fixed;
   background: rgb(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
   top: 100%;
   z-index: 2;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 .box-panduan.active {
   top: 0;
@@ -223,8 +224,8 @@ body {
   border-radius: 5px;
   background: #feeee7;
   color: #1e1c2a;
-  width: 80%;
-  height: 50%;
+  width: 75%;
+  height: 65%;
   padding: 20px;
   position: relative;
   left: 50%;
@@ -640,35 +641,6 @@ input[name="trueOption"]:focus {
   border: 5px solid #fff;
 }
 
-.hapus3,
-.hapus4,
-.hapus5 {
-  color: #ff0000;
-  background: transparent;
-  font-size: 25px;
-  padding-left: 10px;
-  padding-right: 11px;
-  padding-bottom: 5px;
-  margin-left: -9.5px;
-  margin-top: -0.5px;
-  display: flex;
-  position: absolute;
-  cursor: pointer;
-  border: none;
-}
-
-.hapus3,
-.hapus4 {
-  display: none;
-}
-
-.hapus3:hover,
-.hapus4:hover,
-.hapus5:hover {
-  background: #ff0000;
-  color: #fff;
-}
-
 /* Gaya tombol slide */
 .splide__arrow {
   background-color: #fff;
@@ -814,7 +786,7 @@ input[name="trueOption"]:focus {
 
 .volume {
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
   margin: 10px;
   font-size: 25px;
@@ -830,9 +802,9 @@ input[name="trueOption"]:focus {
 .board {
   display: none;
   position: absolute;
-  background-color: #643a6b;
+  background-color: #1e1c2a;
   background-image: url(img/board.png);
-  background-size: 85%;
+  background-size: 88%;
   background-repeat: no-repeat;
   background-position: center;
   -webkit-user-select: none;
@@ -841,8 +813,36 @@ input[name="trueOption"]:focus {
   user-select: none;
 }
 
+.finish {
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  top: 0;
+  right: 0;
+  background: #000;
+}
+
+.congratulations {
+  background: #feeee7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 20;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.congratulations div {
+  color: #f45050;
+  font-size: 30px;
+}
+
 .video-explain {
-  background: rgb(0, 0, 0, 0.4);
+  background: rgb(0, 0, 0, 0.25);
+  backdrop-filter: blur(5px);
   position: absolute;
   top: 0;
   left: 0;
@@ -1325,7 +1325,7 @@ input[type="radio"]:checked {
   margin: 10px 20px;
   cursor: pointer;
   z-index: 4;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 
 .x.on {
@@ -1343,6 +1343,7 @@ input[type="radio"]:checked {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 }
 
 #cursor1,
@@ -1359,28 +1360,47 @@ input[type="radio"]:checked {
   filter: drop-shadow(0 0 10px #e20000);
   left: 13%;
   bottom: 16%;
+  transition: left 0.7s 0.1s ease;
 }
 #cursor2 {
   filter: drop-shadow(0 0 10px #1919e2);
   left: 11%;
   bottom: 14%;
+  transition: left 0.7s 0.4s ease;
 }
 #cursor3 {
   filter: drop-shadow(0 0 10px #11e211);
   left: 9%;
   bottom: 12%;
+  transition: left 0.7s 0.7s ease;
 }
 #cursor4 {
   filter: drop-shadow(0 0 10px #800080);
   left: 7%;
   bottom: 10%;
+  transition: left 0.7s 1s ease;
 }
 #cursor5 {
   filter: drop-shadow(0 0 10px #00a5a7);
   left: 5%;
   bottom: 8%;
+  transition: left 0.7s 1.3s ease;
 }
-
+#cursor1.remove {
+  left: -20%;
+}
+#cursor2.remove {
+  left: -20%;
+}
+#cursor3.remove {
+  left: -20%;
+}
+#cursor4.remove {
+  left: -20%;
+}
+#cursor5.remove {
+  left: -20%;
+}
 .objek:active {
   cursor: grabbing;
 }

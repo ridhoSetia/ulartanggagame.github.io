@@ -221,13 +221,9 @@ let pertanyaan = [
   },
 ];
 
-console.log(pertanyaan.map((p) => p.jawaban));
-
 const boxQuestion = document.querySelector(".questionShadow");
 const questionBox = document.querySelector(".questionBox");
 let question = document.getElementById("pertanyaan");
-
-let timerId; // buat variabel untuk menyimpan id penundaan
 
 function hideQuestionBox() {
   questionBox.style.display = "none";
@@ -235,6 +231,8 @@ function hideQuestionBox() {
   question.style.display = "none";
   stopCountDownTimeSfx();
 }
+
+let timerId; // buat variabel untuk menyimpan id penundaan
 
 function showQuestion() {
   // Menampilkan kotak pertanyaan dan pertanyaan
@@ -254,9 +252,20 @@ function showQuestion() {
 
   // Menunggu 21 detik sebelum menyembunyikan kotak pertanyaan
   timerId = setTimeout(() => {
+    xResult.classList.add("on");
+    result.classList.add("on");
+    result.innerHTML = "Maaf kamu terlambat";
+    document.querySelector(".showQuestion").disabled = true;
+    clearTimeout(timerId);
+    whoosh();
     // Menyembunyikan kotak pertanyaan
     hideQuestionBox();
   }, 21000);
+}
+
+// Function untuk menghentikan timer
+function stopTimer() {
+  clearTimeout(timerId);
 }
 
 // Menampilkan pertanyaan dan opsi jawaban
@@ -304,6 +313,9 @@ const xResult = document.querySelector(".x");
 function cekJawaban() {
   xResult.classList.add("on");
   document.querySelector(".showQuestion").disabled = true;
+  whoosh();
+
+  stopTimer(); // Menghentikan timer sebelum memeriksa jawaban
 
   let jawabanUser = document.querySelector(
     'input[name="jawaban"]:checked'
@@ -322,13 +334,15 @@ function cekJawaban() {
   // Reset opsi jawaban
   document.getElementById("opsiJawaban").innerHTML = "";
 
+  document.querySelector("#shakeCard").disabled = false;
+
   hideQuestionBox();
 }
 
 xResult.onclick = () => {
   xResult.classList.remove("on");
-  document.querySelector("#shakeCard").disabled = false;
   result.classList.remove("on");
+  whoosh();
 };
 
 // set semua radio button menjadi unchecked

@@ -50,6 +50,45 @@ let boxes = [
   },
 ];
 
+// Variabel untuk menyimpan status pesan selamat yang ditampilkan
+let congratulationsShown = [false, false, false, false, false];
+
+// Fungsi untuk memeriksa tabrakan kotak dengan lingkaran
+function checkCollision(box, index) {
+  const circle = document.querySelector(".finish");
+  const circleRect = circle.getBoundingClientRect();
+  const boxRect = box.element.getBoundingClientRect();
+
+  if (
+    boxRect.left < circleRect.right &&
+    boxRect.right > circleRect.left &&
+    boxRect.top < circleRect.bottom &&
+    boxRect.bottom > circleRect.top &&
+    !congratulationsShown[index]
+  ) {
+    showCongratulations(index + 1);
+    congratulationsShown[index] = true;
+  }
+}
+
+// Fungsi untuk menampilkan pesan selamat
+function showCongratulations(boxNumber) {
+  const pesanJuara = [
+    "Selamat kepada Andi",
+    "Keren sekali Saiful",
+    "Kamu Hebat Herman",
+    "Congratulations Dani",
+    "Ridho adalah juaranya!",
+  ];
+  setTimeout(() => {
+    const message = document.createElement("div");
+    message.className = "selamat" + boxNumber;
+    message.textContent = pesanJuara[boxNumber - 1];
+    document.querySelector(".congratulations").appendChild(message);
+    document.querySelector(".congratulations").style.display = "flex";
+  }, 500);
+}
+
 // loop untuk menambahkan event listener ke setiap kotak
 boxes.forEach(function (box, index) {
   box.element.addEventListener("mousedown", function (event) {
@@ -61,6 +100,7 @@ boxes.forEach(function (box, index) {
   document.addEventListener("mouseup", function () {
     box.isDragging = false;
     saveBoxPosition(index);
+    checkCollision(box, index);
   });
 
   document.addEventListener("mousemove", function (event) {
@@ -73,6 +113,7 @@ function moveBox(event, box) {
   if (box.isDragging) {
     box.element.style.left = event.clientX - box.offsetX + "px";
     box.element.style.top = event.clientY - box.offsetY + "px";
+    checkCollision(box, boxes.indexOf(box));
   }
 }
 
@@ -114,6 +155,8 @@ halaman.addEventListener("touchmove", (event) => {
     // Mengambil koordinat sentuhan
     let x = event.touches[i].clientX;
     let y = event.touches[i].clientY;
+
+    checkCollision({ element: objCursor[i] }, i);
 
     // Menentukan objek cursor mana yang akan mengikuti setiap sentuhan
     let objTarget = objCursor[event.target.getAttribute("data-sentuhan") - 1];
@@ -261,7 +304,6 @@ pickrollDice.onclick = () => {
 // Mendefinisikan fungsi untuk mengklik tombol "kocok dadu"
 function rollButtonClick() {
   rollSound();
-
   // Menonaktifkan tombol selama animasi berlangsung
   rollButton.disabled = true;
   setTimeout(() => {
@@ -298,11 +340,12 @@ if (storedDiceValue) {
   var dice = document.getElementById("dice");
   dice.src = `img/Dadu${storedDiceValue}.png`;
 }
+
 if (storedcurrentWordIndex) {
-  rollButton.innerHTML = words[storedcurrentWordIndex];
+  rollButton.innerHTML = words[storedcurrentWordIndex - 1];
 }
 if (storedcurrentColorIndex) {
-  rollButton.style.background = color[storedcurrentColorIndex];
+  rollButton.style.background = color[storedcurrentColorIndex - 1];
 }
 
 // Mengaitkan fungsi rollButtonClick dengan tombol "kocok dadu"
@@ -360,22 +403,6 @@ function handleClick(player) {
         cursorToRemove.style.display
       );
     }
-
-    if (player.id === 1) {
-      words.slice(-3);
-      color.slice(-3);
-    }
-    if (player.id === 1) {
-      words.slice(-2);
-      color.slice(-2);
-    }
-    if (player.id === 1) {
-      words.pop();
-      color.pop();
-    }
-
-    localStorage.setItem("words", JSON.stringify(words));
-    localStorage.setItem("color", JSON.stringify(color));
   }
 }
 
@@ -384,8 +411,18 @@ for (let i = players.length - 1; i >= 0; i--) {
   const pick = document.querySelector(`#pick${player.id}`);
 
   const handleClickPick = () => {
+    const count = parseInt(pick.getAttribute("data-count"));
+
+    // Menghapus elemen-elemen dari array words dan color
+    words.splice(-count);
+    color.splice(-count);
+
+    localStorage.setItem("words", JSON.stringify(words));
+    localStorage.setItem("color", JSON.stringify(color));
+
     handleClick(player);
     pick.removeEventListener("click", handleClickPick);
+    klik();
   };
 
   pick.addEventListener("click", handleClickPick);
@@ -419,6 +456,7 @@ const pick4 = document.querySelector("#pick4");
 
 const handleClickPick4 = () => {
   pick4.removeEventListener("click", handleClickPick4);
+  klik();
 };
 
 pick4.addEventListener("click", handleClickPick4);
@@ -427,7 +465,6 @@ const pickButton = document.querySelectorAll('input[name="pilihPlayer"]');
 
 pickButton.forEach((button) => {
   button.addEventListener("change", (event) => {
-    klik();
     const selectedButton = event.target;
 
     pickButton.forEach((btn) => {

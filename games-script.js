@@ -16,6 +16,11 @@ function spin() {
   spin.volume = 0.5;
 }
 
+function whoosh() {
+  const whoosh = new Audio("sfx/whoosh.mp3");
+  whoosh.play();
+}
+
 const board = document.querySelector(".board");
 
 function openFullscreen() {
@@ -86,6 +91,7 @@ const backsound = new Audio("sfx/backsound.mp3");
 
 function playBacksoundMusic() {
   if (backsound.paused) {
+    backsound.loop = true;
     backsound.play();
     backsound.volume = 0.2;
   } else {
@@ -122,6 +128,7 @@ userEdit.onclick = () => {
   document.querySelector(".user-experience").classList.toggle("showEdit");
   document.querySelector("html").classList.toggle("showEdit");
   document.querySelector(".edit-content").classList.toggle("showEdit");
+  whoosh();
 };
 
 const createNameButton = document.querySelector("#createName");
@@ -256,28 +263,21 @@ function direct() {
   editQuestion.style.display = "none";
   createButton.style.display = "none";
   localStorage.setItem("directEditQuestion", editQuestion.style.display);
-  localStorage.setItem("createButtonFalse", createButton.style.display);
+  localStorage.setItem("createButton", createButton.style.display);
 }
 
 function edit() {
   editQuestion.style.display = "block";
   createButton.style.display = "block";
-  localStorage.setItem("editEditQuestion", editQuestion.style.display);
-  localStorage.setItem("createButtonTrue", createButton.style.display);
+  localStorage.setItem("directEditQuestion", editQuestion.style.display);
+  localStorage.setItem("createButton", createButton.style.display);
 }
 
 const storedDirect = localStorage.getItem("directEditQuestion");
-const storedFalseButton = localStorage.getItem("createButtonFalse");
+const storedButton = localStorage.getItem("createButton");
 if (storedDirect) {
   editQuestion.style.display = storedDirect;
-  createButton.style.display = storedFalseButton;
-}
-
-const storedEdit = localStorage.getItem("editEditQuestion");
-const storedTrueButton = localStorage.getItem("createButtonTrue");
-if (storedEdit) {
-  editQuestion.style.display = storedEdit;
-  createButton.style.display = storedTrueButton;
+  createButton.style.display = storedButton;
 }
 
 const buttonCloseGame = document.querySelector(".gameShowUlarTangga button");
@@ -320,11 +320,43 @@ const faBook = document.querySelector(".fa-book");
 faBook.onclick = () => {
   document.querySelector(".box-panduan").classList.toggle("active");
   document.querySelector("html").classList.toggle("showEdit");
+  whoosh();
 };
 
 const videoExplain = document.querySelector(".video-explain video");
 const mulai = document.querySelector(".mulai");
+const removeBidaks = document.querySelectorAll(
+  "#cursor1, #cursor2, #cursor3, #cursor4, #cursor5"
+);
+
+removeBidaks.forEach((removeBidak) => {
+  removeBidak.classList.add("remove");
+});
 mulai.onclick = () => {
   document.querySelector(".video-explain").style.display = "none";
+  localStorage.setItem(
+    "videoExplain",
+    document.querySelector(".video-explain").style.display
+  );
   videoExplain.pause();
+
+  removeBidaks.forEach((removeBidak) => {
+    removeBidak.classList.remove("remove");
+    localStorage.setItem("removeBidak", "true");
+    setTimeout(() => {
+      removeBidak.style.transition = "none";
+    }, 2000);
+  });
 };
+
+const savedremoveBidak = localStorage.getItem("removeBidak");
+const savedVideoExplain = localStorage.getItem("videoExplain");
+if (savedremoveBidak === "true") {
+  removeBidaks.forEach((removeBidak) => {
+    removeBidak.classList.remove("remove");
+    setTimeout(() => {
+      removeBidak.style.transition = "none";
+    }, 2000);
+  });
+  document.querySelector(".video-explain").style.display = savedVideoExplain;
+}

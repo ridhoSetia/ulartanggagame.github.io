@@ -62,7 +62,6 @@ header {
 }
 .navbar .gamesVip {
   font-size: 1.2rem;
-  background: var(--main-color);
   padding: 5px;
   border-radius: 5px;
 }
