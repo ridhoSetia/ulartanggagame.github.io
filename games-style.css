@@ -774,12 +774,12 @@ input[name="trueOption"]:focus {
 .fa-arrow-left {
   position: relative;
   font-size: 30px;
-  background: #333;
+  background: #feeee7;
   padding: 10px;
   width: 30px;
   height: 30px;
-  border-radius: 50%;
-  color: #fff;
+  border-radius: 5px;
+  color: #1e1c2a;
   cursor: pointer;
   z-index: 1;
 }
@@ -788,22 +788,24 @@ input[name="trueOption"]:focus {
   position: absolute;
   bottom: 0;
   right: 0;
-  margin: 10px;
+  margin: 15px;
   font-size: 25px;
   border: none;
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 5px;
   width: 50px;
   height: 50px;
   z-index: 1;
   cursor: pointer;
+  background: #feeee7;
+  color: #1e1c2a;
 }
 
 .board {
   display: none;
   position: absolute;
-  background-color: #1e1c2a;
-  background-image: url(img/board.png);
+  background-color: #2b283a;
+  background-image: url(img/papanUlarTangga.png);
   background-size: 88%;
   background-repeat: no-repeat;
   background-position: center;
@@ -815,11 +817,19 @@ input[name="trueOption"]:focus {
 
 .finish {
   position: absolute;
-  width: 25%;
-  height: 25%;
+  width: 60px;
+  height: 60px;
   top: 0;
   right: 0;
-  background: #000;
+  margin: 10px;
+  background: #f45050;
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
+  border-radius: 5px;
+  background-image: url(img/finish-line.png);
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* opacity: 0; */
 }
 
 .congratulations {
@@ -891,8 +901,8 @@ button:focus {
   height: 55px;
   border: 5px solid #252525;
   border-radius: 15px;
-  transition: transform 0.5s ease;
   box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 
 #rollButton {
@@ -981,6 +991,7 @@ button:focus {
   transition: all 0.1s ease;
   cursor: pointer;
   display: block;
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.5);
 }
 #shakeCard:hover {
   opacity: 1;
@@ -1025,6 +1036,11 @@ button:focus {
   z-index: 3;
   border: none;
   border-radius: 5px;
+  transition: all 0.1s ease;
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.5);
+}
+.showQuestion:hover {
+  scale: 1.1;
 }
 
 .flex-point {
@@ -1063,8 +1079,8 @@ button:focus {
 }
 
 .flex-point button {
-  width: 9.5%;
-  height: 19%;
+  width: 10%;
+  height: 20%;
   margin: 15px;
   font-size: 30px;
   border-radius: 5px;
@@ -1136,26 +1152,6 @@ button:focus {
 .flex-point button:nth-child(15)::before {
   color: #8bc34a;
   content: "15";
-}
-.flex-point button:nth-child(16)::before {
-  color: #ff9800;
-  content: "16";
-}
-.flex-point button:nth-child(17)::before {
-  color: #795548;
-  content: "17";
-}
-.flex-point button:nth-child(18)::before {
-  color: #607d8b;
-  content: "18";
-}
-.flex-point button:nth-child(19)::before {
-  color: #5f5a68;
-  content: "19";
-}
-.flex-point button:nth-child(20)::before {
-  color: #2c3e50;
-  content: "20";
 }
 
 .questionShadow {
@@ -1276,6 +1272,10 @@ input[type="radio"]:checked {
   color: #fff;
   transition: all 0.3s ease;
   cursor: pointer;
+  opacity: 1;
+}
+#jawab:disabled {
+  opacity: 0.5;
 }
 
 #jawab:hover {
@@ -1306,6 +1306,31 @@ input[type="radio"]:checked {
 #result.on {
   top: 50%;
   box-shadow: 0 0 0 100vh rgb(0, 0, 0, 0.5);
+}
+
+#stopBtn {
+  position: relative;
+  margin: 5px 0;
+}
+#startBtn {
+  margin-bottom: 5px;
+}
+.stopwatch {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 18px;
+  color: #f45050;
+  background: #feeee7;
+  padding: 2px;
+  border-radius: 5px;
+  text-align: center;
+  width: 50px;
+  bottom: 0;
+  left: 0;
+  margin: 5% 8px;
 }
 
 .x {
@@ -1358,31 +1383,31 @@ input[type="radio"]:checked {
 }
 #cursor1 {
   filter: drop-shadow(0 0 10px #e20000);
-  left: 13%;
+  left: 15%;
   bottom: 16%;
   transition: left 0.7s 0.1s ease;
 }
 #cursor2 {
   filter: drop-shadow(0 0 10px #1919e2);
-  left: 11%;
+  left: 13%;
   bottom: 14%;
   transition: left 0.7s 0.4s ease;
 }
 #cursor3 {
   filter: drop-shadow(0 0 10px #11e211);
-  left: 9%;
+  left: 11%;
   bottom: 12%;
   transition: left 0.7s 0.7s ease;
 }
 #cursor4 {
   filter: drop-shadow(0 0 10px #800080);
-  left: 7%;
+  left: 9%;
   bottom: 10%;
   transition: left 0.7s 1s ease;
 }
 #cursor5 {
   filter: drop-shadow(0 0 10px #00a5a7);
-  left: 5%;
+  left: 7%;
   bottom: 8%;
   transition: left 0.7s 1.3s ease;
 }
@@ -1455,7 +1480,7 @@ input[type="radio"]:checked {
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1080px) {
   #dice {
     position: absolute;
     width: 45px;
@@ -1472,6 +1497,9 @@ input[type="radio"]:checked {
     border-radius: 5px;
   }
   .board {
+    background-size: contain;
+  }
+  .board-point {
     background-size: contain;
   }
   .objek {

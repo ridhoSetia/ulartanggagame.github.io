@@ -501,131 +501,6 @@
                   <input type="text" name="trueOption" data-trueOption="14" />
                 </label>
               </label>
-              <label for="question"
-                >pertanyaan P :
-                <textarea name="pertanyaan" data-question="15"></textarea>
-                <label for="option">
-                  <p>
-                    A
-                    <input type="text" name="option" data-option16="0" />
-                  </p>
-                  <p>
-                    B
-                    <input type="text" name="option" data-option16="1" />
-                  </p>
-                  <p>
-                    C
-                    <input type="text" name="option" data-option16="2" />
-                  </p>
-                  <p>
-                    D
-                    <input type="text" name="option" data-option16="3" /></p
-                ></label>
-                <label for="select" id="select">
-                  Jawaban yang benar :
-                  <input type="text" name="trueOption" data-trueOption="15" />
-                </label>
-              </label>
-              <label for="question"
-                >pertanyaan Q :
-                <textarea name="pertanyaan" data-question="16"></textarea>
-                <label for="option">
-                  <p>
-                    A
-                    <input type="text" name="option" data-option17="0" />
-                  </p>
-                  <p>
-                    B
-                    <input type="text" name="option" data-option17="1" />
-                  </p>
-                  <p>
-                    C
-                    <input type="text" name="option" data-option17="2" />
-                  </p>
-                  <p>
-                    D
-                    <input type="text" name="option" data-option17="3" /></p
-                ></label>
-                <label for="select" id="select">
-                  Jawaban yang benar :
-                  <input type="text" name="trueOption" data-trueOption="16" />
-                </label>
-              </label>
-              <label for="question"
-                >pertanyaan R :
-                <textarea name="pertanyaan" data-question="17"></textarea>
-                <label for="option">
-                  <p>
-                    A
-                    <input type="text" name="option" data-option18="0" />
-                  </p>
-                  <p>
-                    B
-                    <input type="text" name="option" data-option18="1" />
-                  </p>
-                  <p>
-                    C
-                    <input type="text" name="option" data-option18="2" />
-                  </p>
-                  <p>
-                    D
-                    <input type="text" name="option" data-option18="3" /></p
-                ></label>
-                <label for="select" id="select">
-                  Jawaban yang benar :
-                  <input type="text" name="trueOption" data-trueOption="17" />
-                </label>
-              </label>
-              <label for="question"
-                >pertanyaan S :
-                <textarea name="pertanyaan" data-question="18"></textarea>
-                <label for="option">
-                  <p>
-                    A
-                    <input type="text" name="option" data-option19="0" />
-                  </p>
-                  <p>
-                    B
-                    <input type="text" name="option" data-option19="1" />
-                  </p>
-                  <p>
-                    C
-                    <input type="text" name="option" data-option19="2" />
-                  </p>
-                  <p>
-                    D
-                    <input type="text" name="option" data-option19="3" /></p
-                ></label>
-                <label for="select" id="select">
-                  Jawaban yang benar :
-                  <input type="text" name="trueOption" data-trueOption="18" />
-                </label>
-              </label>
-              <label for="question"
-                >pertanyaan T :
-                <textarea name="pertanyaan" data-question="19"></textarea>
-                <label for="option">
-                  <p>
-                    A
-                    <input type="text" name="option" data-option20="0" />
-                  </p>
-                  <p>
-                    B
-                    <input type="text" name="option" data-option20="1" />
-                  </p>
-                  <p>
-                    C
-                    <input type="text" name="option" data-option20="2" />
-                  </p>
-                  <p>
-                    D
-                    <input type="text" name="option" data-option20="3" /></p
-                ></label>
-                <label for="select" id="select">
-                  Jawaban yang benar :
-                  <input type="text" name="trueOption" data-trueOption="19" />
-                </label>
-              </label>
             </div>
             <center>
               <button id="create" type="submit">Simpan Soal</button>
@@ -757,8 +632,13 @@
         <i class="fas fa-arrow-left"></i>
       </button>
       <button class="volume"><i class="fas fa-volume-up"></i></button>
-
+      <div class="stopwatch">
+        <span id="minutes">00</span>:<span id="seconds">00</span>
+        <button id="stopBtn">Stop</button>
+        <button id="startBtn">Start</button>
+      </div>
       <div class="rollDice">
+
         <img id="dice" src="img/Dadu1.png" alt="roll-dice" />
         <button id="rollButton"><p class="player">Player1</p></button>
       </div>
@@ -785,11 +665,6 @@
         <button onclick="tampilPertanyaan(12)"></button>
         <button onclick="tampilPertanyaan(13)"></button>
         <button onclick="tampilPertanyaan(14)"></button>
-        <button onclick="tampilPertanyaan(15)"></button>
-        <button onclick="tampilPertanyaan(16)"></button>
-        <button onclick="tampilPertanyaan(17)"></button>
-        <button onclick="tampilPertanyaan(18)"></button>
-        <button onclick="tampilPertanyaan(19)"></button>
       </div>
       
       <div class="boxCard">

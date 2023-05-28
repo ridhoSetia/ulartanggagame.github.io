@@ -174,50 +174,6 @@ let pertanyaan = [
     soal: "Siapakah presiden pertama Indonesia?",
     jawaban: ["Soekarno", "Jokowi", "SBY", "Puan"],
     jawabanBenar: "Soekarno",
-  }, // A
-  {
-    soal: "Siapakah presiden pertama Indonesia?",
-    jawaban: ["Soekarno", "Jokowi", "SBY", "Gusdur"],
-    jawabanBenar: "Soekarno",
-  },
-  //   B
-  {
-    soal: "Kapankah Indonesia merdeka?",
-    jawaban: [
-      "17 Agustus 1945",
-      "15 Agustus 1945",
-      "19 Agustus 1945",
-      "Kemarin",
-    ],
-    jawabanBenar: "17 Agustus 1945",
-  },
-  //   C
-  {
-    soal: "Siapakah penemu bola lampu?",
-    jawaban: [
-      "Thomas Edison",
-      "Alexander Graham Bell",
-      "Nikola Tesla",
-      "Danang",
-    ],
-    jawabanBenar: "Thomas Edison",
-  },
-  //   D
-  {
-    soal: "Kapankah Indonesia merdeka?",
-    jawaban: [
-      "17 Agustus 1945",
-      "15 Agustus 1945",
-      "19 Agustus 1945",
-      "Tahun lalu",
-    ],
-    jawabanBenar: "17 Agustus 1945",
-  },
-  //   E
-  {
-    soal: "Siapakah presiden pertama Indonesia?",
-    jawaban: ["Soekarno", "Jokowi", "SBY", "Puan"],
-    jawabanBenar: "Soekarno",
   },
 ];
 
@@ -527,51 +483,7 @@ function editContent(event) {
       replacementOption
     );
   });
-  inputOption.forEach((inputOption) => {
-    const indexOption = inputOption.getAttribute("data-option16");
-    const replacementOption = inputOption.value;
-    pertanyaan[15].jawaban[indexOption] = replacementOption;
-    localStorage.setItem(
-      `replacementOption16${indexOption}`,
-      replacementOption
-    );
-  });
-  inputOption.forEach((inputOption) => {
-    const indexOption = inputOption.getAttribute("data-option17");
-    const replacementOption = inputOption.value;
-    pertanyaan[16].jawaban[indexOption] = replacementOption;
-    localStorage.setItem(
-      `replacementOption17${indexOption}`,
-      replacementOption
-    );
-  });
-  inputOption.forEach((inputOption) => {
-    const indexOption = inputOption.getAttribute("data-option18");
-    const replacementOption = inputOption.value;
-    pertanyaan[17].jawaban[indexOption] = replacementOption;
-    localStorage.setItem(
-      `replacementOption18${indexOption}`,
-      replacementOption
-    );
-  });
-  inputOption.forEach((inputOption) => {
-    const indexOption = inputOption.getAttribute("data-option19");
-    const replacementOption = inputOption.value;
-    pertanyaan[18].jawaban[indexOption] = replacementOption;
-    localStorage.setItem(
-      `replacementOption19${indexOption}`,
-      replacementOption
-    );
-  });
-  inputOption.forEach((inputOption) => {
-    const indexOption = inputOption.getAttribute("data-option20");
-    const replacementOption = inputOption.value;
-    pertanyaan[19].jawaban[indexOption] = replacementOption;
-    localStorage.setItem(
-      `replacementOption20${indexOption}`,
-      replacementOption
-    );
-  });
+
   let succesInputText = (succesInput.textContent = "Game Storage Full 🔒");
   let succesInputColor = (succesInput.style.background = "#f31414");
   localStorage.setItem(`succesInputText`, succesInputText);
@@ -670,26 +582,6 @@ function editContent(event) {
     const storedOption15 = localStorage.getItem(`replacementOption15${o}`);
     if (storedOption15) {
       pertanyaan[14].jawaban[o] = storedOption14;
-    }
-    const storedOption16 = localStorage.getItem(`replacementOption16${o}`);
-    if (storedOption16) {
-      pertanyaan[15].jawaban[o] = storedOption15;
-    }
-    const storedOption17 = localStorage.getItem(`replacementOption17${o}`);
-    if (storedOption17) {
-      pertanyaan[16].jawaban[o] = storedOption16;
-    }
-    const storedOption18 = localStorage.getItem(`replacementOption18${o}`);
-    if (storedOption18) {
-      pertanyaan[17].jawaban[o] = storedOption17;
-    }
-    const storedOption19 = localStorage.getItem(`replacementOption19${o}`);
-    if (storedOption19) {
-      pertanyaan[18].jawaban[o] = storedOption18;
-    }
-    const storedOption20 = localStorage.getItem(`replacementOption20${o}`);
-    if (storedOption20) {
-      pertanyaan[19].jawaban[o] = storedOption19;
     }
   }
 }

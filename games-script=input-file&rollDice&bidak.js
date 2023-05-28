@@ -156,7 +156,9 @@ halaman.addEventListener("touchmove", (event) => {
     let x = event.touches[i].clientX;
     let y = event.touches[i].clientY;
 
-    checkCollision({ element: objCursor[i] }, i);
+    for (let i = 0; i < objCursor.length; i++) {
+      checkCollision({ element: objCursor[i] }, i);
+    }
 
     // Menentukan objek cursor mana yang akan mengikuti setiap sentuhan
     let objTarget = objCursor[event.target.getAttribute("data-sentuhan") - 1];

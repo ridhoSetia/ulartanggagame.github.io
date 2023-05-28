@@ -360,3 +360,72 @@ if (savedremoveBidak === "true") {
   });
   document.querySelector(".video-explain").style.display = savedVideoExplain;
 }
+
+let minutes = 0;
+let seconds = 0;
+let intervalId;
+
+const minutesElement = document.getElementById("minutes");
+const secondsElement = document.getElementById("seconds");
+const startBtn = document.getElementById("startBtn");
+const stopBtn = document.getElementById("stopBtn");
+const resetBtn = document.getElementById("resetBtn");
+
+// Cek apakah waktu terakhir tersimpan di localStorage
+if (localStorage.getItem("stopwatch")) {
+  const lastTime = JSON.parse(localStorage.getItem("stopwatch"));
+  minutes = lastTime.minutes;
+  seconds = lastTime.seconds;
+  updateTimer();
+}
+
+function startTimer() {
+  intervalId = setInterval(updateTimer, 1000);
+  startBtn.disabled = true;
+  stopBtn.disabled = false;
+}
+
+function stopTimer() {
+  clearInterval(intervalId);
+  startBtn.disabled = false;
+  stopBtn.disabled = true;
+  saveTimer();
+}
+
+function resetTimer() {
+  clearInterval(intervalId);
+  minutes = 0;
+  seconds = 0;
+  updateTimer();
+  startBtn.disabled = false;
+  localStorage.removeItem("stopwatch");
+}
+
+function updateTimer() {
+  seconds++;
+
+  if (seconds === 60) {
+    minutes++;
+    seconds = 0;
+  }
+
+  minutesElement.textContent = padNumber(minutes);
+  secondsElement.textContent = padNumber(seconds);
+  saveTimer();
+}
+
+function padNumber(number) {
+  return number.toString().padStart(2, "0");
+}
+
+function saveTimer() {
+  const currentTime = {
+    minutes: minutes,
+    seconds: seconds,
+  };
+  localStorage.setItem("stopwatch", JSON.stringify(currentTime));
+}
+
+mulai.addEventListener("click", startTimer);
+startBtn.addEventListener("click", startTimer);
+stopBtn.addEventListener("click", stopTimer);
