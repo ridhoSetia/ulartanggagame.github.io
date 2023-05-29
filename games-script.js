@@ -122,7 +122,7 @@ for (var i = 0; i < buttonNumberSkin.length; i++) {
   };
 }
 
-const userEdit = document.querySelector(".fas");
+const userEdit = document.querySelector("p .fas");
 userEdit.onclick = () => {
   userEdit.classList.toggle("fa-times");
   document.querySelector(".user-experience").classList.toggle("showEdit");
