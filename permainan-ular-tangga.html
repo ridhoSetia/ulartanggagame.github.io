@@ -107,9 +107,15 @@
       </div>
     </div>
 
-    <p><i class="fas fa-edit"></i></p>
-    <p><i class="fas fa-book"></i><i class="fas fa-exclamation-circle"></i></p>
-    <div class="alertBerhasilSave"><p>Nama Berhasil di Simpan Kedalam Storage</p></div>
+    <div class="hover-element">
+      <p><i class="fas fa-edit"></i></p>
+      <span class="hover-text">Edit Konten</span>
+    </div>
+    <div class="hover-element-b">
+      <p><i class="fas fa-book"></i><i class="fas fa-exclamation-circle"></i></p>
+      <span class="hover-text-b">Buku Panduan</span>
+    </div>
+    <div class="alertBerhasilSave"><p>Nama Berhasil di Simpan Kedalam Penyimpanan</p></div>
     <div class="user-experience">
       <div class="edit-content">
         <div class="edit-name">
@@ -117,7 +123,7 @@
             <div class="succesInput">Game Storage kosong 🔓</div>
             <label for="player"
               >Player 1 :
-              <input type="text" name="teks" data-name="0" required/>
+              <input type="text" name="teks" data-name="0" required />
             </label>
             <label for="player"
               >Player 2 :
@@ -125,7 +131,7 @@
             </label>
             <label for="player" id="inputNama3" 
               >Player 3 :
-              <input type="text" name="teks" data-name="2" required/>
+              <input type="text" name="teks" data-name="2" required />
             </label>
             <label for="player" id="inputNama4" 
               >Player 4 :
@@ -133,7 +139,7 @@
             </label>
             <label for="player" id="inputNama5" 
               >Player 5 :
-              <input type="text" name="teks" data-name="4" required/>
+              <input type="text" name="teks" data-name="4" required />
             </label>
             <center>
               <button id="createName" type="submit">Simpan Nama</button>
@@ -650,8 +656,8 @@
       <button class="volume"><i class="fas fa-volume-up"></i></button>
       <div class="stopwatch">
         <span id="minutes">00</span>:<span id="seconds">00</span>
-        <button id="stopBtn">Stop</button>
-        <button id="startBtn">Start</button>
+        <button id="stopBtn"><i class="fas fa-stop"></i></button>
+       <button id="startBtn"><i class="fas fa-play"></i></button>
       </div>
       <div class="rollDice">
 

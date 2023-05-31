@@ -225,23 +225,23 @@ p.explain {
 
 .alertBerhasilSave {
   background: #feeee7;
-  width: 90%;
+  width: 95%;
   height: auto;
-  border-radius: 15px;
+  border-radius: 5px;
   position: fixed;
   bottom: -20vh;
   left: 50%;
   transform: translate(-50%, 0);
   margin: 15px 0;
   z-index: 5;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   box-shadow: 0 5px 15px rgb(0, 0, 0, 0.5);
 }
 .alertBerhasilSave p {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 25px;
+  font-size: 20px;
   color: #f45050;
   margin: 10px;
 }
@@ -252,7 +252,7 @@ p.explain {
   width: 100%;
   height: 100%;
   position: fixed;
-  background: rgb(0, 0, 0, 0.5);
+  background: rgb(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   top: 100%;
   z-index: 2;
@@ -356,7 +356,8 @@ p.explain {
 
 .user-experience {
   position: fixed;
-  background: #37306b;
+  background: rgb(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
   width: 100%;
   height: 100%;
   display: flex;
@@ -375,7 +376,7 @@ p.explain {
 
 .edit-content {
   position: fixed;
-  background: #66347f;
+  background: #feeee7;
   width: 90%;
   height: 90%;
   overflow: auto;
@@ -383,7 +384,7 @@ p.explain {
   top: 160%;
   transform: translate(-50%, -50%);
   margin-top: 10px;
-  border: 5px solid #252525;
+  border: 5px solid #feeee7;
   transition: all 0.3s ease;
 }
 .edit-content.showEdit {
@@ -424,8 +425,9 @@ p.explain {
 }
 
 .edit-name {
-  background: #66347f;
+  background: #f45050;
   padding: 10px;
+  height: 100%;
 }
 
 .edit-question {
@@ -439,18 +441,20 @@ button {
 }
 
 textarea[name="pertanyaan"] {
-  border: 3px solid #252525;
+  border-bottom: 5px solid #f45050;
   width: 98%;
   font-size: 20px;
   overflow: hidden;
   font-family: "Acme", sans-serif;
-
+  background: rgb(255, 255, 255, 0.5);
   display: flex;
 }
 
 textarea[name="pertanyaan"]:focus {
-  box-shadow: 3px 3px 0 3px #181818;
   border-radius: 1px;
+  background: rgb(255, 255, 255, 1);
+  outline: none;
+  border-bottom: 5px solid #eb3d3d;
 }
 
 label[for="option"] p {
@@ -463,14 +467,22 @@ input[name="option"] {
 }
 
 input[name="option"]:focus {
-  box-shadow: 3px 3px 0 3px #2c3e50;
-  border-radius: 1px;
+  border-bottom: 3px solid #1919e2;
+  background: rgb(255, 255, 255, 1);
+  outline: none;
 }
 
 input[type="text"] {
-  border: 3px solid #252525;
+  border: none;
+  border-bottom: 3px solid #feeee7;
   font-family: "Acme", sans-serif;
   font-size: 20px;
+  background: rgb(255, 255, 255, 0.5);
+}
+input[name="teks"]:focus {
+  background: rgb(255, 255, 255, 1);
+  outline: none;
+  border-bottom: 3px solid #9e4784;
 }
 
 input[name="teks"] {
@@ -485,21 +497,22 @@ input[name="trueOption"] {
   display: flex;
   flex-wrap: wrap;
   border-radius: 1px;
+  margin-left: 10px;
 }
 
 input[name="trueOption"]:focus {
-  box-shadow: 3px 3px 0 3px #0de70d;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border-bottom: 3px solid #0de70d;
+  background: rgb(255, 255, 255, 1);
+  outline: none;
 }
 
 #select {
-  color: #252525;
+  color: #1e1c2a;
   display: flex;
   margin: 10px;
   display: flex;
   flex-wrap: wrap;
+  font-size: 18px;
 }
 
 #create {
@@ -522,6 +535,8 @@ input[name="trueOption"]:focus {
   border: none;
   color: #fff;
   cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 #reset {
@@ -563,6 +578,45 @@ input[name="trueOption"]:focus {
   color: #262333;
 }
 
+.hover-text {
+  position: fixed;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s 0.4s ease;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  margin: 60px;
+}
+
+.hover-element:hover .hover-text {
+  opacity: 1;
+  transition: opacity 0.3s 0.4s ease;
+}
+
+.hover-text-b {
+  position: fixed;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s 0.4s ease;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  margin: 60px;
+}
+
+.hover-element-b:hover .hover-text-b {
+  opacity: 1;
+  transition: opacity 0.3s 0.4s ease;
+}
 /* styling choose skin */
 
 .chooseSkin {
@@ -854,6 +908,16 @@ input[name="trueOption"]:focus {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.stopwatch .fas {
+  color: #f45050;
+  font-size: 10px;
+  margin: 5px;
+}
+#stopBtn,
+#startBtn {
+  cursor: pointer;
 }
 
 .finish {
@@ -1349,13 +1413,6 @@ input[type="radio"]:checked {
   box-shadow: 0 0 0 100vh rgb(0, 0, 0, 0.5);
 }
 
-#stopBtn {
-  position: relative;
-  margin: 5px 0;
-}
-#startBtn {
-  margin-bottom: 5px;
-}
 .stopwatch {
   position: absolute;
   display: flex;

@@ -3,9 +3,9 @@
   top: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
-  z-index: 20;
+  z-index: 30;
   background: #fff;
-  padding: 100%;
+  padding: 150vh;
   display: block;
 }
 .loadingspinner {

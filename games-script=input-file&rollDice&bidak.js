@@ -407,10 +407,9 @@ function handleClick(player) {
     }
   }
 }
-
-const hapusInputNama3 = document.querySelector("#inputNama3");
-const hapusInputNama4 = document.querySelector("#inputNama4");
-const hapusInputNama5 = document.querySelector("#inputNama5");
+const inputNama3 = document.getElementById("inputNama3");
+const inputNama4 = document.getElementById("inputNama4");
+const inputNama5 = document.getElementById("inputNama5");
 
 for (let i = players.length - 1; i >= 0; i--) {
   const player = players[i];
@@ -424,39 +423,28 @@ for (let i = players.length - 1; i >= 0; i--) {
     color.splice(-count);
 
     if (player.id === 1) {
-      hapusInputNama3.style.display = "none";
-      hapusInputNama3.required = false;
-      localStorage.setItem("hapusInputNama3Display", "none");
-      localStorage.setItem("hapusInputNama3Required", false);
-
-      hapusInputNama4.style.display = "none";
-      hapusInputNama4.required = false;
-      localStorage.setItem("hapusInputNama4Display", "none");
-      localStorage.setItem("hapusInputNama4Required", false);
-
-      hapusInputNama5.style.display = "none";
-      hapusInputNama5.required = false;
-      localStorage.setItem("hapusInputNama5Display", "none");
-      localStorage.setItem("hapusInputNama5Required", false);
+      localStorage.removeItem("remove3");
+      localStorage.removeItem("remove4");
+      localStorage.removeItem("remove5");
+      localStorage.setItem("remove3", "removed");
+      localStorage.setItem("remove4", "removed");
+      localStorage.setItem("remove5", "removed");
+      inputNama3.remove();
+      inputNama4.remove();
+      inputNama5.remove();
     }
-
     if (player.id === 2) {
-      hapusInputNama4.style.display = "none";
-      hapusInputNama4.required = false;
-      localStorage.setItem("hapusInputNama4Display", "none");
-      localStorage.setItem("hapusInputNama4Required", false);
-
-      hapusInputNama5.style.display = "none";
-      hapusInputNama5.required = false;
-      localStorage.setItem("hapusInputNama5Display", "none");
-      localStorage.setItem("hapusInputNama5Required", false);
+      localStorage.removeItem("remove4");
+      localStorage.removeItem("remove5");
+      localStorage.setItem("remove4", "removed");
+      localStorage.setItem("remove5", "removed");
+      inputNama4.remove();
+      inputNama5.remove();
     }
-
     if (player.id === 3) {
-      hapusInputNama5.style.display = "none";
-      hapusInputNama5.required = false;
-      localStorage.setItem("hapusInputNama5Display", "none");
-      localStorage.setItem("hapusInputNama5Required", false);
+      localStorage.removeItem("remove5");
+      localStorage.setItem("remove5", "removed");
+      inputNama5.remove();
     }
 
     localStorage.setItem("words", JSON.stringify(words));
@@ -471,28 +459,6 @@ for (let i = players.length - 1; i >= 0; i--) {
 
   const savedSkinPlayer = localStorage.getItem(`skinPlayer${player.id}`);
   const savedCursorPlayer = localStorage.getItem(`cursorPlayer${player.id}`);
-
-  // Retrieve from localStorage and apply styles and required properties
-  const hapusInputNama3Display = localStorage.getItem("hapusInputNama3Display");
-  const hapusInputNama3Required = localStorage.getItem(
-    "hapusInputNama3Required"
-  );
-  hapusInputNama3.style.display = hapusInputNama3Display;
-  hapusInputNama3.required = hapusInputNama3Required;
-
-  const hapusInputNama4Display = localStorage.getItem("hapusInputNama4Display");
-  const hapusInputNama4Required = localStorage.getItem(
-    "hapusInputNama4Required"
-  );
-  hapusInputNama4.style.display = hapusInputNama4Display;
-  hapusInputNama4.required = hapusInputNama4Required;
-
-  const hapusInputNama5Display = localStorage.getItem("hapusInputNama5Display");
-  const hapusInputNama5Required = localStorage.getItem(
-    "hapusInputNama5Required"
-  );
-  hapusInputNama5.style.display = hapusInputNama5Display;
-  hapusInputNama5.required = hapusInputNama5Required;
 
   if (savedSkinPlayer === "none") {
     const skinPlayer = document.querySelector(`.${player.skinClass}`);
@@ -546,3 +512,62 @@ const savedClosePick = localStorage.getItem("closePick");
 if (savedClosePick === "true") {
   document.querySelector(".pilihBerapaPlayer").classList.add("active");
 }
+
+const cursorName = [
+  document.querySelector(".nameColor1"),
+  document.querySelector(".nameColor2"),
+  document.querySelector(".nameColor3"),
+  document.querySelector(".nameColor4"),
+  document.querySelector(".nameColor5"),
+];
+const nameSkinPlayer = document.querySelectorAll(".nameSkinPlayer");
+
+function editName(event) {
+  event.preventDefault(); // Mencegah halaman untuk refresh
+  const inputs = document.querySelectorAll('input[name="teks"]');
+  inputs.forEach((input) => {
+    const index = input.getAttribute("data-name");
+    const replacementText = input.value;
+    words[index] = replacementText;
+    nameSkinPlayer[index].textContent = replacementText;
+    cursorName[index].textContent = replacementText;
+    localStorage.setItem(`replacementText${index}`, replacementText);
+    if (index === "0") {
+      document.querySelector(".player").textContent = replacementText;
+    }
+  });
+  userEdit.classList.remove("fa-times");
+  document.querySelector(".user-experience").classList.remove("showEdit");
+  document.querySelector("html").classList.remove("showEdit");
+  document.querySelector(".edit-content").classList.remove("showEdit");
+  document.querySelector(".alertBerhasilSave").classList.add("active");
+  setTimeout(() => {
+    document.querySelector(".alertBerhasilSave").classList.remove("active");
+  }, 3000);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedRemove3 = localStorage.getItem("remove3");
+  const savedRemove4 = localStorage.getItem("remove4");
+  const savedRemove5 = localStorage.getItem("remove5");
+  if (savedRemove3 === "removed") {
+    inputNama3.remove();
+  }
+  if (savedRemove4 === "removed") {
+    inputNama4.remove();
+  }
+  if (savedRemove5 === "removed") {
+    inputNama5.remove();
+  }
+  for (let i = 0; i < words.length; i++) {
+    const storedText = localStorage.getItem(`replacementText${i}`);
+    if (storedText) {
+      words[i] = storedText;
+      nameSkinPlayer[i].textContent = storedText;
+      cursorName[i].textContent = storedText;
+      if (i === 0) {
+        document.querySelector(".player").textContent = storedText;
+      }
+    }
+  }
+});

@@ -225,7 +225,7 @@ const questionInput = document.querySelectorAll('textarea[name="pertanyaan"]');
 window.addEventListener("input", () => {
   for (let i = 0; i < progressInput.length; i++) {
     const inputNameValue = progressInput[i].value;
-    localStorage.setItem(`player${i}`, inputNameValue);
+    localStorage.setItem(`textProgress${i}`, inputNameValue);
   }
   for (let q = 0; q < questionInput.length; q++) {
     const inputQuestionValue = questionInput[q].value;
@@ -235,7 +235,7 @@ window.addEventListener("input", () => {
 
 // Mengisi nilai input dengan data yang disimpan di Local Storage (jika ada)
 for (let i = 0; i < progressInput.length; i++) {
-  const inputDataName = localStorage.getItem(`player${i}`);
+  const inputDataName = localStorage.getItem(`textProgress${i}`);
   if (inputDataName) {
     progressInput[i].value = inputDataName;
   }

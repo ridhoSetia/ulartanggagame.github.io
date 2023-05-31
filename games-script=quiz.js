@@ -314,39 +314,7 @@ pointQuestion.forEach((pointQuestion) => {
   });
 });
 
-const cursorName = [
-  document.querySelector(".nameColor1"),
-  document.querySelector(".nameColor2"),
-  document.querySelector(".nameColor3"),
-  document.querySelector(".nameColor4"),
-  document.querySelector(".nameColor5"),
-];
-const nameSkinPlayer = document.querySelectorAll(".nameSkinPlayer");
 let succesInput = document.querySelector(".succesInput");
-
-function editName(event) {
-  event.preventDefault(); // Mencegah halaman untuk refresh
-  const inputs = document.querySelectorAll('input[name="teks"]');
-  inputs.forEach((input) => {
-    const index = input.getAttribute("data-name");
-    const replacementText = input.value;
-    words[index] = replacementText;
-    nameSkinPlayer[index].textContent = replacementText;
-    cursorName[index].textContent = replacementText;
-    localStorage.setItem(`replacementText${index}`, replacementText);
-    if (index === "0") {
-      document.querySelector(".player").textContent = replacementText;
-    }
-  });
-  userEdit.classList.remove("fa-times");
-  document.querySelector(".user-experience").classList.remove("showEdit");
-  document.querySelector("html").classList.remove("showEdit");
-  document.querySelector(".edit-content").classList.remove("showEdit");
-  document.querySelector(".alertBerhasilSave").classList.add("active");
-  setTimeout(() => {
-    document.querySelector(".alertBerhasilSave").classList.remove("active");
-  }, 3000);
-}
 
 function editContent(event) {
   event.preventDefault(); // Mencegah halaman untuk refresh
@@ -484,23 +452,25 @@ function editContent(event) {
     );
   });
 
+  const alertBerhasilSave = document.querySelector(".alertBerhasilSave");
+  userEdit.classList.remove("fa-times");
+  document.querySelector(".user-experience").classList.remove("showEdit");
+  document.querySelector("html").classList.remove("showEdit");
+  document.querySelector(".edit-content").classList.remove("showEdit");
+  alertBerhasilSave.classList.add("active");
+  document.querySelector(".alertBerhasilSave p").textContent =
+    "Soal berhasil disimpan ke dalam penyimpanan";
+  setTimeout(() => {
+    alertBerhasilSave.classList.remove("active");
+  }, 3000);
+
   let succesInputText = (succesInput.textContent = "Game Storage Full 🔒");
   let succesInputColor = (succesInput.style.background = "#f31414");
   localStorage.setItem(`succesInputText`, succesInputText);
   localStorage.setItem(`succesInputColor`, succesInputColor);
+}
 
-  for (let i = 0; i < words.length; i++) {
-    const storedText = localStorage.getItem(`replacementText${i}`);
-    if (storedText) {
-      words[i] = storedText;
-      nameSkinPlayer[i].textContent = storedText;
-      cursorName[i].textContent = storedText;
-      if (i === 0) {
-        document.querySelector(".player").textContent = storedText;
-      }
-    }
-  }
-
+window.addEventListener("DOMContentLoaded", () => {
   const savesuccesInputText = localStorage.getItem(`succesInputText`);
   if (savesuccesInputText) {
     succesInput.textContent = savesuccesInputText;
@@ -584,7 +554,7 @@ function editContent(event) {
       pertanyaan[14].jawaban[o] = storedOption14;
     }
   }
-}
+});
 
 const reset = document.querySelector("#reset");
 reset.onclick = () => {
