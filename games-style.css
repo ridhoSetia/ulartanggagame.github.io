@@ -586,7 +586,7 @@ input[name="trueOption"]:focus {
   border-radius: 5px;
   font-size: 14px;
   opacity: 0;
-  transition: opacity 0.3s 0.4s ease;
+  transition: opacity 0.3s 0.3s ease;
   z-index: 1;
   top: 0;
   right: 0;
@@ -595,7 +595,7 @@ input[name="trueOption"]:focus {
 
 .hover-element:hover .hover-text {
   opacity: 1;
-  transition: opacity 0.3s 0.4s ease;
+  transition: opacity 0.3s 0.1s ease;
 }
 
 .hover-text-b {
@@ -606,7 +606,7 @@ input[name="trueOption"]:focus {
   border-radius: 5px;
   font-size: 14px;
   opacity: 0;
-  transition: opacity 0.3s 0.4s ease;
+  transition: opacity 0.3s 0.3s ease;
   z-index: 3;
   top: 0;
   left: 0;
@@ -615,7 +615,7 @@ input[name="trueOption"]:focus {
 
 .hover-element-b:hover .hover-text-b {
   opacity: 1;
-  transition: opacity 0.3s 0.4s ease;
+  transition: opacity 0.3s 0.1s ease;
 }
 /* styling choose skin */
 
@@ -950,9 +950,17 @@ input[name="trueOption"]:focus {
   align-items: center;
   justify-content: center;
 }
+.congratulations img {
+  position: absolute;
+  height: 90%;
+  z-index: -1;
+  filter: drop-shadow(0 0 10px #000);
+  margin-bottom: 20px;
+}
 .congratulations div {
   color: #f45050;
   font-size: 30px;
+  background: #feeee7;
 }
 
 .video-explain {

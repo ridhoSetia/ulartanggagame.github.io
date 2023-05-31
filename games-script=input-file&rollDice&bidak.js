@@ -71,24 +71,6 @@ function checkCollision(box, index) {
   }
 }
 
-// Fungsi untuk menampilkan pesan selamat
-function showCongratulations(boxNumber) {
-  const pesanJuara = [
-    "Selamat kepada Andi",
-    "Keren sekali Saiful",
-    "Kamu Hebat Herman",
-    "Congratulations Dani",
-    "Ridho adalah juaranya!",
-  ];
-  setTimeout(() => {
-    const message = document.createElement("div");
-    message.className = "selamat" + boxNumber;
-    message.textContent = pesanJuara[boxNumber - 1];
-    document.querySelector(".congratulations").appendChild(message);
-    document.querySelector(".congratulations").style.display = "flex";
-  }, 500);
-}
-
 // loop untuk menambahkan event listener ke setiap kotak
 boxes.forEach(function (box, index) {
   box.element.addEventListener("mousedown", function (event) {
@@ -471,13 +453,23 @@ for (let i = players.length - 1; i >= 0; i--) {
   }
 }
 
+// Fungsi untuk menampilkan pesan selamat
+function showCongratulations(boxNumber) {
+  setTimeout(() => {
+    const message = document.createElement("div");
+    message.className = "selamat" + boxNumber;
+    message.textContent = `Selamat kepada ${words[boxNumber - 1]}`;
+    document.querySelector(".congratulations").appendChild(message);
+    document.querySelector(".congratulations").style.display = "flex";
+  }, 500);
+}
+
 const savedWords = localStorage.getItem("words");
 const savedColor = localStorage.getItem("color");
 
 if (savedWords) {
   words = JSON.parse(savedWords);
 }
-
 if (savedColor) {
   color = JSON.parse(savedColor);
 }
