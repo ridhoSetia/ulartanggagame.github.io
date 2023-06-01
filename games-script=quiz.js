@@ -9,6 +9,7 @@ waktuMundur.volume = 0.2;
 
 function playCountDownTimeSfx() {
   waktuMundur.play();
+  waktuMundur.loop = true;
 }
 function stopCountDownTimeSfx() {
   waktuMundur.pause();
@@ -111,26 +112,22 @@ let pertanyaan = [
   },
   //   I
   {
-    soal: "Klub sepak bola mana yang memenangkan Liga Primer Inggris pada musim 2020-2021?",
-    jawaban: [
-      "a) Manchester United",
-      "b) Liverpool",
-      "c) Manchester City",
-      "d) Chelsea",
-    ],
-    jawabanBenar: "c) Manchester City",
+    soal: "Pidana bagi orang yang melanggar pasal 76C berada dalam Undang-Undang nomor 35 Tahun 2014 Pasal berapa?",
+    jawaban: ["a.	Pasal 79", "b.	Pasal 54", "c.	Pasal 80", "d.	Pasal 81"],
+    jawabanBenar: "c.	Pasal 80",
   },
   //   J
   {
-    soal: "Siapakah atlet renang pria yang memegang rekor medali emas Olimpiade terbanyak?",
+    soal: "Undang-Undang Nomor 35 Tahun 2014 Pasal 76C berbunyi...",
     jawaban: [
-      "a) Michael Phelps",
-      "b) Ian Thorpe",
-      "c) Mark Spitz",
-      "d) Ryan Lochte",
+      "a.	Setiap Anak dilarang melakukan atau menyuruh melakukan kekerasan",
+      "b.	Setiap Orang dilarang menempatkan, membiarkan, melakukan, menyuruh melakukan, atau turut serta melakukan kekerasan terhadap anak",
+      "c.	Setiap Anak dilarang melakukan kekerasan terhadap sesama",
+      "d.	Setiap Orang dilarang melakukan atau membiarkan anak melakukan kekerasan",
     ],
-    jawabanBenar: "a) Michael Phelps",
-  }, // A
+    jawabanBenar:
+      "b.	Setiap Orang dilarang menempatkan, membiarkan, melakukan, menyuruh melakukan, atau turut serta melakukan kekerasan terhadap anak",
+  }, // K
   {
     soal: "Bullying terbagi menjadi tiga, kecuali...",
     jawaban: [
@@ -141,7 +138,7 @@ let pertanyaan = [
     ],
     jawabanBenar: "c.	Bullying candaan",
   },
-  //   B
+  //   L
   {
     soal: "Bullying yang terjadi di media sosial disebut juga dengan?",
     jawaban: [
@@ -152,18 +149,18 @@ let pertanyaan = [
     ],
     jawabanBenar: "b.	Cyberbullying",
   },
-  //   C
+  //   M
   {
-    soal: "Siapakah penemu bola lampu?",
+    soal: "“Setiap Anak berhak mendapatkan perlindungan di satuan pendidikan dari kejahatan seksual dan Kekerasan yang dilakukan oleh pendidik, tenaga kependidikan, sesama peserta didik, dan/atau pihak lain.” merupakan isi dari...",
     jawaban: [
-      "Thomas Edison",
-      "Alexander Graham Bell",
-      "Nikola Tesla",
-      "Danang",
+      "a.	Undang-Undang Nomor 35 Tahun 2014 Pasal 9 Ayat 1a",
+      "b.	Undang-Undang Nomor 35 Tahun 2009  Pasal 12 Ayat 1",
+      "c.	Undang-Undang Nomor 19 tahun 2019 Pasal 10 Ayat 1",
+      "d.	Undang-Undang Nomor 1 Tahun 2022 Pasal 9 Ayat 1",
     ],
-    jawabanBenar: "Thomas Edison",
+    jawabanBenar: "a.	Undang-Undang Nomor 35 Tahun 2014 Pasal 9 Ayat 1a",
   },
-  //   D
+  //   N
   {
     soal: "Apa yang harus kita lakukan jika kita melihat tindakan bullying di sekitar kita?",
     jawaban: [
@@ -174,7 +171,7 @@ let pertanyaan = [
     ],
     jawabanBenar: "d. Melerai dan melapor kepada orang dewasa",
   },
-  //   E
+  //   O
   {
     soal: "Siti mendapatkan perkataan yang menghina dirinya di sekolah, kasus ini dapat disebut",
     jawaban: [
@@ -212,9 +209,7 @@ function showQuestion() {
     clearTimeout(timerId);
   }
 
-  setTimeout(() => {
-    playCountDownTimeSfx();
-  }, 300);
+  playCountDownTimeSfx();
 
   // Menunggu 21 detik sebelum menyembunyikan kotak pertanyaan
   timerId = setTimeout(() => {
@@ -226,7 +221,7 @@ function showQuestion() {
     whoosh();
     // Menyembunyikan kotak pertanyaan
     hideQuestionBox();
-  }, 21000);
+  }, 30000);
 }
 
 // Function untuk menghentikan timer
@@ -290,10 +285,10 @@ function cekJawaban() {
   result.classList.add("on");
 
   if (jawabanUser == pertanyaan[nomorSoal].jawabanBenar) {
-    result.innerHTML = "Benar! naik ke tangga";
+    result.innerHTML = "Benar!";
     isTrue();
   } else {
-    result.innerHTML = "Salah! turun sampai ekor ular";
+    result.innerHTML = "Salah!";
     isFalse();
   }
 
@@ -565,10 +560,3 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-
-const reset = document.querySelector("#reset");
-reset.onclick = () => {
-  localStorage.clear();
-  // Refresh halaman untuk memuat ulang nilai-nilai default
-  window.location.reload();
-};

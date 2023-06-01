@@ -1,7 +1,7 @@
 function pop() {
   const pop = new Audio("sfx/pop.mp3");
   pop.play();
-  pop.volume = 0.3;
+  pop.volume = 0.2;
 }
 
 function klik() {
@@ -221,20 +221,6 @@ closeCard.onclick = () => {
   card.classList.remove("flip");
 };
 
-const parentElement = document.querySelector(".flex-point");
-const childElements = parentElement.children;
-
-// fungsi untuk mengacak urutan child element secara acak
-function shuffleChildren() {
-  for (let i = childElements.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    parentElement.insertBefore(childElements[j], childElements[i]);
-  }
-}
-
-// panggil fungsi di atas setiap kali halaman dimuat ulang
-window.onload = shuffleChildren();
-
 // Mengambil semua elemen input
 const progressInput = document.querySelectorAll('input[type="text"]');
 const questionInput = document.querySelectorAll('textarea[name="pertanyaan"]');
@@ -447,3 +433,38 @@ function saveTimer() {
 mulai.addEventListener("click", startTimer);
 startBtn.addEventListener("click", startTimer);
 stopBtn.addEventListener("click", stopTimer);
+
+const parentElement = document.querySelector(".flex-point");
+const childElements = Array.from(parentElement.children);
+
+// fungsi untuk mengacak urutan child element secara acak
+function shuffleChildren() {
+  for (let i = childElements.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    parentElement.insertBefore(childElements[j], childElements[i]);
+  }
+}
+
+// panggil fungsi di atas setiap kali halaman dimuat ulang
+window.onload = shuffleChildren();
+
+// program reset localStorage
+const setting = document.querySelector(".fa.fa-cog");
+const menuSetting = document.querySelector(".menu-reset");
+setting.onclick = () => {
+  menuSetting.classList.toggle("active");
+};
+
+const resetSemua = document.querySelector("#reset-semua");
+const resetGameMode = document.querySelector("#reset-game-mode");
+const resetPemain = document.querySelector("#reset-jumlah-pemain");
+// const resetPermainan = document.querySelector("#reset-permainan");
+
+resetSemua.onclick = () => {
+  localStorage.clear();
+  window.location.reload();
+};
+resetGameMode.onclick = () => {
+  localStorage.removeItem("closeShowGame");
+  window.location.reload();
+};

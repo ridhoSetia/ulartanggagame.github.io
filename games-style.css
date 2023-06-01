@@ -106,16 +106,16 @@ p.explain {
   font-size: 18px;
 }
 .pilihBerapaPlayer input[name="pilihPlayer"]:nth-child(2):before {
-  content: "2 Player";
+  content: "2 Pemain";
 }
 .pilihBerapaPlayer input[name="pilihPlayer"]:nth-child(3):before {
-  content: "3 Player";
+  content: "3 Pemain";
 }
 .pilihBerapaPlayer input[name="pilihPlayer"]:nth-child(4):before {
-  content: "4 Player";
+  content: "4 Pemain";
 }
 .pilihBerapaPlayer input[name="pilihPlayer"]:nth-child(5):before {
-  content: "5 Player";
+  content: "5 Pemain";
 }
 .pilihBerapaPlayer input[name="pilihPlayer"]:checked {
   background: #f45050;
@@ -225,7 +225,7 @@ p.explain {
 
 .alertBerhasilSave {
   background: #feeee7;
-  width: 95%;
+  width: 90%;
   height: auto;
   border-radius: 5px;
   position: fixed;
@@ -241,7 +241,7 @@ p.explain {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 15px;
   color: #f45050;
   margin: 10px;
 }
@@ -296,7 +296,7 @@ p.explain {
 
 .fas.fa-edit {
   position: fixed;
-  margin: 20px;
+  margin: 15px;
   right: 0;
   top: 0;
   color: #f45050;
@@ -311,7 +311,7 @@ p.explain {
 
 .fas.fa-book {
   position: fixed;
-  margin: 20px;
+  margin: 15px;
   left: 0;
   top: 0;
   color: #f45050;
@@ -587,36 +587,10 @@ input[name="trueOption"]:focus {
   cursor: pointer;
 }
 
-.setting {
-  margin: 10px 0;
-  width: 140px;
-  position: relative;
-  display: flex;
-  right: 0;
-}
-
-.smooth,
-.height {
-  margin: 5px 6px;
-  background: #262333;
-  padding: 5px;
-  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.5);
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  color: #fff;
-}
-.smooth:focus,
-.height:focus {
-  background: #fff;
-  color: #262333;
-}
-
 .hover-text {
   position: fixed;
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 14px;
@@ -626,6 +600,7 @@ input[name="trueOption"]:focus {
   top: 0;
   right: 0;
   margin: 60px;
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
 }
 
 .hover-element:hover .hover-text {
@@ -635,8 +610,8 @@ input[name="trueOption"]:focus {
 
 .hover-text-b {
   position: fixed;
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 14px;
@@ -646,12 +621,138 @@ input[name="trueOption"]:focus {
   top: 0;
   left: 0;
   margin: 60px;
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
 }
 
 .hover-element-b:hover .hover-text-b {
   opacity: 1;
   transition: opacity 0.3s 0.1s ease;
 }
+
+.hover-text-v {
+  position: fixed;
+  background-color: #fff;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s 0.3s ease;
+  z-index: 3;
+  bottom: 0;
+  right: 0;
+  margin: 55px;
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
+}
+
+.hover-element-v:hover .hover-text-v {
+  opacity: 1;
+  transition: opacity 0.3s 0.1s ease;
+}
+
+.hover-text-s {
+  position: fixed;
+  background-color: #fff;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s 0.3s ease;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  margin: 55px;
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
+}
+
+.menu-reset {
+  position: fixed;
+  background-color: #feeee7;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  display: none;
+  transition: opacity 0.3s 0.3s ease;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  margin: 90px 15px;
+  box-shadow: 0 5px 15px rgb(0, 0, 0);
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.menu-reset.active {
+  display: flex;
+}
+.menu-reset button {
+  margin: 5px 0;
+  font-size: 18px;
+  border-radius: 3px;
+  border: none;
+  background: #f45050;
+  padding: 2px;
+  cursor: pointer;
+  color: #fff;
+}
+.menu-reset button:hover {
+  background: #ff0000;
+}
+
+.fa.fa-cog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: #f45050;
+  background: #feeee7;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  margin: 15px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgb(0, 0, 0);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.hover-element-s:hover .hover-text-s {
+  opacity: 1;
+  transition: opacity 0.3s 0.1s ease;
+}
+
+.setting {
+  margin: 10px 0;
+  width: 140px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  right: 0;
+}
+
+.setting .smooth,
+.setting .height {
+  margin: 0 5px;
+  background: #262333;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.5);
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #fff;
+}
+.setting .smooth:hover,
+.setting .height:hover {
+  background: #fff;
+  color: #262333;
+}
+
 /* styling choose skin */
 
 .chooseSkin {
@@ -889,7 +990,7 @@ input[name="trueOption"]:focus {
   cursor: pointer;
   border: 5px solid #feeee7;
 }
-.open:active {
+.open:focus {
   transform: translate(-50%, -140px);
   box-shadow: 0 0 0 #feeee7;
 }
@@ -916,7 +1017,7 @@ input[name="trueOption"]:focus {
 }
 
 .volume {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   margin: 15px;
@@ -929,7 +1030,8 @@ input[name="trueOption"]:focus {
   z-index: 1;
   cursor: pointer;
   background: #feeee7;
-  color: #1e1c2a;
+  color: #f45050;
+  box-shadow: 0 5px 15px rgb(0, 0, 0);
 }
 
 .board {
@@ -983,17 +1085,25 @@ input[name="trueOption"]:focus {
   display: none;
   z-index: 20;
   display: none;
-  align-items: center;
-  justify-content: center;
+  background-image: url(img/bg-champions.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
 }
 .congratulations img {
-  position: absolute;
-  height: 90%;
+  width: 100px;
+  height: 100px;
   z-index: -1;
-  filter: drop-shadow(0 0 10px #000);
   margin-bottom: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .congratulations div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #f45050;
   font-size: 30px;
   background: #feeee7;
@@ -1046,8 +1156,8 @@ button:focus {
   top: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  width: 55px;
-  height: 55px;
+  width: 65px;
+  height: 65px;
   border: 5px solid #252525;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
@@ -1055,10 +1165,10 @@ button:focus {
 }
 
 #rollButton {
-  margin-top: 105px;
+  margin-top: 125px;
   border: none;
   padding: 5px;
-  font-size: 15px;
+  font-size: 20px;
   border-radius: 8px;
   background: #e20000;
   display: flex;
@@ -1302,6 +1412,9 @@ button:focus {
   color: #8bc34a;
   content: "15";
 }
+.flex-point button:nth-child(16) {
+  display: none;
+}
 
 .questionShadow {
   top: 0;
@@ -1326,7 +1439,7 @@ button:focus {
   margin-top: 5px;
   margin-bottom: 5px;
   border-radius: 5px;
-  animation: waktuMundur 21s linear;
+  animation: waktuMundur 30s linear;
 }
 
 @keyframes waktuMundur {

@@ -1,7 +1,7 @@
 function popIp() {
   const popIp = new Audio("sfx/pop.mp3");
   popIp.play();
-  popIp.volume = 0.3;
+  popIp.volume = 0.2;
 }
 
 function klik() {
@@ -403,6 +403,23 @@ for (let i = players.length - 1; i >= 0; i--) {
     const cursorPlayer = document.querySelector(`#${player.cursor}`);
     cursorPlayer.style.display = savedCursorPlayer;
   }
+  resetPemain.onclick = () => {
+    localStorage.removeItem(`words`);
+    localStorage.removeItem(`color`);
+    localStorage.removeItem(`closePick`);
+
+    for (let i = 0; i < players.length; i++) {
+      const playerId = players[i].id;
+      localStorage.removeItem(`skinPlayer${playerId}`);
+      localStorage.removeItem(`cursorPlayer${playerId}`);
+    }
+
+    localStorage.removeItem(`remove3`);
+    localStorage.removeItem(`remove4`);
+    localStorage.removeItem(`remove5`);
+
+    window.location.reload();
+  };
 }
 
 // Fungsi untuk menampilkan pesan selamat
@@ -412,7 +429,7 @@ function showCongratulations(boxNumber) {
     message.className = "selamat" + boxNumber;
     message.textContent = `Selamat kepada ${words[boxNumber - 1]}`;
     document.querySelector(".congratulations").appendChild(message);
-    document.querySelector(".congratulations").style.display = "flex";
+    document.querySelector(".congratulations").style.display = "block";
   }, 500);
 }
 

@@ -107,6 +107,24 @@
       </div>
     </div>
 
+    <div class="hover-element-s">
+      <p><i class="fa fa-cog"></i></p>
+      <span class="hover-text-s">pengaturan</span>
+    </div>
+    <span class="menu-reset">
+      <button id="reset-semua">Reset permainan</button>
+      <button id="reset-game-mode">Pilih ulang jenis permainan</button>
+      <button id="reset-jumlah-pemain">Pilih ulang jumlah pemain</button>
+      <!-- <button id="reset-permainan">Reset permainan</button> -->
+      <div class="setting">
+        <button class="smooth">smooth</button>
+        <button class="height">medium</button>
+      </div>
+    </span>
+    <div class="hover-element-v">
+      <button class="volume"><i class="fas fa-volume-up"></i></button>
+      <span class="hover-text-v">Backsound</span>
+    </div>
     <div class="hover-element">
       <p><i class="fas fa-edit"></i></p>
       <span class="hover-text">Edit Konten</span>
@@ -537,19 +555,12 @@
           </form>
         </div>
       </div>
-      <center>
-        <button id="reset">Reset</button>
-      </center>
     </div>
 
     <center>
-      <h1 class="chooseSkin">Choose Skin</h1>
+      <h1 class="chooseSkin">Pilih Karakter</h1>
     </center>
     <center>
-      <div class="setting">
-        <button class="smooth">smooth</button>
-        <button class="height">medium</button>
-      </div>
     </center>
     <div class="flex-skin">
       <div class="playerSkin skinPlayer1">
@@ -660,7 +671,6 @@
       <button class="exit" onclick="exitFullscreen()">
         <i class="fas fa-arrow-left"></i>
       </button>
-      <button class="volume"><i class="fas fa-volume-up"></i></button>
       <div class="stopwatch">
         <span id="minutes">00</span>:<span id="seconds">00</span>
         <button id="stopBtn"><i class="fas fa-stop"></i></button>
@@ -694,6 +704,7 @@
         <button onclick="tampilPertanyaan(12)"></button>
         <button onclick="tampilPertanyaan(13)"></button>
         <button onclick="tampilPertanyaan(14)"></button>
+        <button onclick="tampilPertanyaan(15)"></button>
       </div>
       
       <div class="boxCard">
