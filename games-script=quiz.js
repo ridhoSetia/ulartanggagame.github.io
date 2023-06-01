@@ -132,20 +132,25 @@ let pertanyaan = [
     jawabanBenar: "a) Michael Phelps",
   }, // A
   {
-    soal: "Siapakah presiden pertama Indonesia?",
-    jawaban: ["Soekarno", "Jokowi", "SBY", "Gusdur"],
-    jawabanBenar: "Soekarno",
+    soal: "Bullying terbagi menjadi tiga, kecuali...",
+    jawaban: [
+      "a.	Bullying verbal",
+      "b.	Bullying non-verbal",
+      "c.	Bullying candaan",
+      "d.	Cyberbullying",
+    ],
+    jawabanBenar: "c.	Bullying candaan",
   },
   //   B
   {
-    soal: "Kapankah Indonesia merdeka?",
+    soal: "Bullying yang terjadi di media sosial disebut juga dengan?",
     jawaban: [
-      "17 Agustus 1945",
-      "15 Agustus 1945",
-      "19 Agustus 1945",
-      "Kemarin",
+      "a.	Bullying medsos ",
+      "b.	Cyberbullying",
+      "c.	Bullying ketikan",
+      "d.	Cybercrime",
     ],
-    jawabanBenar: "17 Agustus 1945",
+    jawabanBenar: "b.	Cyberbullying",
   },
   //   C
   {
@@ -160,20 +165,25 @@ let pertanyaan = [
   },
   //   D
   {
-    soal: "Kapankah Indonesia merdeka?",
+    soal: "Apa yang harus kita lakukan jika kita melihat tindakan bullying di sekitar kita?",
     jawaban: [
-      "17 Agustus 1945",
-      "15 Agustus 1945",
-      "19 Agustus 1945",
-      "Tahun lalu",
+      "a. Membiarkan bullying terjadi",
+      "b. Ikut membully",
+      "c. Bantu ketawa",
+      "d. Melerai dan melapor kepada orang dewasa",
     ],
-    jawabanBenar: "17 Agustus 1945",
+    jawabanBenar: "d. Melerai dan melapor kepada orang dewasa",
   },
   //   E
   {
-    soal: "Siapakah presiden pertama Indonesia?",
-    jawaban: ["Soekarno", "Jokowi", "SBY", "Puan"],
-    jawabanBenar: "Soekarno",
+    soal: "Siti mendapatkan perkataan yang menghina dirinya di sekolah, kasus ini dapat disebut",
+    jawaban: [
+      "a. Bullying non-verbal",
+      "b. Bullying verbal",
+      "c. Bullying omongan",
+      "d. Cyberbullying",
+    ],
+    jawabanBenar: "b. Bullying verbal",
   },
 ];
 

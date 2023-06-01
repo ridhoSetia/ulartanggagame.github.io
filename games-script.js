@@ -39,6 +39,24 @@ function openFullscreen() {
     const buttonResume = (buttonPlay.textContent = "Resume");
     localStorage.setItem("buttonResume", buttonResume);
   }, 500);
+
+  var storedDiceValue = localStorage.getItem("diceValue");
+  var storedcurrentWordIndex = localStorage.getItem("currentWordIndex");
+  var storedcurrentColorIndex = localStorage.getItem("currentColorIndex");
+
+  if (storedDiceValue) {
+    var dice = document.getElementById("dice");
+    dice.src = `img/Dadu${storedDiceValue}.png`;
+  }
+  rollButton.innerHTML = words[0];
+
+  if (storedcurrentWordIndex) {
+    rollButton.innerHTML = words[storedcurrentWordIndex - 1];
+  }
+
+  if (storedcurrentColorIndex) {
+    rollButton.style.background = color[storedcurrentColorIndex - 1];
+  }
 }
 const buttonPlay = document.querySelector(".open");
 

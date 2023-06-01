@@ -235,56 +235,27 @@ skinElements.forEach((element) => {
   }
 });
 
-// membuat sebuah array yang berisi kata-kata yang ingin ditampilkan
 let words = ["Player1", "Player2", "Player3", "Player4", "Player5"];
 let color = ["#e20000", "#1919e2", "#11e211", "#800080", "#00a5a7"];
 
-// membuat variabel untuk menunjukkan indeks kata saat ini
 let currentWordIndex = 0;
 let currentColorIndex = 0;
 
-// Mendefinisikan fungsi untuk menghasilkan angka acak dari 1 hingga 6
 function rollDice() {
   return Math.floor(Math.random() * 6) + 1;
 }
 
-// Mendefinisikan fungsi untuk mengambil elemen HTML dadu dan memperbarui gambarnya dengan nilai dadu yang baru
 function updateDice(value) {
   var dice = document.getElementById("dice");
   dice.src = "img/Dadu" + value + ".png";
 
-  // Menyimpan nilai value ke localStorage
   localStorage.setItem("diceValue", value);
 }
 
 document.querySelector(".showQuestion").disabled = true;
 
-// Mendapatkan elemen HTML tombol
 var rollButton = document.getElementById("rollButton");
 
-const pickrollDice = document.querySelector("#dice");
-pickrollDice.onclick = () => {
-  // mengubah teks tombol menjadi kata selanjutnya dalam array
-  rollButton.innerHTML = words[currentWordIndex];
-  rollButton.style.background = color[currentColorIndex];
-
-  // menambahkan satu ke indeks kata saat ini
-  currentWordIndex++;
-  currentColorIndex++;
-
-  // Menyimpan nilai indexWord ke localStorage
-  localStorage.setItem("currentWordIndex", currentWordIndex);
-
-  // Menyimpan nilai indexColor ke localStorage
-  localStorage.setItem("currentColorIndex", currentColorIndex);
-  // jika sudah mencapai kata terakhir, mengulang dari awal
-  if (currentWordIndex >= words.length) {
-    currentWordIndex = 0;
-  }
-  if (currentColorIndex >= color.length) {
-    currentColorIndex = 0;
-  }
-};
 // Mendefinisikan fungsi untuk mengklik tombol "kocok dadu"
 function rollButtonClick() {
   rollSound();
@@ -314,26 +285,7 @@ function rollButtonClick() {
   }, interval);
 }
 
-// Mendapatkan nilai rollInterval dari localStorage
-var storedDiceValue = localStorage.getItem("diceValue");
-var storedcurrentWordIndex = localStorage.getItem("currentWordIndex");
-var storedcurrentColorIndex = localStorage.getItem("currentColorIndex");
-
-// Menggunakan nilai storedrollInterval jika ada
-if (storedDiceValue) {
-  var dice = document.getElementById("dice");
-  dice.src = `img/Dadu${storedDiceValue}.png`;
-}
-
-if (storedcurrentWordIndex) {
-  rollButton.innerHTML = words[storedcurrentWordIndex - 1];
-}
-if (storedcurrentColorIndex) {
-  rollButton.style.background = color[storedcurrentColorIndex - 1];
-}
-
 // Mengaitkan fungsi rollButtonClick dengan tombol "kocok dadu"
-var rollButton = document.getElementById("rollButton");
 rollButton.addEventListener("click", rollButtonClick);
 
 const players = [
@@ -524,9 +476,6 @@ function editName(event) {
     nameSkinPlayer[index].textContent = replacementText;
     cursorName[index].textContent = replacementText;
     localStorage.setItem(`replacementText${index}`, replacementText);
-    if (index === "0") {
-      document.querySelector(".player").textContent = replacementText;
-    }
   });
   userEdit.classList.remove("fa-times");
   document.querySelector(".user-experience").classList.remove("showEdit");
@@ -551,15 +500,64 @@ window.addEventListener("DOMContentLoaded", () => {
   if (savedRemove5 === "removed") {
     inputNama5.remove();
   }
+  const savedRemoveInput = localStorage.getItem("remove1");
+  const savedRemoveVideo = localStorage.getItem("remove2");
+  if (savedRemoveInput === "removed") {
+    document.querySelector(".editVideo").remove();
+  }
+  if (savedRemoveVideo === "removed") {
+    document.querySelector(".video-explain").remove();
+  }
   for (let i = 0; i < words.length; i++) {
     const storedText = localStorage.getItem(`replacementText${i}`);
     if (storedText) {
       words[i] = storedText;
       nameSkinPlayer[i].textContent = storedText;
       cursorName[i].textContent = storedText;
-      if (i === 0) {
-        document.querySelector(".player").textContent = storedText;
-      }
     }
   }
 });
+
+function pickRollDice() {
+  if (currentWordIndex >= words.length) {
+    currentWordIndex = 0;
+  }
+  if (currentColorIndex >= color.length) {
+    currentColorIndex = 0;
+  }
+
+  rollButton.innerHTML = words[currentWordIndex];
+  rollButton.style.background = color[currentColorIndex];
+
+  currentWordIndex++;
+  currentColorIndex++;
+
+  localStorage.setItem("currentWordIndex", currentWordIndex);
+  localStorage.setItem("currentColorIndex", currentColorIndex);
+}
+
+const inputVideo = document.getElementById("input-file-video");
+const videoElement = document.querySelector(".video-explain video");
+
+inputVideo.addEventListener("submit", () => {
+  const file = inputVideo.files[0];
+  const videoURL = URL.createObjectURL(file);
+
+  videoElement.src = videoURL;
+  localStorage.setItem("videoUrl", videoURL);
+});
+
+const savedVideoUrl = localStorage.getItem("videoUrl");
+if (savedVideoUrl) {
+  videoElement.src = savedVideoUrl;
+}
+
+const removeVideo = document.querySelector(".removeVideo");
+removeVideo.onclick = () => {
+  document.querySelector(".editVideo").remove();
+  document.querySelector(".video-explain").remove();
+  localStorage.removeItem("remove1");
+  localStorage.setItem("remove1", "removed");
+  localStorage.removeItem("remove2");
+  localStorage.setItem("remove2", "removed");
+};

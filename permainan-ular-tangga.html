@@ -147,6 +147,13 @@
           </form>
           <form id="myForm" onsubmit="editContent(event)">
             <div class="edit-question">
+              <div class="editVideo">
+              <label for="input-file-video" class="inputVideo">
+                Video Penjelasan : 
+                <input type="file" name="video" id="input-file-video">
+              </label>
+              <div class="removeVideo">X</div>
+            </div>
               <label for="question"
                 >pertanyaan A :
                 <textarea name="pertanyaan" data-question="0"></textarea>
@@ -541,7 +548,7 @@
     <center>
       <div class="setting">
         <button class="smooth">smooth</button>
-        <button class="height">height</button>
+        <button class="height">medium</button>
       </div>
     </center>
     <div class="flex-skin">
@@ -661,8 +668,8 @@
       </div>
       <div class="rollDice">
 
-        <img id="dice" src="img/Dadu1.png" alt="roll-dice" />
-        <button id="rollButton"><p class="player">Player1</p></button>
+        <img id="dice" src="img/Dadu1.png" alt="roll-dice" onclick="pickRollDice()"/>
+        <button id="rollButton"><p class="player"></p></button>
       </div>
 
       <div class="objek" id="cursor5" data-sentuhan="5"><p class="cursorName nameColor5">Player5</p></div>

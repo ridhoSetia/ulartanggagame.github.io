@@ -425,7 +425,7 @@ p.explain {
 }
 
 .edit-name {
-  background: #f45050;
+  background: #f06c6c;
   padding: 10px;
   height: 100%;
 }
@@ -433,10 +433,13 @@ p.explain {
 .edit-question {
   padding: 10px;
   margin: 10px -10px;
-  background-color: #9e4784;
+  background-color: #b35998;
 }
 
 button {
+  font-family: "Acme", sans-serif;
+}
+input {
   font-family: "Acme", sans-serif;
 }
 
@@ -504,6 +507,38 @@ input[name="trueOption"]:focus {
   border-bottom: 3px solid #0de70d;
   background: rgb(255, 255, 255, 1);
   outline: none;
+}
+
+.editVideo {
+  display: flex;
+}
+.inputVideo {
+  display: block;
+  margin: 10px 0;
+}
+.inputVideo input[type="file"] {
+  background-color: #f1f1f1;
+  color: #333;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: block;
+  width: 200px;
+}
+.removeVideo {
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+  background: #ff0000;
+  height: 20px;
+  width: 20px;
+  top: 30px;
+  margin-left: 10px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 #select {
@@ -746,6 +781,7 @@ input[name="trueOption"]:focus {
   height: 100%;
   margin: 0 -50px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  z-index: 0;
 }
 
 /* Gaya tombol slide aktif */
