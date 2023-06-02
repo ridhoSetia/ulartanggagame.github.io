@@ -322,6 +322,12 @@ pointQuestion.forEach((pointQuestion) => {
 let succesInput = document.querySelector(".succesInput");
 
 function editContent(event) {
+  const file = inputVideo.files[0];
+  const videoURL = URL.createObjectURL(file);
+
+  videoElement.src = videoURL;
+  localStorage.setItem("videoUrl", videoURL);
+
   event.preventDefault(); // Mencegah halaman untuk refresh
   const inputQuestion = document.querySelectorAll(
     'textarea[name="pertanyaan"]'
@@ -560,3 +566,11 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+const inputVideo = document.getElementById("input-file-video");
+const videoElement = document.querySelector(".video-explain video");
+
+const savedVideoUrl = localStorage.getItem("videoUrl");
+if (savedVideoUrl) {
+  videoElement.src = savedVideoUrl;
+}

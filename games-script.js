@@ -253,11 +253,11 @@ for (let q = 0; q < questionInput.length; q++) {
 
 const smooth = document.querySelector(".smooth");
 smooth.onclick = () => {
-  board.style.backgroundImage = "url(img/board.png)";
+  board.style.backgroundImage = "url(img/papanUlarTangga-smooth.png)";
 };
 const height = document.querySelector(".height");
 height.onclick = () => {
-  board.style.backgroundImage = "url(img/board-hd.jpg)";
+  board.style.backgroundImage = "url(img/papanUlarTangga.png)";
 };
 
 const editQuestion = document.querySelector(".edit-question");

@@ -747,8 +747,8 @@ input[name="trueOption"]:focus {
   border-radius: 5px;
   color: #fff;
 }
-.setting .smooth:hover,
-.setting .height:hover {
+.setting .smooth:focus,
+.setting .height:focus {
   background: #fff;
   color: #262333;
 }
@@ -1162,6 +1162,10 @@ button:focus {
   border-radius: 15px;
   box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
   cursor: pointer;
+  transition: all 0.1s ease;
+}
+#dice:active {
+  box-shadow: 0 0 10px 3px #ff0000;
 }
 
 #rollButton {

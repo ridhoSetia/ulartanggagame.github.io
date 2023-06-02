@@ -536,6 +536,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function pickRollDice() {
+  klik();
   if (currentWordIndex >= words.length) {
     currentWordIndex = 0;
   }
@@ -551,22 +552,6 @@ function pickRollDice() {
 
   localStorage.setItem("currentWordIndex", currentWordIndex);
   localStorage.setItem("currentColorIndex", currentColorIndex);
-}
-
-const inputVideo = document.getElementById("input-file-video");
-const videoElement = document.querySelector(".video-explain video");
-
-inputVideo.addEventListener("submit", () => {
-  const file = inputVideo.files[0];
-  const videoURL = URL.createObjectURL(file);
-
-  videoElement.src = videoURL;
-  localStorage.setItem("videoUrl", videoURL);
-});
-
-const savedVideoUrl = localStorage.getItem("videoUrl");
-if (savedVideoUrl) {
-  videoElement.src = savedVideoUrl;
 }
 
 const removeVideo = document.querySelector(".removeVideo");
