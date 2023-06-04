@@ -5,7 +5,7 @@ showPoint.onclick = () => {
 };
 
 const waktuMundur = new Audio("sfx/countdown.mp3");
-waktuMundur.volume = 0.2;
+waktuMundur.volume = 0.5;
 
 function playCountDownTimeSfx() {
   waktuMundur.play();
@@ -34,81 +34,94 @@ function isFalse() {
 let pertanyaan = [
   // A
   {
-    soal: "Siapakah pemain basket NBA dengan jumlah poin tertinggi sepanjang masa?",
+    soal: "Dani merupakan siswa yang biasanya memiliki banyak teman, tetapi pada suatu hari ia di kucilkan teman-temannya karena manipulatif atau fitnah dari seseorang. Hal yang di alami Dani termasuk Bullying? ",
     jawaban: [
-      "a) Michael Jordan",
-      "b) LeBron James",
-      "c) Kobe Bryant",
-      "d) Kareem Abdul-Jabbar",
+      "a. Bullying prejudice ",
+      "b. Bullying fisik",
+      "c. Bullying verbal",
+      "d. Bullying relasional",
     ],
-    jawabanBenar: "d) Kareem Abdul-Jabbar",
+    jawabanBenar: "d. Bullying relasional",
   },
   //   B
   {
-    soal: "Negara mana yang menjadi juara Piala Dunia FIFA 2018?",
-    jawaban: ["a) Brasil", "b) Prancis", "c) Jerman", "d) Spanyol"],
-    jawabanBenar: "b) Prancis",
+    soal: "Berdasarkan pengetahuan yang sudah kamu ketahui mengenai cyberbullying, mana dari berikut ini termasuk contoh cyberbullying?",
+    jawaban: [
+      "a. Berbagi cerita lucu dengan teman di media sosial",
+      "b. Menyebarkan rumor dan menghina seseorang di media sosial",
+      "c. Mengirim pesan positif kepada teman secara online",
+      "d. menghina teman sekelas secara langsung",
+    ],
+    jawabanBenar: "b. Menyebarkan rumor dan menghina seseorang di media sosial",
   },
   //   C
   {
-    soal: "Siapakah penemu bola lampu?",
+    soal: "Sarah merupakan seorang siswi baru di SMA 9, suatu hari dia mendapatkan komentar jahat dan meme yang menghina penampilannya. Sarah merasa terpukul dan mulai merasa cemas dan tertekan.\n Apa yang bisa dilakukan Sarah untuk mengatasi cyberbullying yang dialaminya?",
     jawaban: [
-      "Thomas Edison",
-      "Alexander Graham Bell",
-      "Nikola Tesla",
-      "Danang",
+      "a. Membalas dengan komentar yang sama jahatnya kepada pelaku",
+      "b. Mengabaikan cyberbullying dan menghindari media sosial",
+      "c. Melaporkan cyberbullying ke pihak sekolah dan meminta bantuan dari guru atau orang tua",
+      "d. Berdiam diri dan tidak melakukan apapun",
     ],
-    jawabanBenar: "Thomas Edison",
+    jawabanBenar:
+      "c. Melaporkan cyberbullying ke pihak sekolah dan meminta bantuan dari guru atau orang tua",
   },
   //   D
   {
-    soal: "Kapankah Indonesia merdeka?",
+    soal: "Siapa pengaduan terdekat di sekolah jika kita mengalami bullying?",
     jawaban: [
-      "17 Agustus 1945",
-      "15 Agustus 1945",
-      "19 Agustus 1945",
-      "Tahun lalu",
+      "a.	Pedagang kantin",
+      "b.	Satpam",
+      "c.	Teman sebaya",
+      "d.	Bimbingan Konselling",
     ],
-    jawabanBenar: "17 Agustus 1945",
+    jawabanBenar: "d.	Bimbingan Konselling",
   },
   //   E
   {
-    soal: "Siapakah presiden pertama Indonesia?",
-    jawaban: ["Soekarno", "Jokowi", "SBY", "Puan"],
-    jawabanBenar: "Soekarno",
+    soal: "Bullying merupakan salah satu contoh dari? mengapa?",
+    jawaban: [
+      "a.	Perilaku terpuji, karena membuat kita senang",
+      "b.	Perilaku tercela, karena dapat merenggut masa depan seseorang ",
+      "c.	Perilaku mulia, karena bisa menyelamatkan masa deoan",
+      "d. Perilaku tercela, karena membuat kita merasa keren",
+    ],
+    jawabanBenar:
+      "b.	Perilaku tercela, karena dapat merenggut masa depan seseorang ",
   },
   // F
   {
-    soal: "Dalam tenis, siapa pemain yang memiliki rekor Grand Slam paling banyak?",
+    soal: "Di era modern ini, kita harus bijak dalam menggunakan social media, jangan sampai kita melakukan cyber bullying. Apa sih yang dimaksud dengan cyberbullying?",
     jawaban: [
-      "a) Roger Federer",
-      "b) Rafael Nadal",
-      "c) Novak Djokovic",
-      "d) Serena Williams",
+      "a.	Penindasan secara online",
+      "b.	Penindasan secara langsung",
+      "c.	Penindasan berkelanjutan",
+      "d.	Penindasan tercela",
     ],
-    jawabanBenar: "b) Rafael Nadal",
+    jawabanBenar: "a.	Penindasan secara online",
   },
   //   G
   {
-    soal: "Klub sepak bola mana yang menjadi juara Liga Champions UEFA pada musim 2020-2021?",
+    soal: "Bullying memiliki dampak yang sangat besar bagi korban, efek dari bullying yang paling sering terjadi adalah?",
     jawaban: [
-      "a) Real Madrid",
-      "b) Manchester City",
-      "c) Chelsea",
-      "d) Bayern Munich",
+      "a.	Membuat korban menjadi Bahagia",
+      "b.	Meningkatkan kepercayaan diri",
+      "c.	Korban dapat mengalami trauma dan takut bersosialisasi",
+      "d.	Mendapat ketidakadilan hukum",
     ],
-    jawabanBenar: "c) Chelsea",
+    jawabanBenar: "c.	Korban dapat mengalami trauma dan takut bersosialisasi",
   },
   //   H
   {
-    soal: "Siapa pemain sepak bola yang memenangkan Ballon d'Or 2021?",
+    soal: "Pengertian bullying non-verbal adalah?",
     jawaban: [
-      "a) Lionel Messi",
-      "b) Cristiano Ronaldo",
-      "c) Robert Lewandowski",
-      "d) Kylian Mbappé",
+      "a.	Bullying yang dilakukan langsung dengan kekerasan fisik",
+      "b.	Bullying dengan ekpresi menghina, mengejek, atau mengabaikan orang lain dengan sengaja",
+      "c.	Bullying yang terjadi di media sosial",
+      "d.	Bullying secara tidak langsung",
     ],
-    jawabanBenar: "Thomas Edison",
+    jawabanBenar:
+      "b.	Bullying dengan ekpresi menghina, mengejek, atau mengancam",
   },
   //   I
   {
@@ -129,7 +142,7 @@ let pertanyaan = [
       "b.	Setiap Orang dilarang menempatkan, membiarkan, melakukan, menyuruh melakukan, atau turut serta melakukan kekerasan terhadap anak",
   }, // K
   {
-    soal: "Bullying terbagi menjadi tiga, kecuali...",
+    soal: "Bullying memiliki banyak macam diantaranya adalah sebagai berikut, kecuali...",
     jawaban: [
       "a.	Bullying verbal",
       "b.	Bullying non-verbal",
@@ -140,14 +153,14 @@ let pertanyaan = [
   },
   //   L
   {
-    soal: "Bullying yang terjadi di media sosial disebut juga dengan?",
+    soal: "Bullying yang dilakukan dengan didasari pada prasangka pelaku terhadap seseorang dari ras, agama, atau suku dinamakan?",
     jawaban: [
       "a.	Bullying medsos ",
       "b.	Cyberbullying",
-      "c.	Bullying ketikan",
+      "c.	Prejudice bullying",
       "d.	Cybercrime",
     ],
-    jawabanBenar: "b.	Cyberbullying",
+    jawabanBenar: "c.	Prejudice bullying",
   },
   //   M
   {
@@ -162,7 +175,7 @@ let pertanyaan = [
   },
   //   N
   {
-    soal: "Apa yang harus kita lakukan jika kita melihat tindakan bullying di sekitar kita?",
+    soal: "Sebagai makhluk sosial, apa yang harus kita lakukan jika kita melihat tindakan bullying di sekitar kita?",
     jawaban: [
       "a. Membiarkan bullying terjadi",
       "b. Ikut membully",
@@ -209,7 +222,9 @@ function showQuestion() {
     clearTimeout(timerId);
   }
 
-  playCountDownTimeSfx();
+  setTimeout(() => {
+    playCountDownTimeSfx();
+  }, 1000);
 
   // Menunggu 21 detik sebelum menyembunyikan kotak pertanyaan
   timerId = setTimeout(() => {
@@ -221,7 +236,7 @@ function showQuestion() {
     whoosh();
     // Menyembunyikan kotak pertanyaan
     hideQuestionBox();
-  }, 30000);
+  }, 35000);
 }
 
 // Function untuk menghentikan timer

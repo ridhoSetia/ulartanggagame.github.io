@@ -70,7 +70,7 @@
     <div class="gameShowUlarTangga">
       <center>
         <div class="longLine"></div>
-        <h2>Select Your Favorite Mode</h2>
+        <h2>Pilih Tipe Permainan</h2>
       </center>
       <div class="ularTanggaContainer">
           <div class="boxUlarTangga" onclick="direct()">
@@ -107,16 +107,23 @@
         </ol>
       </div>
     </div>
-
+    <div class="alert-reset">
+      <div class="box-reset"><p>Kamu yakin ingin mereset
+        permainan?
+      </p>
+    <button id="reset-semua">Ya</button>
+    <button id="cancel">Tidak</button>
+  </div>
+  </div>
     <div class="hover-element-s">
       <p><i class="fa fa-cog"></i></p>
       <span class="hover-text-s">pengaturan</span>
     </div>
     <span class="menu-reset">
-      <button id="reset-semua">Reset permainan</button>
-      <button id="reset-game-mode">Pilih ulang jenis permainan</button>
+      <button id="reset-permainan">Reset permainan</button>
+      <button id="reset-game-mode">Pilih ulang tipe permainan</button>
       <button id="reset-jumlah-pemain">Pilih ulang jumlah pemain</button>
-      <!-- <button id="reset-permainan">Reset permainan</button> -->
+      
       <div class="setting">
         <button class="smooth">smooth</button>
         <button class="height">medium</button>
@@ -667,7 +674,13 @@
       </div>
       <div class="video-explain">
         <video controls controlsList="nodownload" src="Hal yang Harus Kamu Ketahui Tentang BULLYING.mp4" controls type="video/mp4"></video>
-        <div class="mulai">Mulai Permainan</div>
+      </div>
+      <button id="alert-mulai">Mulai Permainan</button>
+      <div class="mulai-permainan">
+      <div class="box-mulai"> Siap untuk mulai permainan?
+        <p><button class="mulai">Siap!</button>
+        <button class="belum">Belum</button></p>
+      </div>
       </div>
       <button class="exit" onclick="exitFullscreen()">
         <i class="fas fa-arrow-left"></i>
@@ -710,8 +723,8 @@
       
       <div class="boxCard">
         <div class="shakeCard">
-          <img class="front" src="img/cardFront1.jpeg" alt="card" />
-          <img class="back" src="img/cardBack1.jpeg" alt="card" />
+          <img class="front" src="img/cardFront1.png" alt="card" />
+          <img class="back" src="img/cardBack1.png" alt="card" />
         </div>
         <button id="closeCard">
           <p><i class="fas fa-times card"></i></p>
@@ -736,8 +749,18 @@
       </p>
       
     <div class="congratulations">
-      <img src="img/champions.png" alt="">
+      <div class="pemenangnya-adalah">
+        <h2>The Winner Is...</h2>
+      </div>
+    <div class="flex-congrats">
+      <img src="img/champions.png" alt="champions">
+        <button id="reset-semua" class="rst">Restart</button>
     </div>
+      <div class="quotes-day">
+      <p><i></i></p>
+    <div class="line"></div>
+  </div>
+  </div>
 
     </div>
 

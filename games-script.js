@@ -111,9 +111,8 @@ function playBacksoundMusic() {
   if (backsound.paused) {
     backsound.loop = true;
     backsound.play();
-    backsound.volume = 0.2;
+    backsound.volume = 0.1;
   } else {
-    backsound.currentTime = 0;
     backsound.pause();
   }
 }
@@ -161,15 +160,15 @@ card.onclick = () => {
 
 // Mendefinisikan fungsi untuk menghasilkan angka acak dari 1 hingga 6
 function rollCard() {
-  return Math.floor(Math.random() * 6) + 1;
+  return Math.floor(Math.random() * 8) + 1;
 }
 
 // Mendefinisikan fungsi untuk mengambil elemen HTML kartu dan memperbarui gambarnya dengan nilai kartu yang baru
 function updateCard(value) {
   var cardFront = document.querySelector(".front");
-  cardFront.src = "img/cardFront" + value + ".jpeg";
+  cardFront.src = "img/cardFront" + value + ".png";
   var cardBack = document.querySelector(".back");
-  cardBack.src = "img/cardBack" + value + ".jpeg";
+  cardBack.src = "img/cardBack" + value + ".png";
 }
 
 const boxCard = document.querySelector(".boxCard");
@@ -329,6 +328,8 @@ faBook.onclick = () => {
 
 const videoExplain = document.querySelector(".video-explain video");
 const mulai = document.querySelector(".mulai");
+const alertMulai = document.querySelector("#alert-mulai");
+const belum = document.querySelector(".belum");
 const removeBidaks = document.querySelectorAll(
   "#cursor1, #cursor2, #cursor3, #cursor4, #cursor5"
 );
@@ -336,7 +337,15 @@ const removeBidaks = document.querySelectorAll(
 removeBidaks.forEach((removeBidak) => {
   removeBidak.classList.add("remove");
 });
+alertMulai.onclick = () => {
+  document.querySelector(".mulai-permainan").style.display = "flex";
+};
+belum.onclick = () => {
+  document.querySelector(".mulai-permainan").style.display = "none";
+};
 mulai.onclick = () => {
+  alertMulai.style.display = "none";
+  document.querySelector(".mulai-permainan").style.display = "none";
   document.querySelector(".video-explain").style.display = "none";
   localStorage.setItem(
     "videoExplain",
@@ -363,6 +372,7 @@ if (savedremoveBidak === "true") {
     }, 2000);
   });
   document.querySelector(".video-explain").style.display = savedVideoExplain;
+  alertMulai.style.display = "none";
 }
 
 let minutes = 0;
@@ -430,7 +440,7 @@ function saveTimer() {
   localStorage.setItem("stopwatch", JSON.stringify(currentTime));
 }
 
-mulai.addEventListener("click", startTimer);
+mulai.addEventListener("click", shuffleChildren);
 startBtn.addEventListener("click", startTimer);
 stopBtn.addEventListener("click", stopTimer);
 
@@ -455,15 +465,39 @@ setting.onclick = () => {
   menuSetting.classList.toggle("active");
 };
 
-const resetSemua = document.querySelector("#reset-semua");
+// Fungsi untuk menghapus class "active" jika yang diklik bukan elemen ".fa.fa-cog"
+document.addEventListener("click", (event) => {
+  const targetElement = event.target;
+
+  // Cek apakah yang diklik bukan elemen ".fa.fa-cog" atau ".menu-reset"
+  if (
+    !targetElement.matches(".fa.fa-cog") &&
+    !targetElement.matches(".menu-reset")
+  ) {
+    setTimeout(() => {
+      menuSetting.classList.remove("active");
+    }, 200);
+  }
+});
+
+const resetSemua = document.querySelectorAll("#reset-semua");
 const resetGameMode = document.querySelector("#reset-game-mode");
 const resetPemain = document.querySelector("#reset-jumlah-pemain");
-// const resetPermainan = document.querySelector("#reset-permainan");
+const resetPermainan = document.querySelector("#reset-permainan");
 
-resetSemua.onclick = () => {
-  localStorage.clear();
-  window.location.reload();
+resetPermainan.onclick = () => {
+  document.querySelector(".alert-reset").style.display = "flex";
+  menuSetting.classList.remove("active");
 };
+document.querySelector("#cancel").onclick = () => {
+  document.querySelector(".alert-reset").style.display = "none";
+};
+resetSemua.forEach((reset) => {
+  reset.onclick = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
+});
 resetGameMode.onclick = () => {
   localStorage.removeItem("closeShowGame");
   window.location.reload();

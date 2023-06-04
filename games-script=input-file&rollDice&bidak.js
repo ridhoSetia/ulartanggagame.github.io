@@ -16,6 +16,17 @@ function rollSound() {
   roll.volume = 0.5;
 }
 
+const drumi = new Audio("sfx/drum.mp3");
+function drum() {
+  drumi.play();
+  drumi.currentTime = 2.2;
+}
+
+const champion = new Audio("sfx/champions.mp3");
+function champions() {
+  champion.play();
+}
+
 // array untuk menyimpan elemen kotak dan status dragging-nya
 let boxes = [
   {
@@ -422,15 +433,35 @@ for (let i = players.length - 1; i >= 0; i--) {
   };
 }
 
+const randomQuotes = [
+  '"Untuk menjadi seorang pemenang, kamu tidak selalu harus menindas yang kalah"',
+  '"Bijaklah dalam bermedia sosial, kadang kita tidak tahu dampak dari apa yang kita tulis pada seseorang"',
+];
 // Fungsi untuk menampilkan pesan selamat
 function showCongratulations(boxNumber) {
   setTimeout(() => {
+    drum();
+    setTimeout(() => {
+      champions();
+    }, 2800);
+    const quotesElement = document.querySelector(".quotes-day p i");
+    const randomIndex = Math.floor(Math.random() * randomQuotes.length);
+    quotesElement.textContent = randomQuotes[randomIndex];
     const message = document.createElement("div");
     message.className = "selamat" + boxNumber;
-    message.textContent = `Selamat kepada ${words[boxNumber - 1]}`;
-    document.querySelector(".congratulations").appendChild(message);
+    message.textContent = `${words[boxNumber - 1]}`;
+    document.querySelector(".flex-congrats").appendChild(message);
     document.querySelector(".congratulations").style.display = "block";
+    setTimeout(() => {
+      document.querySelector(".pemenangnya-adalah").style.display = "none";
+    }, 4500);
+    localStorage.setItem("champions", "win");
   }, 500);
+}
+
+const storedWin = localStorage.getItem("champions");
+if (storedWin === "win") {
+  document.querySelector(".congratulations").style.display = "block";
 }
 
 const savedWords = localStorage.getItem("words");
@@ -499,6 +530,8 @@ function editName(event) {
   document.querySelector("html").classList.remove("showEdit");
   document.querySelector(".edit-content").classList.remove("showEdit");
   document.querySelector(".alertBerhasilSave").classList.add("active");
+  document.querySelector(".alertBerhasilSave p").textContent =
+    "Nama berhasil disimpan ke dalam penyimpanan";
   setTimeout(() => {
     document.querySelector(".alertBerhasilSave").classList.remove("active");
   }, 3000);
