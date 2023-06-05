@@ -187,14 +187,15 @@ let pertanyaan = [
   },
   //   O
   {
-    soal: "Siti mendapatkan perkataan yang menghina dirinya di sekolah, kasus ini dapat disebut sebagai?",
+    soal: "Olvah Alhamid, finalis Puteri Indonesia, model dan motivational speaker. Saat SMA, Olvah Alhamid perempuan asal Timika, Papua Barat, pindah ke Surabaya, Jawa Timur untuk menempuh pendidikan di salah satu SMA terbaik di Indonesia. Namun ada peristiwa yang menimpanya saat berusia 16 tahun yang begitu mengguncang jiwanya. Olvah, siswi satu-satunya asal Papua di SMA saat itu, diolok-olok murid perempuan lain karena penampilan fisik dan warna kulitnya. Di tempat baru ini, Olvah remaja menghadapi lingkungan yang tidak kondusif. \n Berdasarkan kasus tersebut salah satu dampak dari perilaku yang dialami Olvah adalah...",
     jawaban: [
-      "a. Bullying non-verbal",
-      "b. Bullying verbal",
-      "c. Bullying fisik",
-      "d. Cyberbullying",
+      "a. Membuat senang korban bullying",
+      "b. Malas sekolah dan pura-pura sakit karena bullying tersebut",
+      "c. Pelaku menjadi sadar akan kesalahannya",
+      "d. Semakin bersemangat dalam bersekolah",
     ],
-    jawabanBenar: "b. Bullying verbal",
+    jawabanBenar:
+      "b. Malas sekolah dan pura-pura sakit karena bullying tersebut",
   },
 ];
 
