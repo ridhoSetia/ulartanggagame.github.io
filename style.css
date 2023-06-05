@@ -218,6 +218,9 @@ section {
 .cta i {
   margin-left: 10px;
 }
+.cta a {
+  margin: 0 5px;
+}
 
 footer {
   background-color: #feeee7;
