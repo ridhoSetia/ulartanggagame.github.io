@@ -374,14 +374,13 @@ p.explain {
   z-index: 3;
   top: 110%;
   left: 0;
-  display: block;
+  display: none;
   transition: all 0.3s ease;
-  opacity: 0;
 }
 
 .user-experience.showEdit {
   top: 0;
-  opacity: 1;
+  display: block;
 }
 
 .edit-content {
@@ -395,11 +394,11 @@ p.explain {
   transform: translate(-50%, -50%);
   margin-top: 10px;
   border: 5px solid #feeee7;
-  opacity: 0;
+  display: none;
 }
 .edit-content.showEdit {
   top: 50%;
-  opacity: 1;
+  display: block;
 }
 
 .edit-content::-webkit-scrollbar {
@@ -1619,7 +1618,7 @@ button:focus {
 .questionBox {
   background: #333;
   padding: 10px;
-  width: 80%;
+  width: 85%;
   height: auto;
   padding-bottom: 100px;
   display: none;

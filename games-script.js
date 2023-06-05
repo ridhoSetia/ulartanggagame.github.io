@@ -36,6 +36,23 @@ function openFullscreen() {
       board.msRequestFullscreen();
     }
 
+    // Fungsi untuk mengubah orientasi layar
+    if (screen.orientation.lock) {
+      screen.orientation.lock("landscape");
+    } else if (screen.lockOrientation) {
+      // Untuk Firefox
+      screen.lockOrientation("landscape");
+    } else if (screen.mozLockOrientation) {
+      // Untuk Firefox versi lama
+      screen.mozLockOrientation("landscape");
+    } else if (screen.webkitLockOrientation) {
+      // Untuk Chrome, Safari, dan Opera
+      screen.webkitLockOrientation("landscape");
+    } else if (screen.msLockOrientation) {
+      // Untuk Internet Explorer
+      screen.msLockOrientation("landscape");
+    }
+
     const buttonResume = (buttonPlay.textContent = "Resume");
     localStorage.setItem("buttonResume", buttonResume);
   }, 500);

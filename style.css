@@ -106,7 +106,7 @@ section {
   grid-template-columns: repeat(2, 2fr);
   grid-gap: 2rem;
   align-items: center;
-  padding-top: 5rem;
+  padding-top: 5.8rem;
 }
 .about-img img {
   max-width: 100%;
@@ -219,7 +219,7 @@ section {
   margin-left: 10px;
 }
 .cta a {
-  margin: 0 5px;
+  margin: 5px;
 }
 
 footer {

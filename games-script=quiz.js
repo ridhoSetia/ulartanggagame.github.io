@@ -45,26 +45,27 @@ let pertanyaan = [
   },
   //   B
   {
-    soal: "Berdasarkan pengetahuan yang sudah kamu ketahui mengenai cyberbullying, mana dari berikut ini termasuk contoh cyberbullying?",
+    soal: "Budi merupakan siswa dari SMA 7, setiap hari ia sering diejek oleh teman-temannya hanya karena menganut agama yang berbeda. Jika hal semacam ini dilakukan secara terus menerus maka dapat mengakibatkan...",
     jawaban: [
-      "a. Berbagi cerita lucu dengan teman di media sosial",
-      "b. Menyebarkan rumor dan menghina seseorang di media sosial",
-      "c. Mengirim pesan positif kepada teman secara online",
-      "d. menghina teman sekelas secara langsung",
+      "a. Semakin akrab nya pertemanan",
+      "b. Bullying yang awalnya berupa kata-kata bisa menjadi lebih parah, seperti memukul",
+      "c. Munculnya sifat saling menyayangi",
+      "d. Timbulnya sikap nasionalisme",
     ],
-    jawabanBenar: "b. Menyebarkan rumor dan menghina seseorang di media sosial",
+    jawabanBenar:
+      "b. Bullying yang awalnya berupa kata-kata bisa menjadi lebih parah, seperti memukul",
   },
   //   C
   {
-    soal: "Sarah merupakan seorang siswi baru di SMA 9, suatu hari dia mendapatkan komentar jahat dan meme yang menghina penampilannya. Sarah merasa terpukul dan mulai merasa cemas dan tertekan.\n Apa yang bisa dilakukan Sarah untuk mengatasi cyberbullying yang dialaminya?",
+    soal: "Sarah merupakan seorang siswi baru di SMA 9, suatu hari dia mendapatkan komentar SARA di media sosial nya. Sarah merasa terpukul dan mulai merasa cemas dan tertekan.\n Apa yang bisa dilakukan Sarah untuk mengatasi hal yang dialaminya?",
     jawaban: [
       "a. Membalas dengan komentar yang sama jahatnya kepada pelaku",
-      "b. Mengabaikan cyberbullying dan menghindari media sosial",
-      "c. Melaporkan cyberbullying ke pihak sekolah dan meminta bantuan dari guru atau orang tua",
+      "b. Mengabaikan komentar tersebut dan menghindari media sosial",
+      "c. Melaporkan komentar tersebut ke pihak sekolah dan meminta bantuan dari guru atau orang tua",
       "d. Berdiam diri dan tidak melakukan apapun",
     ],
     jawabanBenar:
-      "c. Melaporkan cyberbullying ke pihak sekolah dan meminta bantuan dari guru atau orang tua",
+      "c. Melaporkan komentar tersebut ke pihak sekolah dan meminta bantuan dari guru atau orang tua",
   },
   //   D
   {
@@ -121,7 +122,7 @@ let pertanyaan = [
       "d.	Bullying secara tidak langsung",
     ],
     jawabanBenar:
-      "b.	Bullying dengan ekpresi menghina, mengejek, atau mengancam",
+      "b.	Bullying dengan ekpresi menghina, mengejek, atau mengabaikan orang lain dengan sengaja",
   },
   //   I
   {
@@ -146,10 +147,10 @@ let pertanyaan = [
     jawaban: [
       "a.	Bullying verbal",
       "b.	Bullying non-verbal",
-      "c.	Bullying candaan",
+      "c.	Bullying redaksi",
       "d.	Cyberbullying",
     ],
-    jawabanBenar: "c.	Bullying candaan",
+    jawabanBenar: "c.	Bullying redaksi",
   },
   //   L
   {
@@ -186,11 +187,11 @@ let pertanyaan = [
   },
   //   O
   {
-    soal: "Siti mendapatkan perkataan yang menghina dirinya di sekolah, kasus ini dapat disebut",
+    soal: "Siti mendapatkan perkataan yang menghina dirinya di sekolah, kasus ini dapat disebut sebagai?",
     jawaban: [
       "a. Bullying non-verbal",
       "b. Bullying verbal",
-      "c. Bullying omongan",
+      "c. Bullying fisik",
       "d. Cyberbullying",
     ],
     jawabanBenar: "b. Bullying verbal",
@@ -336,12 +337,14 @@ pointQuestion.forEach((pointQuestion) => {
 
 let succesInput = document.querySelector(".succesInput");
 
+const inputVideo = document.getElementById("input-file-video");
+const videoElement = document.querySelector(".explain-video");
+
 function editContent(event) {
   const file = inputVideo.files[0];
   const videoURL = URL.createObjectURL(file);
 
   videoElement.src = videoURL;
-  localStorage.setItem("videoUrl", videoURL);
 
   event.preventDefault(); // Mencegah halaman untuk refresh
   const inputQuestion = document.querySelectorAll(
@@ -581,11 +584,3 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-
-const inputVideo = document.getElementById("input-file-video");
-const videoElement = document.querySelector(".video-explain video");
-
-const savedVideoUrl = localStorage.getItem("videoUrl");
-if (savedVideoUrl) {
-  videoElement.src = savedVideoUrl;
-}
