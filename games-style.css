@@ -21,47 +21,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-.screen-how-to-play {
-  background: rgb(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  z-index: 25;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.fa-book-open {
-  position: absolute;
-  display: block;
-  bottom: 20%;
-  color: #feeee7;
-  background: #f45050;
-  font-size: 25px;
-  padding: 15px;
-  border-radius: 5px;
-}
-p.explain {
-  color: #fff;
-  background: #f45050;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 20px;
-  font-size: 20px;
-}
-.how-play {
-  position: absolute;
-  padding: 20px 40px;
-  margin: 40px;
-  background: #feeee7;
-  width: 75%;
-  height: 65%;
-  overflow: auto;
-  z-index: 2;
-}
-
 .pilihBerapaPlayer {
   background: #feeee7;
   position: fixed;
@@ -179,6 +138,21 @@ p.explain {
   background: #feeee7;
   box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
 }
+.boxUlarTangga h3 {
+  color: #f45050;
+}
+.boxUlarTangga p {
+  margin: 5px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boxUlarTangga mark {
+  background: #f45050;
+  color: #fff;
+  padding: 0 5px;
+}
 .gameShowUlarTangga button:disabled {
   color: #fff;
   background: #f45050;
@@ -287,8 +261,12 @@ p.explain {
   margin-left: 15px;
 }
 .buku-panduan img {
-  margin-left: 15px;
-  width: 100px;
+  margin: 5px 0;
+  margin-left: 10px;
+  width: 150px;
+}
+.buku-panduan .imgPilih {
+  width: 300px;
 }
 
 .succesInput {
@@ -1114,6 +1092,16 @@ input[name="trueOption"]:focus {
   cursor: pointer;
 }
 
+.checkFinish {
+  background: #000;
+  position: absolute;
+  width: 23%;
+  height: 20%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+
 .finish {
   position: absolute;
   width: 60px;
@@ -1128,7 +1116,7 @@ input[name="trueOption"]:focus {
   background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
-  /* opacity: 0; */
+  display: none;
 }
 
 .congratulations {
@@ -1211,7 +1199,8 @@ input[name="trueOption"]:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 20px;
+  margin: 0 10%;
 }
 
 .video-explain {
@@ -1463,7 +1452,7 @@ button:focus {
   width: 100%;
   height: 100%;
   padding: 20px;
-  background: #643a6b;
+  background: #f3695f;
   display: none;
   z-index: 2;
 }
@@ -1501,6 +1490,7 @@ button:focus {
   cursor: pointer;
 }
 .flex-point button:hover {
+  scale: 1.1;
   box-shadow: 0 5px 10px rgb(0, 0, 0, 0.5);
 }
 
@@ -1592,7 +1582,7 @@ button:focus {
   margin-top: 5px;
   margin-bottom: 5px;
   border-radius: 5px;
-  animation: waktuMundur 34s 1s linear;
+  animation: waktuMundur 39s 1s linear;
 }
 
 @keyframes waktuMundur {
@@ -1698,9 +1688,9 @@ input[type="radio"]:checked {
 }
 
 #result {
-  color: #333;
-  background: #fff;
-  font-size: 35px;
+  color: #1e1c2a;
+  background: #feeee7;
+  font-size: 45px;
   padding: 25px;
   border-radius: 5px;
   position: absolute;
@@ -1713,10 +1703,30 @@ input[type="radio"]:checked {
   text-align: center;
   justify-content: center;
   align-items: center;
-  width: 85%;
+  width: auto;
   height: auto;
   box-shadow: none;
   opacity: 0;
+}
+.check-icon {
+  color: #0bb90b;
+  background: transparent;
+  border-radius: 50%;
+  font-size: 40px;
+  border: 5px solid #0bb90b;
+  padding: 10px;
+  margin-right: 10px;
+}
+#result .fa-times {
+  color: #ff0000;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 40px;
+  border: 5px solid #ff0000;
+  padding: 10px;
+  margin-right: 10px;
 }
 
 #result.on {
@@ -1752,11 +1762,11 @@ input[type="radio"]:checked {
   top: -40%;
   color: #f45050;
   background: #feeee7;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   padding: 5px;
   border-radius: 10px;
-  font-size: 70px;
+  font-size: 50px;
   margin: 10px 20px;
   cursor: pointer;
   z-index: 4;

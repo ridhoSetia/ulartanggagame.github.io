@@ -19,15 +19,11 @@ function stopCountDownTimeSfx() {
 function isTrue() {
   const isTrue = new Audio("sfx/yeay.mp3");
   isTrue.play();
-  isTrue.currentTime = 1.2;
-  isTrue.volume = 0.5;
 }
 
 function isFalse() {
   const isFalse = new Audio("sfx/ohno.mp3");
   isFalse.play();
-  isFalse.currentTime = 0.5;
-  isFalse.volume = 0.5;
 }
 
 // Array pertanyaan dan jawaban
@@ -238,7 +234,7 @@ function showQuestion() {
     whoosh();
     // Menyembunyikan kotak pertanyaan
     hideQuestionBox();
-  }, 35000);
+  }, 40000);
 }
 
 // Function untuk menghentikan timer
@@ -302,10 +298,10 @@ function cekJawaban() {
   result.classList.add("on");
 
   if (jawabanUser == pertanyaan[nomorSoal].jawabanBenar) {
-    result.innerHTML = "Benar!";
+    result.innerHTML = '<i class="fa fa-check check-icon"></i> Benar!';
     isTrue();
   } else {
-    result.innerHTML = "Salah!";
+    result.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i> Salah!';
     isFalse();
   }
 

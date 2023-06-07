@@ -24,229 +24,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        text-decoration: none;
-        box-sizing: border-box;
-        font-family: "Acme", sans-serif;
-        scroll-behavior: smooth;
-        letter-spacing: 0.5px;
-      }
-
-      :root {
-        --main-color: #f45050;
-        --text-color: #fff;
-        --bg-color: #1e1c2a;
-        --big-font: 3rem;
-        --h2-font: 1.6rem;
-        --p-font: 0.9rem;
-      }
-
-      ::selection {
-        background: var(--main-color);
-        color: #fff;
-      }
-
-      body {
-        color: var(--text-color);
-        background: var(--bg-color);
-      }
-
-      header {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        z-index: 10;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 30px 170px;
-        background: var(--bg-color);
-        box-shadow: 0 1px 20px 0 rgb(0, 0, 0, 0.5);
-      }
-
-      .logo img {
-        width: 185px;
-      }
-
-      .navbar {
-        display: flex;
-      }
-      .navbar a {
-        color: var(--text-color);
-        font-size: 1rem;
-        padding: 0 20px;
-        font-weight: 500;
-      }
-      .navbar a:hover {
-        color: var(--main-color);
-      }
-      #menu-icon {
-        font-size: 2rem;
-        cursor: pointer;
-        display: none;
-      }
-
-      section {
-        padding: 70px 17%;
-      }
-      .about {
-        display: grid;
-        /* grid-template-columns: repeat(2, 2fr); */
-        grid-gap: 2rem;
-        align-items: center;
-        padding-top: 5rem;
-      }
-      .about-img img {
-        max-width: 100%;
-        width: 480px;
-        height: auto;
-      }
-      .about-text span {
-        color: var(--main-color);
-        font-weight: 600;
-        font-size: 20px;
-      }
-      .about-text h2 {
-        font-size: var(--h2-font);
-      }
-      .about-text p {
-        margin: 1.8rem 0 1.8rem;
-        margin-bottom: -5rem;
-        line-height: 1.7;
-      }
-
-.heading span {
-  color: var(--main-color);
-  font-weight: 600;
-  font-size: 20px;
-}
-.heading h2 {
-  font-size: 30px;
-}
-      
-.menu-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-  grid-gap: 1.5rem;
-  align-items: center;
-}
-.box {
-  position: relative;
-  margin-top: 2rem;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #feeee7;
-  padding: 20px;
-  border-radius: 5px;
-}
-.box-img {
-  width: 220px;
-  height: 220px;
-}
-.box-img img {
-  width: 100%;
-  height: 100%;
-}
-.box h2 {
-  margin-top: 5px;
-  font-size: 1.3rem;
-  color: var(--bg-color);
-}
-.box h3 {
-  color: var(--bg-color);
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 2px 0 10px;
-}
-.box span {
-  font-size: var(--p-font);
-  font-weight: 600;
-  background: var(--main-color);
-  border-radius: 5px;
-}
-.box button {
-  border: none;
-  padding: 5px;
-  background: none;
-  color: #fff;
-  cursor: pointer;
-}
-.box button a {
-  color: #fff;
-}
-.box i {
-  background: var(--main-color);
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 25px;
-  padding: 7px 10px;
-  border-radius: 0 0 0 5px;
-}
-@media (max-width: 1560px) {
-  header {
-    padding: 15px 40px;
-  }
-  :root {
-    --big-font: 2.5rem;
-    --h2-font: 1.4rem;
-  }
-}
-
-@media (max-width: 1140px) {
-  section {
-    padding: 50px 8%;
-  }
-}
-
-@media (max-width: 720px) {
-  header {
-    padding: 10px 16px;
-  }
-  .home {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  section {
-    padding: 100px 7%;
-  }
-
-  #menu-icon {
-    display: initial;
-    color: var(--text-color);
-  }
-  header .navbar {
-    position: absolute;
-    top: 60px;
-    left: 100%;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background: #2b2640;
-    transition: 0.3s;
-    opacity: 0;
-    width: 100%;
-  }
-  header .navbar.open {
-    left: 0;
-    opacity: 1;
-  }
-  .navbar a {
-    padding: 1.5rem;
-    display: block;
-  }
-}
-    </style>
+    <link rel="stylesheet" href="artikel.css">
   </head>
   <body>
     <header>
@@ -257,6 +35,7 @@
 
       <ul class="navbar">
         <li><a href="index.html">Home</a></li>
+        <li><a href="materi-bullying.html">Materi Bullying</a></li>
       </ul>
     </header>
 
@@ -265,61 +44,56 @@
       <div class="about-text">
         <h2>
           Assalamualaikum wr. wb. <br />
-          Halo sahabat Sadar Hukum yang luar biasa!
+          Halo Pahlawan Anti Bullying!
         </h2>
         <p>
-          Dalam keberagaman yang kaya di Indonesia, kami, Ridho dan Aisyah,
-          hadir sebagai duta pelajar Sadar Hukum dari MAN 2 Kutai Kartanegara.
-          Kami menyadari bahwa negara kita ini memiliki banyak etnis dan budaya
+          Dalam keberagaman yang kaya di Indonesia, kami, Ridho Setiawan dan Aisyah Meylina Putri,
+          hadir sebagai duta pelajar Sadar Hukum dari MAN 2 Kutai Kartanegara.</p>
+          <p>Kami menyadari bahwa negara kita ini memiliki banyak etnis dan budaya
           yang beragam, dan hal ini menjadi kekuatan yang luar biasa bagi bangsa
           kita. Namun, sayangnya, keberagaman ini juga bisa menjadi sumber
           masalah jika tidak dikelola dengan baik. Terkadang, perbedaan etnis
           dan budaya ini bisa berujung pada tindakan diskriminasi dan bahkan
-          bullying di lingkungan sekolah. Bullying adalah perilaku yang kejam
+          bullying di lingkungan sekolah.</p>
+          <p>Bullying adalah perilaku yang kejam
           dan merendahkan seseorang secara fisik, verbal, atau psikologis, yang
           diarahkan kepada mereka yang dianggap lebih lemah. Kami sangat
-          prihatin dengan hal ini. Karena itulah, kami sebagai calon duta Sadar
+          prihatin dengan hal ini. </p>
+          <p>Karena itulah, kami sebagai calon duta Sadar
           Hukum ingin memperkenalkan sebuah inisiatif yang menarik, yaitu game
           berbasis website yang kami sebut TAMAN (Tangga Pertemanan Anti
-          Bullying). Tujuan kami adalah untuk mengedukasi tentang bahaya
+          Bullying). </p>
+          <p>Tujuan kami adalah untuk mengedukasi tentang bahaya
           bullying yang berkaitan dengan SARA di lingkungan sekolah. Website ini
           akan berisi aplikasi permainan yang seru, pertanyaan seputar anti
           bullying yang berkaitan dengan SARA, materi yang relevan tentang
           bullying dan SARA, serta komunitas TAMAN yang akan saling berbagi
           informasi tentang aplikasi game dan sosialisasi aturan terkait masalah
-          bullying yang berkaitan dengan SARA. Kami mengundang kalian semua
+          bullying yang berkaitan dengan SARA.</p> 
+          <p>Kami mengundang kalian semua
           untuk bergabung bersama kami dalam membangun TAMAN ini. Bersama-sama,
           kita bisa menjaga dan menghargai pertemanan, menjauhkan bullying yang
           berbau SARA dari lingkungan sekolah kita. Ayo, jadilah bagian dari
-          gerakan ini! Wassalamualaikum wr. wb.
-        </p>
+          gerakan ini! Wassalamualaikum wr. wb.</p>
       </div>
     </section>
 
     <section class="menu" id="games">
         <div class="heading">
-          <span>Website</span>
-          <h2>Developer</h2>
+          <span>Pengembang</span>
+          <h2>Website TAMAN</h2>
         </div>
   
         <div class="menu-container">
           <div class="box">
             <div class="box-img">
-              <img src="img/OIP.jpeg" alt="menu-game" />
+              <img></img>
             </div>
-            <h2>Ridho Setiawan</h2>
-            <h3>Software Engineer</h3>
-            <span><button><a href=""></a></button></span>
+            <h2>Ridho Setiawan dan Aisyah Meylina Putri</h2>
+            <h3>Calon Duta Pelajar Sadar Hukum</h3>
+            <p style="color: #f45050;">MAN 2 KUKAR</p>
+            <i class="bx bx-code"></i>
           </div>
-          <div class="box">
-            <div class="box-img">
-              <img src="img/OIP (1).jpeg" alt="menu-game" />
-            </div>
-            <h2>Ridho Setiawan</h2>
-            <h3>Writer</h3>
-            <span><button><a href=""></a></button></span>
-        </div>
-  
     </div>
   </div>
   </section>

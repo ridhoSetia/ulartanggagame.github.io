@@ -1,13 +1,12 @@
 function pop() {
   const pop = new Audio("sfx/pop.mp3");
   pop.play();
-  pop.volume = 0.2;
+  pop.volume = 0.1;
 }
 
 function klik() {
   const klik = new Audio("sfx/klik.mp3");
   klik.play();
-  klik.volume = 0.3;
 }
 
 function spin() {
@@ -53,9 +52,9 @@ function openFullscreen() {
       screen.msLockOrientation("landscape");
     }
 
-    const buttonResume = (buttonPlay.textContent = "Resume");
+    const buttonResume = (buttonPlay.textContent = "Lanjut");
     localStorage.setItem("buttonResume", buttonResume);
-  }, 500);
+  }, 300);
 
   var storedDiceValue = localStorage.getItem("diceValue");
   var storedcurrentWordIndex = localStorage.getItem("currentWordIndex");

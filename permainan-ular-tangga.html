@@ -41,22 +41,6 @@
       </div>
     </div>
 
-<!-- <div class="screen-how-to-play">
-  <p class="explain">Sebelum melanjutkan ke permainan, baca dulu panduan bermain</p>
-  <i class="fas fa-book-open"></i>
-  <div class="how-play">
-  <h2>Panduan Bermain</h2>
-  <ol>
-    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
-    <img src="img/board-game3.png" alt="">
-    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
-    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
-    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
-    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
-  </ol>
-</div>
-</div> -->
-
     <!-- gameShow Pop Up -->
 
     <div class="pilihBerapaPlayer">
@@ -77,7 +61,8 @@
             <div class="imgUlarTangga">
               <img src="img/direct-game.png" alt="img ular tangga">
             </div>
-            <h3>Langsung main</h3>
+            <h3>Tema: <mark>Bullying</mark></h3>
+            <p>Langsung mulai bermain dengan soal-soal pemahaman tentang bullying</p>
             <input type="radio" name="pickTypeGame">
           </div>
         
@@ -86,6 +71,7 @@
               <img src="img/edit-game.png" alt="img ular tangga">
             </div>
             <h3>Edit sendiri</h3>
+            <p>Bisa bermain dengan mengedit soal-soal versi kamu sendiri</p>
             <input type="radio" name="pickTypeGame">
           </div>
       </div>
@@ -98,13 +84,47 @@
       <div class="buku-panduan">
         <h2>Panduan Bermain</h2>
         <ol>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
-          <img src="img/board-game3.png" alt="">
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsa velit optio, recusandae itaque similique facere nihil commodi. Similique ex voluptatibus doloribus eos minima nemo quis nihil qui iste harum?</li>
-        </ol>
+          <li>Pemain dilarang berbuat curang didalam permainan, jika pemain terbukti melakukan kecurangan maka dihukum <b>mundur 10 langkah</b></li>
+          <br>
+          <li>Sebelum memulai bermain, para pemain diperintahkan untuk memilih karakter bidak</li>
+          <img class="imgPilih" src="img/pilih-karakter.png" alt="pilih karakter">
+          <li><p>Permainan diawali dengan melempar dadu oleh permain pertama</p>
+          <img src="img/lempar-dadu.png" alt="lempar dadu">
+          <p>Setelah itu pemain berjalan sesuai nomor dadu yang didapatkan</p></li>
+          <br>
+          <li>Jika pemain menginjak nomor pertanyaan (nomor warna kuning: <a style="background: #333; color: yellow; border-radius: 50%; padding: 2px 8px;">2</a>). Maka, ia berhak untuk membuka kotak pertanyaan lalu memilih nomor pertanyaan</li>
+          <img src="img/buka-jawaban.png" alt="buka jawaban"><img class="imgPilih" src="img/pilihan-pertanyaan.png" alt="pilih pertanyaan"><img class="imgPilih" src="img/jawab-soal.png" alt="jawab soal">
+
+          <br><br>
+        <li><p>Jika posisi pemain berada di <b>TANGGA</b>, </p>
+          <img src="img/pemain-di-tangga.png" alt="pemain di tangga">
+          <p>dan dia menjawab soal yang diberikan dengan jawaban <b>BENAR</b>. Maka, pemain <b>naik ke tangga</b></p>
+          <img class="imgPilih" src="img/jawaban-benar.png" alt="jawaban benar">
+          <p>tapi, jika dia menjawab soal yang diberikan dengan jawaban <b>SALAH</b>. Maka, pemain <b>mundur 2 langkah</b></p>
+          <img class="imgPilih" src="img/jawaban-salah.png" alt="jawaban salah">
+        </li>
+          <br>
+        <li><p>Jika posisi pemain berada di <b>ULAR</b>, </p>
+          <img src="img/pemain-di-ular.png" alt="pemain di ular">
+          <p>dan dia menjawab soal yang diberikan dengan jawaban <b>BENAR</b>. Maka, pemain <b>maju 1 langkah</b></p>
+          <img class="imgPilih" src="img/jawaban-benar.png" alt="jawaban benar">
+          <p>tapi, jika dia menjawab soal yang diberikan dengan jawaban <b>SALAH</b>. Maka, pemain <b>turun sampai ujung ekor ular</b></p>
+          <img class="imgPilih" src="img/jawaban-salah.png" alt="jawaban salah">
+        </li>
+        <br>
+        <li>Setelah menjawab pertanyaan dan menjalankan hukuman sesuai dengan jawaban benar atau salah</li>
+        <br>
+        <li><p>Pemain berhak untuk membuka kartu bonus</p>
+          <img src="img/lempar-kartu.png" alt="buka kartu bonus">
+          <img class="imgPilih" src="img/dapat-kartu-depan.png" alt="kartu bonus depan">
+          <img class="imgPilih" src="img/dapat-kartu-belakang.png" alt="kartu bonus belakang">
+        </li>
+        <li>Jika pemain sudah mencapai garis finish. Maka, pemain harus bersegera untuk menuju logo finish</li>
+        <img style="background: #f45050; border-radius: 5px;" src="img/finish-line.png" alt="logo finish">
+        <li>Lalu permainan berakhir</li>
+        <img src="img/winner1.png" alt="winner">
+        <img src="img/winner2.png" alt="winner">
+      </ol>
       </div>
     </div>
     <div class="alert-reset">
@@ -666,8 +686,9 @@
       </div>
     </div>
 
-    <button class="open" onclick="openFullscreen()">Play</button>
+    <button class="open" onclick="openFullscreen()">Mulai</button>
     <div class="board" onload="openFullscreen()">
+      <div class="checkFinish"></div>
       <div class="finish"></div>
       <div class="rotate-smartphone">
         <img src="img/rotate-smartphone.png" alt="please rotate your phone" />

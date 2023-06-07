@@ -1,13 +1,12 @@
 function popIp() {
   const popIp = new Audio("sfx/pop.mp3");
   popIp.play();
-  popIp.volume = 0.2;
+  popIp.volume = 0.1;
 }
 
 function klik() {
   const klik = new Audio("sfx/klik.mp3");
   klik.play();
-  klik.volume = 0.3;
 }
 
 function rollSound() {
@@ -82,6 +81,26 @@ function checkCollision(box, index) {
   }
 }
 
+// Fungsi untuk memeriksa tabrakan kotak dengan lingkaran
+function checkFinish(box, index) {
+  const circle = document.querySelector(".checkFinish");
+  const circleRect = circle.getBoundingClientRect();
+  const boxRect = box.element.getBoundingClientRect();
+
+  if (
+    boxRect.left < circleRect.right &&
+    boxRect.right > circleRect.left &&
+    boxRect.top < circleRect.bottom &&
+    boxRect.bottom > circleRect.top &&
+    !congratulationsShown[index]
+  ) {
+    document.querySelector(".finish").style.display = "block";
+    setTimeout(() => {
+      document.querySelector(".finish").style.display = "none";
+    }, 1500);
+  }
+}
+
 // loop untuk menambahkan event listener ke setiap kotak
 boxes.forEach(function (box, index) {
   box.element.addEventListener("mousedown", function (event) {
@@ -94,6 +113,7 @@ boxes.forEach(function (box, index) {
     box.isDragging = false;
     saveBoxPosition(index);
     checkCollision(box, index);
+    checkFinish(box, index);
   });
 
   document.addEventListener("mousemove", function (event) {
@@ -151,6 +171,7 @@ halaman.addEventListener("touchmove", (event) => {
 
     for (let i = 0; i < objCursor.length; i++) {
       checkCollision({ element: objCursor[i] }, i);
+      checkFinish({ element: objCursor[i] }, i);
     }
 
     // Menentukan objek cursor mana yang akan mengikuti setiap sentuhan
@@ -434,8 +455,17 @@ for (let i = players.length - 1; i >= 0; i--) {
 }
 
 const randomQuotes = [
-  '"Untuk menjadi seorang pemenang, kamu tidak selalu harus menindas yang kalah"',
-  '"Bijaklah dalam bermedia sosial, kadang kita tidak tahu dampak dari apa yang kita tulis pada seseorang"',
+  '"Kekuatan sejati tidak terletak pada kemampuan kita untuk merendahkan orang lain berdasarkan perbedaan mereka, tetapi dalam menerima keberagaman dan membangun jembatan persaudaraan. Bersama-sama, kita bisa menghentikan bullying berbau sara dan mengabadikan kedamaian."',
+  '"Untuk menjadi seorang pemenang, kamu tidak selalu harus menindas yang kalah."',
+  '"Bijaklah dalam bermedia sosial, kadang kita tidak tahu dampak dari apa yang kita tulis pada seseorang."',
+  '"Kita semua adalah bagian dari keindahan lukisan kehidupan ini, dengan warna-warna yang berbeda dan nuansa yang unik. Mari kita tinggalkan jejak persatuan dan memadamkan api bullying berbau sara dengan kekuatan cinta, pengertian, dan menghormati perbedaan satu sama lain."',
+  '"Kita tidak perlu memiliki pandangan yang sama atau kepercayaan yang serupa untuk hidup berdampingan dengan damai. Marilah kita menghentikan bullying berbau sara dengan berdiri bersama sebagai satu, menghormati perbedaan, dan menjalin ikatan yang lebih kuat melalui keragaman."',
+  '"Keberanian sejati bukanlah melukai orang lain, melainkan berdiri teguh dan membela mereka yang lemah. Jadilah pelindung, bukan perundung."',
+  '"Kita semua berbeda, tetapi kita semua berharga. Mari hentikan bullying dan menjadikan dunia ini tempat yang lebih aman dan indah untuk semua orang."',
+  '"Berhenti dari tindakan keji, hargai diri yang berarti. Bullying tak akan membuatmu hebat, tapi kebaikan hati akan membawamu terbang tinggi."',
+  '"Kuasa kata boleh kuat, tapi kuasa kebaikan lebih berarti. Jangan biarkan bullying menguasai hati, mari bersama hentikan kekejaman di dunia ini."',
+  '"Keberagaman adalah harta yang berharga, tak ada tempat untuk bullying yang keji. Jadilah manusia yang berempati, hentikan tindakan yang melukai hati."',
+  "Jangan biarkan kata-kata melukai, jangan biarkan tindakan membunuh semangat. Hentikan bullying, satukan langkah, jadilah pelindung bagi saudara sebangsa.",
 ];
 // Fungsi untuk menampilkan pesan selamat
 function showCongratulations(boxNumber) {
