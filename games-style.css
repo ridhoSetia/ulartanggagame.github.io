@@ -124,6 +124,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(220px, auto));
   grid-gap: 1.5rem;
   align-items: center;
+  margin: 0 20px;
   margin-top: 1rem;
 }
 .boxUlarTangga {
@@ -134,7 +135,6 @@ body {
   justify-content: center;
   border-radius: 5px;
   padding: 20px;
-  margin: 0 20px;
   background: #feeee7;
   box-shadow: 0 5px 15px rgb(0, 0, 0, 0.25);
 }
@@ -1753,32 +1753,6 @@ input[type="radio"]:checked {
   margin: 5% 8px;
 }
 
-.x {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 0;
-  top: -40%;
-  color: #f45050;
-  background: #feeee7;
-  width: 40px;
-  height: 40px;
-  padding: 5px;
-  border-radius: 10px;
-  font-size: 50px;
-  margin: 10px 20px;
-  cursor: pointer;
-  z-index: 4;
-  transition: all 0.1s ease;
-  opacity: 0;
-}
-
-.x.on {
-  top: 0;
-  opacity: 1;
-}
-
 .objek {
   position: absolute;
   width: 100px;
@@ -1804,30 +1778,35 @@ input[type="radio"]:checked {
   border-radius: 50%;
 }
 #cursor1 {
+  animation: bidakAnimation 2s 0.2s infinite alternate;
   filter: drop-shadow(0 0 10px #e20000);
   left: 15%;
   bottom: 16%;
   transition: left 0.7s 0.1s ease;
 }
 #cursor2 {
+  animation: bidakAnimation 2s 0.4s infinite alternate;
   filter: drop-shadow(0 0 10px #1919e2);
   left: 13%;
   bottom: 14%;
   transition: left 0.7s 0.4s ease;
 }
 #cursor3 {
+  animation: bidakAnimation 2s 0.6s infinite alternate;
   filter: drop-shadow(0 0 10px #11e211);
   left: 11%;
   bottom: 12%;
   transition: left 0.7s 0.7s ease;
 }
 #cursor4 {
+  animation: bidakAnimation 2s 0.8s infinite alternate;
   filter: drop-shadow(0 0 10px #800080);
   left: 9%;
   bottom: 10%;
   transition: left 0.7s 1s ease;
 }
 #cursor5 {
+  animation: bidakAnimation 2s 1s infinite alternate;
   filter: drop-shadow(0 0 10px #00a5a7);
   left: 7%;
   bottom: 8%;
@@ -1850,22 +1829,6 @@ input[type="radio"]:checked {
 }
 .objek:active {
   cursor: grabbing;
-}
-
-.objek:nth-child(11) {
-  animation: bidakAnimation 2s 0.2s infinite alternate;
-}
-.objek:nth-child(10) {
-  animation: bidakAnimation 2s 0.4s infinite alternate;
-}
-.objek:nth-child(9) {
-  animation: bidakAnimation 2s 0.6s infinite alternate;
-}
-.objek:nth-child(8) {
-  animation: bidakAnimation 2s 0.8s infinite alternate;
-}
-.objek:nth-child(7) {
-  animation: bidakAnimation 2s 1s infinite alternate;
 }
 
 .cursorName {

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>games</title>
-    <link rel="shortcut icon" href="img/icon-taman.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/icon-taman.png" type="image/x-icon" />
     <!-- library slick slider (css) -->
     <link
       href="
@@ -45,11 +45,11 @@
 
     <div class="pilihBerapaPlayer">
       <h2>Pilih Berapa Pemain</h2>
-      <input type="radio" id="pick1" data-count="3" name="pilihPlayer">
-      <input type="radio" id="pick2" data-count="2" name="pilihPlayer">
-      <input type="radio" id="pick3" data-count="1" name="pilihPlayer">
-      <input type="radio" id="pick4" name="pilihPlayer">
-  </div>
+      <input type="radio" id="pick1" data-count="3" name="pilihPlayer" />
+      <input type="radio" id="pick2" data-count="2" name="pilihPlayer" />
+      <input type="radio" id="pick3" data-count="1" name="pilihPlayer" />
+      <input type="radio" id="pick4" name="pilihPlayer" />
+    </div>
 
     <div class="gameShowUlarTangga">
       <center>
@@ -57,84 +57,162 @@
         <h2>Pilih Tipe Permainan</h2>
       </center>
       <div class="ularTanggaContainer">
-          <div class="boxUlarTangga" onclick="direct()">
-            <div class="imgUlarTangga">
-              <img src="img/direct-game.png" alt="img ular tangga">
-            </div>
-            <h3>Tema: <mark>Bullying</mark></h3>
-            <p>Langsung mulai bermain dengan soal-soal pemahaman tentang bullying</p>
-            <input type="radio" name="pickTypeGame">
+        <div class="boxUlarTangga" onclick="direct()">
+          <div class="imgUlarTangga">
+            <img src="img/direct-game.png" alt="img ular tangga" />
           </div>
-        
-          <div class="boxUlarTangga" onclick="edit()">
-            <div class="imgUlarTangga">
-              <img src="img/edit-game.png" alt="img ular tangga">
-            </div>
-            <h3>Edit sendiri</h3>
-            <p>Bisa bermain dengan mengedit soal-soal versi kamu sendiri</p>
-            <input type="radio" name="pickTypeGame">
+          <h3>Tema: <mark>Bullying</mark></h3>
+          <p>
+            Langsung mulai bermain dengan soal-soal pemahaman tentang bullying
+          </p>
+          <input type="radio" name="pickTypeGame" />
+        </div>
+
+        <div class="boxUlarTangga" onclick="edit()">
+          <div class="imgUlarTangga">
+            <img src="img/edit-game.png" alt="img ular tangga" />
           </div>
+          <h3>Edit sendiri</h3>
+          <p>Bisa bermain dengan mengedit soal-soal versi kamu sendiri</p>
+          <input type="radio" name="pickTypeGame" />
+        </div>
       </div>
       <center>
-      <button disabled>New Game</button>
-        </center>
+        <button disabled>New Game</button>
+      </center>
     </div>
 
     <div class="box-panduan">
       <div class="buku-panduan">
         <h2>Panduan Bermain</h2>
         <ol>
-          <li>Pemain dilarang berbuat curang didalam permainan, jika pemain terbukti melakukan kecurangan maka dihukum <b>mundur 10 langkah</b></li>
-          <br>
-          <li>Sebelum memulai bermain, para pemain diperintahkan untuk memilih karakter bidak</li>
-          <img class="imgPilih" src="img/pilih-karakter.png" alt="pilih karakter">
-          <li><p>Permainan diawali dengan melempar dadu oleh permain pertama</p>
-          <img src="img/lempar-dadu.png" alt="lempar dadu">
-          <p>Setelah itu pemain berjalan sesuai nomor dadu yang didapatkan</p></li>
-          <br>
-          <li>Jika pemain menginjak nomor pertanyaan (nomor warna kuning: <a style="background: #333; color: yellow; border-radius: 50%; padding: 2px 8px;">2</a>). Maka, ia berhak untuk membuka kotak pertanyaan lalu memilih nomor pertanyaan</li>
-          <img src="img/buka-jawaban.png" alt="buka jawaban"><img class="imgPilih" src="img/pilihan-pertanyaan.png" alt="pilih pertanyaan"><img class="imgPilih" src="img/jawab-soal.png" alt="jawab soal">
+          <li>
+            Pemain dilarang berbuat curang didalam permainan, jika pemain
+            terbukti melakukan kecurangan maka dihukum <b>mundur 10 langkah</b>
+          </li>
+          <br />
+          <li>
+            Sebelum memulai bermain, para pemain diperintahkan untuk memilih
+            karakter bidak
+          </li>
+          <img
+            class="imgPilih"
+            src="img/pilih-karakter.png"
+            alt="pilih karakter"
+          />
+          <li>
+            <p>Permainan diawali dengan melempar dadu oleh permain pertama</p>
+            <img src="img/lempar-dadu.png" alt="lempar dadu" />
+            <p>Setelah itu pemain berjalan sesuai nomor dadu yang didapatkan</p>
+          </li>
+          <br />
+          <li>
+            Jika pemain menginjak nomor pertanyaan (nomor warna kuning:
+            <a
+              style="
+                background: #333;
+                color: yellow;
+                border-radius: 50%;
+                padding: 2px 8px;
+              "
+              >2</a
+            >). Maka, ia berhak untuk membuka kotak pertanyaan lalu memilih
+            nomor pertanyaan
+          </li>
+          <img src="img/buka-jawaban.png" alt="buka jawaban" /><img
+            class="imgPilih"
+            src="img/pilihan-pertanyaan.png"
+            alt="pilih pertanyaan"
+          /><img class="imgPilih" src="img/jawab-soal.png" alt="jawab soal" />
 
-          <br><br>
-        <li><p>Jika posisi pemain berada di <b>TANGGA</b>, </p>
-          <img src="img/pemain-di-tangga.png" alt="pemain di tangga">
-          <p>dan dia menjawab soal yang diberikan dengan jawaban <b>BENAR</b>. Maka, pemain <b>naik ke tangga</b></p>
-          <img class="imgPilih" src="img/jawaban-benar.png" alt="jawaban benar">
-          <p>tapi, jika dia menjawab soal yang diberikan dengan jawaban <b>SALAH</b>. Maka, pemain <b>mundur 2 langkah</b></p>
-          <img class="imgPilih" src="img/jawaban-salah.png" alt="jawaban salah">
-        </li>
-          <br>
-        <li><p>Jika posisi pemain berada di <b>ULAR</b>, </p>
-          <img src="img/pemain-di-ular.png" alt="pemain di ular">
-          <p>dan dia menjawab soal yang diberikan dengan jawaban <b>BENAR</b>. Maka, pemain <b>maju 1 langkah</b></p>
-          <img class="imgPilih" src="img/jawaban-benar.png" alt="jawaban benar">
-          <p>tapi, jika dia menjawab soal yang diberikan dengan jawaban <b>SALAH</b>. Maka, pemain <b>turun sampai ujung ekor ular</b></p>
-          <img class="imgPilih" src="img/jawaban-salah.png" alt="jawaban salah">
-        </li>
-        <br>
-        <li>Setelah menjawab pertanyaan dan menjalankan hukuman sesuai dengan jawaban benar atau salah</li>
-        <br>
-        <li><p>Pemain berhak untuk membuka kartu bonus</p>
-          <img src="img/lempar-kartu.png" alt="buka kartu bonus">
-          <img class="imgPilih" src="img/dapat-kartu-depan.png" alt="kartu bonus depan">
-          <img class="imgPilih" src="img/dapat-kartu-belakang.png" alt="kartu bonus belakang">
-        </li>
-        <li>Jika pemain sudah mencapai garis finish. Maka, pemain harus bersegera untuk menuju logo finish</li>
-        <img style="background: #f45050; border-radius: 5px;" src="img/finish-line.png" alt="logo finish">
-        <li>Lalu permainan berakhir</li>
-        <img src="img/winner1.png" alt="winner">
-        <img src="img/winner2.png" alt="winner">
-      </ol>
+          <br /><br />
+          <li>
+            <p>Jika posisi pemain berada di <b>TANGGA</b>,</p>
+            <img src="img/pemain-di-tangga.png" alt="pemain di tangga" />
+            <p>
+              dan dia menjawab soal yang diberikan dengan jawaban <b>BENAR</b>.
+              Maka, pemain <b>naik ke tangga</b>
+            </p>
+            <img
+              class="imgPilih"
+              src="img/jawaban-benar.png"
+              alt="jawaban benar"
+            />
+            <p>
+              tapi, jika dia menjawab soal yang diberikan dengan jawaban
+              <b>SALAH</b>. Maka, pemain <b>mundur 2 langkah</b>
+            </p>
+            <img
+              class="imgPilih"
+              src="img/jawaban-salah.png"
+              alt="jawaban salah"
+            />
+          </li>
+          <br />
+          <li>
+            <p>Jika posisi pemain berada di <b>ULAR</b>,</p>
+            <img src="img/pemain-di-ular.png" alt="pemain di ular" />
+            <p>
+              dan dia menjawab soal yang diberikan dengan jawaban <b>BENAR</b>.
+              Maka, pemain <b>maju 1 langkah</b>
+            </p>
+            <img
+              class="imgPilih"
+              src="img/jawaban-benar.png"
+              alt="jawaban benar"
+            />
+            <p>
+              tapi, jika dia menjawab soal yang diberikan dengan jawaban
+              <b>SALAH</b>. Maka, pemain <b>turun sampai ujung ekor ular</b>
+            </p>
+            <img
+              class="imgPilih"
+              src="img/jawaban-salah.png"
+              alt="jawaban salah"
+            />
+          </li>
+          <br />
+          <li>
+            Setelah menjawab pertanyaan dan menjalankan hukuman sesuai dengan
+            jawaban benar atau salah
+          </li>
+          <br />
+          <li>
+            <p>Pemain berhak untuk membuka kartu bonus</p>
+            <img src="img/lempar-kartu.png" alt="buka kartu bonus" />
+            <img
+              class="imgPilih"
+              src="img/dapat-kartu-depan.png"
+              alt="kartu bonus depan"
+            />
+            <img
+              class="imgPilih"
+              src="img/dapat-kartu-belakang.png"
+              alt="kartu bonus belakang"
+            />
+          </li>
+          <li>
+            Jika pemain sudah mencapai garis finish. Maka, pemain harus
+            bersegera untuk menuju logo finish
+          </li>
+          <img
+            style="background: #f45050; border-radius: 5px"
+            src="img/finish-line.png"
+            alt="logo finish"
+          />
+          <li>Lalu permainan berakhir</li>
+          <img src="img/winner1.png" alt="winner" />
+          <img src="img/winner2.png" alt="winner" />
+        </ol>
       </div>
     </div>
     <div class="alert-reset">
-      <div class="box-reset"><p>Kamu yakin ingin mereset
-        permainan?
-      </p>
-    <button id="reset-semua">Ya</button>
-    <button id="cancel">Tidak</button>
-  </div>
-  </div>
+      <div class="box-reset">
+        <p>Kamu yakin ingin mereset permainan?</p>
+        <button id="reset-semua">Ya</button>
+        <button id="cancel">Tidak</button>
+      </div>
+    </div>
     <div class="hover-element-s">
       <p><i class="fa fa-cog"></i></p>
       <span class="hover-text-s">pengaturan</span>
@@ -143,7 +221,7 @@
       <button id="reset-permainan">Reset permainan</button>
       <button id="reset-game-mode">Pilih ulang tipe permainan</button>
       <button id="reset-jumlah-pemain">Pilih ulang jumlah pemain</button>
-      
+
       <div class="setting">
         <button class="smooth">smooth</button>
         <button class="height">medium</button>
@@ -158,10 +236,14 @@
       <span class="hover-text">Edit Konten</span>
     </div>
     <div class="hover-element-b">
-      <p><i class="fas fa-book"></i><i class="fas fa-exclamation-circle"></i></p>
+      <p>
+        <i class="fas fa-book"></i><i class="fas fa-exclamation-circle"></i>
+      </p>
       <span class="hover-text-b">Buku Panduan</span>
     </div>
-    <div class="alertBerhasilSave"><p>Nama Berhasil di Simpan Kedalam Penyimpanan</p></div>
+    <div class="alertBerhasilSave">
+      <p>Nama Berhasil di Simpan Kedalam Penyimpanan</p>
+    </div>
     <div class="user-experience">
       <div class="edit-content">
         <div class="edit-name">
@@ -173,17 +255,17 @@
             </label>
             <label for="player"
               >Player 2 :
-              <input type="text" name="teks" data-name="1" required/>
+              <input type="text" name="teks" data-name="1" required />
             </label>
-            <label for="player" id="inputNama3" 
+            <label for="player" id="inputNama3"
               >Player 3 :
               <input type="text" name="teks" data-name="2" required />
             </label>
-            <label for="player" id="inputNama4" 
+            <label for="player" id="inputNama4"
               >Player 4 :
-              <input type="text" name="teks" data-name="3" required/>
+              <input type="text" name="teks" data-name="3" required />
             </label>
-            <label for="player" id="inputNama5" 
+            <label for="player" id="inputNama5"
               >Player 5 :
               <input type="text" name="teks" data-name="4" required />
             </label>
@@ -194,12 +276,12 @@
           <form id="myForm" onsubmit="editContent(event)">
             <div class="edit-question">
               <div class="editVideo">
-              <label for="input-file-video" class="inputVideo">
-                Video Penjelasan : 
-                <input type="file" name="video" id="input-file-video">
-              </label>
-              <div class="removeVideo">X</div>
-            </div>
+                <label for="input-file-video" class="inputVideo">
+                  Video Penjelasan :
+                  <input type="file" name="video" id="input-file-video" />
+                </label>
+                <div class="removeVideo">X</div>
+              </div>
               <label for="question"
                 >pertanyaan A :
                 <textarea name="pertanyaan" data-question="0"></textarea>
@@ -588,8 +670,7 @@
     <center>
       <h1 class="chooseSkin">Pilih Karakter</h1>
     </center>
-    <center>
-    </center>
+    <center></center>
     <div class="flex-skin">
       <div class="playerSkin skinPlayer1">
         <h2 class="nameSkinPlayer">Player 1</h2>
@@ -694,14 +775,24 @@
         <img src="img/rotate-smartphone.png" alt="please rotate your phone" />
       </div>
       <div class="video-explain">
-        <video class="explain-video" controls controlsList="nodownload" src="Hal yang Harus Kamu Ketahui Tentang BULLYING.mp4" controls type="video/mp4"></video>
+        <video
+          class="explain-video"
+          controls
+          controlsList="nodownload"
+          src="Hal yang Harus Kamu Ketahui Tentang BULLYING.mp4"
+          controls
+          type="video/mp4"
+        ></video>
       </div>
       <button id="alert-mulai">Mulai Permainan</button>
       <div class="mulai-permainan">
-      <div class="box-mulai"> Siap untuk mulai permainan?
-        <p><button class="mulai">Siap!</button>
-        <button class="belum">Belum</button></p>
-      </div>
+        <div class="box-mulai">
+          Siap untuk mulai permainan?
+          <p>
+            <button class="mulai">Siap!</button>
+            <button class="belum">Belum</button>
+          </p>
+        </div>
       </div>
       <button class="exit" onclick="exitFullscreen()">
         <i class="fas fa-arrow-left"></i>
@@ -709,19 +800,33 @@
       <div class="stopwatch">
         <span id="minutes">00</span>:<span id="seconds">00</span>
         <button id="stopBtn"><i class="fas fa-stop"></i></button>
-       <button id="startBtn"><i class="fas fa-play"></i></button>
+        <button id="startBtn"><i class="fas fa-play"></i></button>
       </div>
       <div class="rollDice">
-
-        <img id="dice" src="img/Dadu1.png" alt="roll-dice" onclick="pickRollDice()"/>
+        <img
+          id="dice"
+          src="img/Dadu1.png"
+          alt="roll-dice"
+          onclick="pickRollDice()"
+        />
         <button id="rollButton"><p class="player"></p></button>
       </div>
 
-      <div class="objek" id="cursor5" data-sentuhan="5"><p class="cursorName nameColor5">Player5</p></div>
-      <div class="objek" id="cursor4" data-sentuhan="4"><p class="cursorName nameColor4">Player4</p></div>
-      <div class="objek" id="cursor3" data-sentuhan="3"><p class="cursorName nameColor3">Player3</p></div>
-      <div class="objek" id="cursor2" data-sentuhan="2"><p class="cursorName nameColor2">Player2</p></div>
-      <div class="objek" id="cursor1" data-sentuhan="1"><p class="cursorName nameColor1">Player1</p></div>
+      <div class="objek" id="cursor5" data-sentuhan="5">
+        <p class="cursorName nameColor5">Player5</p>
+      </div>
+      <div class="objek" id="cursor4" data-sentuhan="4">
+        <p class="cursorName nameColor4">Player4</p>
+      </div>
+      <div class="objek" id="cursor3" data-sentuhan="3">
+        <p class="cursorName nameColor3">Player3</p>
+      </div>
+      <div class="objek" id="cursor2" data-sentuhan="2">
+        <p class="cursorName nameColor2">Player2</p>
+      </div>
+      <div class="objek" id="cursor1" data-sentuhan="1">
+        <p class="cursorName nameColor1">Player1</p>
+      </div>
       <button class="showQuestion">?</button>
       <div class="flex-point">
         <button onclick="tampilPertanyaan(0)"></button>
@@ -741,7 +846,7 @@
         <button onclick="tampilPertanyaan(14)"></button>
         <button onclick="tampilPertanyaan(15)"></button>
       </div>
-      
+
       <div class="boxCard">
         <div class="shakeCard">
           <img class="front" src="img/cardFront1.png" alt="card" />
@@ -765,26 +870,22 @@
           </button>
         </div>
       </div>
-      <p id="result">
-        <p class="x">x</p>
-      </p>
-      
-    <div class="congratulations">
-      <div class="pemenangnya-adalah">
-        <h2>The Winner Is...</h2>
+      <p id="result"></p>
+
+      <div class="congratulations">
+        <div class="pemenangnya-adalah">
+          <h2>The Winner Is...</h2>
+        </div>
+        <div class="flex-congrats">
+          <img src="img/champions.png" alt="champions" />
+          <button id="reset-semua" class="rst">Restart</button>
+        </div>
+        <div class="quotes-day">
+          <p><i></i></p>
+          <div class="line"></div>
+        </div>
       </div>
-    <div class="flex-congrats">
-      <img src="img/champions.png" alt="champions">
-        <button id="reset-semua" class="rst">Restart</button>
     </div>
-      <div class="quotes-day">
-      <p><i></i></p>
-    <div class="line"></div>
-  </div>
-  </div>
-
-    </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script>
