@@ -1,7 +1,7 @@
 function pop() {
   const pop = new Audio("sfx/pop.mp3");
   pop.play();
-  pop.volume = 0.1;
+  pop.volume = 0.15;
 }
 
 function klik() {
@@ -391,75 +391,6 @@ if (savedremoveBidak === "true") {
   alertMulai.style.display = "none";
 }
 
-let minutes = 0;
-let seconds = 0;
-let intervalId;
-
-const minutesElement = document.getElementById("minutes");
-const secondsElement = document.getElementById("seconds");
-const startBtn = document.getElementById("startBtn");
-const stopBtn = document.getElementById("stopBtn");
-const resetBtn = document.getElementById("resetBtn");
-
-// Cek apakah waktu terakhir tersimpan di localStorage
-if (localStorage.getItem("stopwatch")) {
-  const lastTime = JSON.parse(localStorage.getItem("stopwatch"));
-  minutes = lastTime.minutes;
-  seconds = lastTime.seconds;
-  updateTimer();
-}
-
-function startTimer() {
-  intervalId = setInterval(updateTimer, 1000);
-  startBtn.disabled = true;
-  stopBtn.disabled = false;
-}
-
-function stopTimer() {
-  clearInterval(intervalId);
-  startBtn.disabled = false;
-  stopBtn.disabled = true;
-  saveTimer();
-}
-
-function resetTimer() {
-  clearInterval(intervalId);
-  minutes = 0;
-  seconds = 0;
-  updateTimer();
-  startBtn.disabled = false;
-  localStorage.removeItem("stopwatch");
-}
-
-function updateTimer() {
-  seconds++;
-
-  if (seconds === 60) {
-    minutes++;
-    seconds = 0;
-  }
-
-  minutesElement.textContent = padNumber(minutes);
-  secondsElement.textContent = padNumber(seconds);
-  saveTimer();
-}
-
-function padNumber(number) {
-  return number.toString().padStart(2, "0");
-}
-
-function saveTimer() {
-  const currentTime = {
-    minutes: minutes,
-    seconds: seconds,
-  };
-  localStorage.setItem("stopwatch", JSON.stringify(currentTime));
-}
-
-mulai.addEventListener("click", shuffleChildren);
-startBtn.addEventListener("click", startTimer);
-stopBtn.addEventListener("click", stopTimer);
-
 const parentElement = document.querySelector(".flex-point");
 const childElements = Array.from(parentElement.children);
 
@@ -471,8 +402,9 @@ function shuffleChildren() {
   }
 }
 
-// panggil fungsi di atas setiap kali halaman dimuat ulang
-window.onload = shuffleChildren();
+// // panggil fungsi di atas setiap kali halaman dimuat ulang
+// window.onload = shuffleChildren();
+// mulai.addEventListener("click", shuffleChildren);
 
 // program reset localStorage
 const setting = document.querySelector(".fa.fa-cog");

@@ -26,6 +26,11 @@ function isFalse() {
   isFalse.play();
 }
 
+function lambat() {
+  const lambat = new Audio("sfx/lambat.mp3");
+  lambat.play();
+}
+
 // Array pertanyaan dan jawaban
 let pertanyaan = [
   // A
@@ -35,9 +40,9 @@ let pertanyaan = [
       "a. Bullying prejudice ",
       "b. Bullying fisik",
       "c. Bullying verbal",
-      "d. Bullying relasional",
+      "d. Bullying agresi relasional",
     ],
-    jawabanBenar: "d. Bullying relasional",
+    jawabanBenar: "d. Bullying agresi relasional",
   },
   //   B
   {
@@ -110,15 +115,15 @@ let pertanyaan = [
   },
   //   H
   {
-    soal: "Pengertian bullying non-verbal adalah?",
+    soal: "Salah satu contoh perilaku prejudice bullying adalah?",
     jawaban: [
-      "a.	Bullying yang dilakukan langsung dengan kekerasan fisik",
-      "b.	Bullying dengan ekpresi menghina, mengejek, atau mengabaikan orang lain dengan sengaja",
-      "c.	Bullying yang terjadi di media sosial",
-      "d.	Bullying secara tidak langsung",
+      "a.	Amin sering memukul Andi tanpa sebab.",
+      "b.	Di sekolah, Pano sering mengolok-olok dan mengancam siswa lain berdasarkan ras atau agama mereka.",
+      "c.	Didi diketahui menyebarkan rumor palsu tentang siswa lain di media sosial dan di sekolah untuk merusak reputasi mereka.",
+      "d.	Rati sering mengintimidasi siswa di sekolahannya.",
     ],
     jawabanBenar:
-      "b.	Bullying dengan ekpresi menghina, mengejek, atau mengabaikan orang lain dengan sengaja",
+      "b.	Di sekolah, Pano sering mengolok-olok dan mengancam siswa lain berdasarkan ras atau agama mereka.",
   },
   //   I
   {
@@ -139,14 +144,14 @@ let pertanyaan = [
       "b.	Setiap Orang dilarang menempatkan, membiarkan, melakukan, menyuruh melakukan, atau turut serta melakukan kekerasan terhadap anak",
   }, // K
   {
-    soal: "Bullying memiliki banyak macam diantaranya adalah sebagai berikut, kecuali...",
+    soal: "Apa semboyan bangsa Indonesia?",
     jawaban: [
-      "a.	Bullying verbal",
-      "b.	Bullying non-verbal",
-      "c.	Bullying redaksi",
-      "d.	Cyberbullying",
+      "a.	Bersekutu Bertambah Mutu",
+      "b.	In God We Trust",
+      "c.	Bhinneka Tunggal Ika",
+      "d.	Liberté, égalité, fraternité",
     ],
-    jawabanBenar: "c.	Bullying redaksi",
+    jawabanBenar: "c.	Bhinneka Tunggal Ika",
   },
   //   L
   {
@@ -161,14 +166,14 @@ let pertanyaan = [
   },
   //   M
   {
-    soal: "“Setiap Anak berhak mendapatkan perlindungan di satuan pendidikan dari kejahatan seksual dan Kekerasan yang dilakukan oleh pendidik, tenaga kependidikan, sesama peserta didik, dan/atau pihak lain.” merupakan isi dari...",
+    soal: 'Pada UUD 1945, pasal berapa yang berbunyi "Setiap anak berhak atas kelangsungan hidup, tumbuh, dan berkembang serta berhak atas perlindungan dari kekerasan dan diskriminasi."',
     jawaban: [
-      "a.	Undang-Undang Nomor 35 Tahun 2014 Pasal 9 Ayat 1a",
-      "b.	Undang-Undang Nomor 35 Tahun 2009  Pasal 12 Ayat 1",
-      "c.	Undang-Undang Nomor 19 tahun 2019 Pasal 10 Ayat 1",
-      "d.	Undang-Undang Nomor 1 Tahun 2022 Pasal 9 Ayat 1",
+      "a.	pasal 28B ayat 2 ",
+      "b.	pasal 27B ayat 2 ",
+      "c.	pasal 28B ayat 1",
+      "d.	pasal 27B ayat 2 ",
     ],
-    jawabanBenar: "a.	Undang-Undang Nomor 35 Tahun 2014 Pasal 9 Ayat 1a",
+    jawabanBenar: "a.	pasal 28B ayat 2 ",
   },
   //   N
   {
@@ -183,15 +188,15 @@ let pertanyaan = [
   },
   //   O
   {
-    soal: "Olvah Alhamid, finalis Puteri Indonesia, model dan motivational speaker. Saat SMA, Olvah Alhamid perempuan asal Timika, Papua Barat, pindah ke Surabaya, Jawa Timur untuk menempuh pendidikan di salah satu SMA terbaik di Indonesia. Namun ada peristiwa yang menimpanya saat berusia 16 tahun yang begitu mengguncang jiwanya. Olvah, siswi satu-satunya asal Papua di SMA saat itu, diolok-olok murid perempuan lain karena penampilan fisik dan warna kulitnya. Di tempat baru ini, Olvah remaja menghadapi lingkungan yang tidak kondusif. \n Berdasarkan kasus tersebut salah satu dampak dari perilaku yang dialami Olvah adalah...",
+    soal: "Kasus bullying atau perundungan terhadap penyandang disabilitas kembali terjadi. Sekelompok remaja berseragam SMA tanpa ampun melakukan kekerasan fisik pada korban. Mereka menekan-nekan punggung korban dengan sepatu, lalu menginjak-injak pundak korban. Berkaitan dengan kasus diatas, apakah itu termasuk Bullying yang berbau SARA?",
     jawaban: [
-      "a. Membuat senang korban bullying",
-      "b. Malas sekolah dan pura-pura sakit karena bullying tersebut",
-      "c. Pelaku menjadi sadar akan kesalahannya",
-      "d. Semakin bersemangat dalam bersekolah",
+      "a. Tidak, karena penyandang disabilitas adalah orang yang sehat",
+      "b. Ya, karena penyandang disabilitas termasuk golongan di dalam SARA",
+      "c. Tidak, karena penyandang disabilitas tidak termasuk golongan di dalam SARA",
+      "d. Ya, karena penyandang disabilitas merupakan orang hebat",
     ],
     jawabanBenar:
-      "b. Malas sekolah dan pura-pura sakit karena bullying tersebut",
+      "b. Ya, karena penyandang disabilitas termasuk golongan di dalam SARA",
   },
 ];
 
@@ -226,14 +231,16 @@ function showQuestion() {
 
   // Menunggu 21 detik sebelum menyembunyikan kotak pertanyaan
   timerId = setTimeout(() => {
-    xResult.classList.add("on");
     result.classList.add("on");
     result.innerHTML = "Maaf kamu terlambat";
     document.querySelector(".showQuestion").disabled = true;
     clearTimeout(timerId);
-    whoosh();
+    lambat();
     // Menyembunyikan kotak pertanyaan
     hideQuestionBox();
+    setTimeout(() => {
+      result.classList.remove("on");
+    }, 2000);
   }, 40000);
 }
 
@@ -285,7 +292,6 @@ document.querySelector("#shakeCard").disabled = true;
 // Cek jawaban
 function cekJawaban() {
   document.querySelector(".showQuestion").disabled = true;
-  whoosh();
 
   stopTimer(); // Menghentikan timer sebelum memeriksa jawaban
 
@@ -332,13 +338,23 @@ let succesInput = document.querySelector(".succesInput");
 const inputVideo = document.getElementById("input-file-video");
 const videoElement = document.querySelector(".explain-video");
 
+const removeVideo = document.querySelector(".removeVideo");
+removeVideo.onclick = () => {
+  document.querySelector(".editVideo").remove();
+  document.querySelector(".video-explain").remove();
+  localStorage.removeItem("remove1");
+  localStorage.setItem("remove1", "removed");
+  localStorage.removeItem("remove2");
+  localStorage.setItem("remove2", "removed");
+};
+
 function editContent(event) {
+  event.preventDefault(); // Mencegah halaman untuk refresh
   const file = inputVideo.files[0];
   const videoURL = URL.createObjectURL(file);
 
   videoElement.src = videoURL;
 
-  event.preventDefault(); // Mencegah halaman untuk refresh
   const inputQuestion = document.querySelectorAll(
     'textarea[name="pertanyaan"]'
   );
@@ -492,6 +508,14 @@ function editContent(event) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  const savedRemoveInput = localStorage.getItem("remove1");
+  const savedRemoveVideo = localStorage.getItem("remove2");
+  if (savedRemoveInput === "removed") {
+    document.querySelector(".editVideo").remove();
+  }
+  if (savedRemoveVideo === "removed") {
+    document.querySelector(".video-explain").remove();
+  }
   const savesuccesInputText = localStorage.getItem(`succesInputText`);
   if (savesuccesInputText) {
     succesInput.textContent = savesuccesInputText;

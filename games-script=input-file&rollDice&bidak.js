@@ -1,7 +1,7 @@
 function popIp() {
   const popIp = new Audio("sfx/pop.mp3");
   popIp.play();
-  popIp.volume = 0.1;
+  popIp.volume = 0.15;
 }
 
 function klik() {
@@ -580,14 +580,6 @@ window.addEventListener("DOMContentLoaded", () => {
   if (savedRemove5 === "removed") {
     inputNama5.remove();
   }
-  const savedRemoveInput = localStorage.getItem("remove1");
-  const savedRemoveVideo = localStorage.getItem("remove2");
-  if (savedRemoveInput === "removed") {
-    document.querySelector(".editVideo").remove();
-  }
-  if (savedRemoveVideo === "removed") {
-    document.querySelector(".video-explain").remove();
-  }
   for (let i = 0; i < words.length; i++) {
     const storedText = localStorage.getItem(`replacementText${i}`);
     if (storedText) {
@@ -616,13 +608,3 @@ function pickRollDice() {
   localStorage.setItem("currentWordIndex", currentWordIndex);
   localStorage.setItem("currentColorIndex", currentColorIndex);
 }
-
-const removeVideo = document.querySelector(".removeVideo");
-removeVideo.onclick = () => {
-  document.querySelector(".editVideo").remove();
-  document.querySelector(".video-explain").remove();
-  localStorage.removeItem("remove1");
-  localStorage.setItem("remove1", "removed");
-  localStorage.removeItem("remove2");
-  localStorage.setItem("remove2", "removed");
-};

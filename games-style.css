@@ -266,7 +266,7 @@ body {
   width: 150px;
 }
 .buku-panduan .imgPilih {
-  width: 300px;
+  width: 280px;
 }
 
 .succesInput {
@@ -1080,16 +1080,6 @@ input[name="trueOption"]:focus {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.stopwatch .fas {
-  color: #f45050;
-  font-size: 10px;
-  margin: 5px;
-}
-#stopBtn,
-#startBtn {
-  cursor: pointer;
 }
 
 .checkFinish {
