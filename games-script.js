@@ -310,6 +310,12 @@ buttonCloseGame.onclick = () => {
   showGame.classList.remove("active");
   document.querySelector("html").classList.remove("showEdit");
 
+  document.querySelector(".box-panduan").classList.toggle("active");
+  document.querySelector("html").classList.toggle("showEdit");
+
+  playBacksoundMusic();
+  audioOnOff.classList.toggle("fa-volume-mute");
+  audioOnOff.classList.toggle("fa-volume-up");
   // Menyimpan status pengaturan ke localStorage
   localStorage.setItem("closeShowGame", "true");
 };

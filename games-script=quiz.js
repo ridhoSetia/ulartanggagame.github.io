@@ -128,8 +128,13 @@ let pertanyaan = [
   //   I
   {
     soal: "Pidana bagi orang yang melanggar pasal 76C berada dalam Undang-Undang nomor 35 Tahun 2014 Pasal berapa?",
-    jawaban: ["a.	Pasal 79", "b.	Pasal 54", "c.	Pasal 80", "d.	Pasal 81"],
-    jawabanBenar: "c.	Pasal 80",
+    jawaban: [
+      "a.	Pasal 79 (1)",
+      "b. Pasal 54 (2)",
+      "c.	Pasal 80 (1)",
+      "d.	Pasal 81 (2)",
+    ],
+    jawabanBenar: "c.	Pasal 80 (1)",
   },
   //   J
   {
@@ -348,13 +353,15 @@ removeVideo.onclick = () => {
   localStorage.setItem("remove2", "removed");
 };
 
-function editContent(event) {
-  event.preventDefault(); // Mencegah halaman untuk refresh
+inputVideo.addEventListener("change", () => {
   const file = inputVideo.files[0];
   const videoURL = URL.createObjectURL(file);
 
   videoElement.src = videoURL;
+});
 
+function editContent(event) {
+  event.preventDefault(); // Mencegah halaman untuk refresh
   const inputQuestion = document.querySelectorAll(
     'textarea[name="pertanyaan"]'
   );
