@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TAMAN</title>
+    <!-- aos cdn -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="shortcut icon" href="img/icon-taman.png" type="image/x-icon">
     <!-- link box icon -->
     <link
@@ -43,7 +46,7 @@
 
     <!-- home start -->
 
-    <section class="home" id="home">
+    <section class="home" id="home" data-aos="fade-down">
       <div class="home-text">
         <h1>Taman Website</h1>
         <h2>
@@ -132,9 +135,11 @@
   </p>
 </footer>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-      
+        AOS.init();
+
 const hamburgerMenu = document.querySelector("#menu-icon");
 const navbar = document.querySelector(".navbar");
 const bx = document.querySelector(".bx");
