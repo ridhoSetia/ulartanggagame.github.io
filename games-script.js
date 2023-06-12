@@ -409,8 +409,8 @@ function shuffleChildren() {
 }
 
 // // panggil fungsi di atas setiap kali halaman dimuat ulang
-// window.onload = shuffleChildren();
-// mulai.addEventListener("click", shuffleChildren);
+window.onload = shuffleChildren();
+mulai.addEventListener("click", shuffleChildren);
 
 // program reset localStorage
 const setting = document.querySelector(".fa.fa-cog");
