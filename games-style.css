@@ -689,6 +689,9 @@ input[name="trueOption"]:focus {
 .alert-reset button:hover {
   background: #ff0000;
 }
+.menu-reset button:disabled {
+  opacity: 0.3;
+}
 .rst {
   position: absolute;
   margin-top: 55vh;

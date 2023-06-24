@@ -241,7 +241,7 @@ const progressInput = document.querySelectorAll('input[type="text"]');
 const questionInput = document.querySelectorAll('textarea[name="pertanyaan"]');
 
 // Event listener untuk menangani peristiwa sebelum halaman dimuat ulang
-window.addEventListener("input", () => {
+window.addEventListener("beforeunload", () => {
   for (let i = 0; i < progressInput.length; i++) {
     const inputNameValue = progressInput[i].value;
     localStorage.setItem(`textProgress${i}`, inputNameValue);
@@ -274,30 +274,6 @@ const height = document.querySelector(".height");
 height.onclick = () => {
   board.style.backgroundImage = "url(img/papanUlarTangga.png)";
 };
-
-const editQuestion = document.querySelector(".edit-question");
-const createButton = document.querySelector("#create");
-
-function direct() {
-  editQuestion.style.display = "none";
-  createButton.style.display = "none";
-  localStorage.setItem("directEditQuestion", editQuestion.style.display);
-  localStorage.setItem("createButton", createButton.style.display);
-}
-
-function edit() {
-  editQuestion.style.display = "block";
-  createButton.style.display = "block";
-  localStorage.setItem("directEditQuestion", editQuestion.style.display);
-  localStorage.setItem("createButton", createButton.style.display);
-}
-
-const storedDirect = localStorage.getItem("directEditQuestion");
-const storedButton = localStorage.getItem("createButton");
-if (storedDirect) {
-  editQuestion.style.display = storedDirect;
-  createButton.style.display = storedButton;
-}
 
 const buttonCloseGame = document.querySelector(".gameShowUlarTangga button");
 const showGame = document.querySelector(".gameShowUlarTangga");

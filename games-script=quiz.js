@@ -33,177 +33,378 @@ function lambat() {
 
 // Array pertanyaan dan jawaban
 let pertanyaan = [
-  // A
   {
-    soal: "Dani merupakan siswa yang biasanya memiliki banyak teman, tetapi pada suatu hari ia di kucilkan teman-temannya karena manipulatif atau fitnah dari seseorang. Hal yang di alami Dani termasuk Bullying? ",
-    jawaban: [
-      "a. Bullying prejudice ",
-      "b. Bullying fisik",
-      "c. Bullying verbal",
-      "d. Bullying agresi relasional",
-    ],
-    jawabanBenar: "d. Bullying agresi relasional",
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
   },
-  //   B
   {
-    soal: "Budi merupakan siswa dari SMA 7, setiap hari ia sering diejek oleh teman-temannya hanya karena menganut agama yang berbeda. Jika hal semacam ini dilakukan secara terus menerus maka dapat mengakibatkan...",
-    jawaban: [
-      "a. Semakin akrab nya pertemanan",
-      "b. Bullying yang awalnya berupa kata-kata bisa menjadi lebih parah, seperti memukul",
-      "c. Munculnya sifat saling menyayangi",
-      "d. Timbulnya sikap nasionalisme",
-    ],
-    jawabanBenar:
-      "b. Bullying yang awalnya berupa kata-kata bisa menjadi lebih parah, seperti memukul",
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
   },
-  //   C
   {
-    soal: "Sarah merupakan seorang siswi baru di SMA 9, suatu hari dia mendapatkan komentar SARA di media sosial nya. Sarah merasa terpukul dan mulai merasa cemas dan tertekan.\n Apa yang bisa dilakukan Sarah untuk mengatasi hal yang dialaminya?",
-    jawaban: [
-      "a. Membalas dengan komentar yang sama jahatnya kepada pelaku",
-      "b. Mengabaikan komentar tersebut dan menghindari media sosial",
-      "c. Melaporkan komentar tersebut ke pihak sekolah dan meminta bantuan dari guru atau orang tua",
-      "d. Berdiam diri dan tidak melakukan apapun",
-    ],
-    jawabanBenar:
-      "c. Melaporkan komentar tersebut ke pihak sekolah dan meminta bantuan dari guru atau orang tua",
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
   },
-  //   D
   {
-    soal: "Siapa pengaduan terdekat di sekolah jika kita mengalami bullying?",
-    jawaban: [
-      "a.	Pedagang kantin",
-      "b.	Satpam",
-      "c.	Teman sebaya",
-      "d.	Bimbingan Konselling",
-    ],
-    jawabanBenar: "d.	Bimbingan Konselling",
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
   },
-  //   E
   {
-    soal: "Bullying merupakan salah satu contoh dari? mengapa?",
-    jawaban: [
-      "a.	Perilaku terpuji, karena membuat kita senang",
-      "b.	Perilaku tercela, karena dapat merenggut masa depan seseorang ",
-      "c.	Perilaku mulia, karena bisa menyelamatkan masa deoan",
-      "d. Perilaku tercela, karena membuat kita merasa keren",
-    ],
-    jawabanBenar:
-      "b.	Perilaku tercela, karena dapat merenggut masa depan seseorang ",
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
   },
-  // F
   {
-    soal: "Di era modern ini, kita harus bijak dalam menggunakan social media, jangan sampai kita melakukan cyber bullying. Apa sih yang dimaksud dengan cyberbullying?",
-    jawaban: [
-      "a.	Penindasan secara online",
-      "b.	Penindasan secara langsung",
-      "c.	Penindasan berkelanjutan",
-      "d.	Penindasan tercela",
-    ],
-    jawabanBenar: "a.	Penindasan secara online",
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
   },
-  //   G
   {
-    soal: "Bullying memiliki dampak yang sangat besar bagi korban, efek dari bullying yang paling sering terjadi adalah?",
-    jawaban: [
-      "a.	Membuat korban menjadi Bahagia",
-      "b.	Meningkatkan kepercayaan diri",
-      "c.	Korban dapat mengalami trauma dan takut bersosialisasi",
-      "d.	Mendapat ketidakadilan hukum",
-    ],
-    jawabanBenar: "c.	Korban dapat mengalami trauma dan takut bersosialisasi",
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
   },
-  //   H
   {
-    soal: "Salah satu contoh perilaku prejudice bullying adalah?",
-    jawaban: [
-      "a.	Amin sering memukul Andi tanpa sebab.",
-      "b.	Di sekolah, Pano sering mengolok-olok dan mengancam siswa lain berdasarkan ras atau agama mereka.",
-      "c.	Didi diketahui menyebarkan rumor palsu tentang siswa lain di media sosial dan di sekolah untuk merusak reputasi mereka.",
-      "d.	Rati sering mengintimidasi siswa di sekolahannya.",
-    ],
-    jawabanBenar:
-      "b.	Di sekolah, Pano sering mengolok-olok dan mengancam siswa lain berdasarkan ras atau agama mereka.",
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
   },
-  //   I
   {
-    soal: "Pidana bagi orang yang melanggar pasal 76C berada dalam Undang-Undang nomor 35 Tahun 2014 Pasal berapa?",
-    jawaban: [
-      "a.	Pasal 79 (1)",
-      "b. Pasal 54 (2)",
-      "c.	Pasal 80 (1)",
-      "d.	Pasal 81 (2)",
-    ],
-    jawabanBenar: "c.	Pasal 80 (1)",
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
   },
-  //   J
   {
-    soal: "Undang-Undang Nomor 35 Tahun 2014 Pasal 76C berbunyi...",
-    jawaban: [
-      "a.	Setiap Anak dilarang melakukan atau menyuruh melakukan kekerasan",
-      "b.	Setiap Orang dilarang menempatkan, membiarkan, melakukan, menyuruh melakukan, atau turut serta melakukan kekerasan terhadap anak",
-      "c.	Setiap Anak dilarang melakukan kekerasan terhadap sesama",
-      "d.	Setiap Orang dilarang melakukan atau membiarkan anak melakukan kekerasan",
-    ],
-    jawabanBenar:
-      "b.	Setiap Orang dilarang menempatkan, membiarkan, melakukan, menyuruh melakukan, atau turut serta melakukan kekerasan terhadap anak",
-  }, // K
-  {
-    soal: "Apa semboyan bangsa Indonesia?",
-    jawaban: [
-      "a.	Bersekutu Bertambah Mutu",
-      "b.	In God We Trust",
-      "c.	Bhinneka Tunggal Ika",
-      "d.	Liberté, égalité, fraternité",
-    ],
-    jawabanBenar: "c.	Bhinneka Tunggal Ika",
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
   },
-  //   L
   {
-    soal: "Bullying yang dilakukan dengan didasari pada prasangka pelaku terhadap seseorang dari ras, agama, atau suku dinamakan?",
-    jawaban: [
-      "a.	Bullying medsos ",
-      "b.	Cyberbullying",
-      "c.	Prejudice bullying",
-      "d.	Cybercrime",
-    ],
-    jawabanBenar: "c.	Prejudice bullying",
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
   },
-  //   M
   {
-    soal: 'Pada UUD 1945, pasal berapa yang berbunyi "Setiap anak berhak atas kelangsungan hidup, tumbuh, dan berkembang serta berhak atas perlindungan dari kekerasan dan diskriminasi."',
-    jawaban: [
-      "a.	pasal 28B ayat 2 ",
-      "b.	pasal 27B ayat 2 ",
-      "c.	pasal 28B ayat 1",
-      "d.	pasal 27B ayat 2 ",
-    ],
-    jawabanBenar: "a.	pasal 28B ayat 2 ",
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
   },
-  //   N
   {
-    soal: "Sebagai makhluk sosial, apa yang harus kita lakukan jika kita melihat tindakan bullying di sekitar kita?",
-    jawaban: [
-      "a. Membiarkan bullying terjadi",
-      "b. Ikut membully",
-      "c. Bantu ketawa",
-      "d. Melerai dan melapor kepada orang dewasa",
-    ],
-    jawabanBenar: "d. Melerai dan melapor kepada orang dewasa",
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
   },
-  //   O
   {
-    soal: "Kasus bullying atau perundungan terhadap penyandang disabilitas kembali terjadi. Sekelompok remaja berseragam SMA tanpa ampun melakukan kekerasan fisik pada korban. Mereka menekan-nekan punggung korban dengan sepatu, lalu menginjak-injak pundak korban. Berkaitan dengan kasus diatas, apakah itu termasuk Bullying yang berbau SARA?",
-    jawaban: [
-      "a. Tidak, karena penyandang disabilitas adalah orang yang sehat",
-      "b. Ya, karena penyandang disabilitas termasuk golongan di dalam SARA",
-      "c. Tidak, karena penyandang disabilitas tidak termasuk golongan di dalam SARA",
-      "d. Ya, karena penyandang disabilitas merupakan orang hebat",
-    ],
-    jawabanBenar:
-      "b. Ya, karena penyandang disabilitas termasuk golongan di dalam SARA",
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
+  },
+  {
+    soal: "",
+    jawaban: ["", "", "", ""],
+    jawabanBenar: "",
   },
 ];
+
+const editQuestion = document.querySelector(".edit-question");
+const createButton = document.querySelector("#create");
+
+let videoSrc = document.querySelector(".video-explain video");
+
+function direct() {
+  // Array pertanyaan dan jawaban
+  pertanyaan = [
+    // A
+    {
+      soal: "Dani merupakan siswa yang biasanya memiliki banyak teman, tetapi pada suatu hari ia di kucilkan teman-temannya karena manipulatif atau fitnah dari seseorang. Hal yang di alami Dani termasuk Bullying? ",
+      jawaban: [
+        "a. Bullying prejudice ",
+        "b. Bullying fisik",
+        "c. Bullying verbal",
+        "d. Bullying agresi relasional",
+      ],
+      jawabanBenar: "d. Bullying agresi relasional",
+    },
+    //   B
+    {
+      soal: "Budi merupakan siswa dari SMA 7, setiap hari ia sering diejek oleh teman-temannya hanya karena menganut agama yang berbeda. Jika hal semacam ini dilakukan secara terus menerus maka dapat mengakibatkan...",
+      jawaban: [
+        "a. Semakin akrab nya pertemanan",
+        "b. Bullying yang awalnya berupa kata-kata bisa menjadi lebih parah, seperti memukul",
+        "c. Munculnya sifat saling menyayangi",
+        "d. Timbulnya sikap nasionalisme",
+      ],
+      jawabanBenar:
+        "b. Bullying yang awalnya berupa kata-kata bisa menjadi lebih parah, seperti memukul",
+    },
+    //   C
+    {
+      soal: "Sarah merupakan seorang siswi baru di SMA 9, suatu hari dia mendapatkan komentar SARA di media sosial nya. Sarah merasa terpukul dan mulai merasa cemas dan tertekan.\n Apa yang bisa dilakukan Sarah untuk mengatasi hal yang dialaminya?",
+      jawaban: [
+        "a. Membalas dengan komentar yang sama jahatnya kepada pelaku",
+        "b. Mengabaikan komentar tersebut dan menghindari media sosial",
+        "c. Melaporkan komentar tersebut ke pihak sekolah dan meminta bantuan dari guru atau orang tua",
+        "d. Berdiam diri dan tidak melakukan apapun",
+      ],
+      jawabanBenar:
+        "c. Melaporkan komentar tersebut ke pihak sekolah dan meminta bantuan dari guru atau orang tua",
+    },
+    //   D
+    {
+      soal: "Siapa pengaduan terdekat di sekolah jika kita mengalami bullying?",
+      jawaban: [
+        "a.	Pedagang kantin",
+        "b.	Satpam",
+        "c.	Teman sebaya",
+        "d.	Bimbingan Konselling",
+      ],
+      jawabanBenar: "d.	Bimbingan Konselling",
+    },
+    //   E
+    {
+      soal: "Bullying merupakan salah satu contoh dari? mengapa?",
+      jawaban: [
+        "a.	Perilaku terpuji, karena membuat kita senang",
+        "b.	Perilaku tercela, karena dapat merenggut masa depan seseorang ",
+        "c.	Perilaku mulia, karena bisa menyelamatkan masa deoan",
+        "d. Perilaku tercela, karena membuat kita merasa keren",
+      ],
+      jawabanBenar:
+        "b.	Perilaku tercela, karena dapat merenggut masa depan seseorang ",
+    },
+    // F
+    {
+      soal: "Di era modern ini, kita harus bijak dalam menggunakan social media, jangan sampai kita melakukan cyber bullying. Apa sih yang dimaksud dengan cyberbullying?",
+      jawaban: [
+        "a.	Penindasan secara online",
+        "b.	Penindasan secara langsung",
+        "c.	Penindasan berkelanjutan",
+        "d.	Penindasan tercela",
+      ],
+      jawabanBenar: "a.	Penindasan secara online",
+    },
+    //   G
+    {
+      soal: "Bullying memiliki dampak yang sangat besar bagi korban, efek dari bullying yang paling sering terjadi adalah?",
+      jawaban: [
+        "a.	Membuat korban menjadi Bahagia",
+        "b.	Meningkatkan kepercayaan diri",
+        "c.	Korban dapat mengalami trauma dan takut bersosialisasi",
+        "d.	Mendapat ketidakadilan hukum",
+      ],
+      jawabanBenar: "c.	Korban dapat mengalami trauma dan takut bersosialisasi",
+    },
+    //   H
+    {
+      soal: "Salah satu contoh perilaku prejudice bullying adalah?",
+      jawaban: [
+        "a.	Amin sering memukul Andi tanpa sebab.",
+        "b.	Di sekolah, Pano sering mengolok-olok dan mengancam siswa lain berdasarkan ras atau agama mereka.",
+        "c.	Didi diketahui menyebarkan rumor palsu tentang siswa lain di media sosial dan di sekolah untuk merusak reputasi mereka.",
+        "d.	Rati sering mengintimidasi siswa di sekolahannya.",
+      ],
+      jawabanBenar:
+        "b.	Di sekolah, Pano sering mengolok-olok dan mengancam siswa lain berdasarkan ras atau agama mereka.",
+    },
+    //   I
+    {
+      soal: "Pidana bagi orang yang melanggar pasal 76C berada dalam Undang-Undang nomor 35 Tahun 2014 Pasal berapa?",
+      jawaban: [
+        "a.	Pasal 79 (1)",
+        "b. Pasal 54 (2)",
+        "c.	Pasal 80 (1)",
+        "d.	Pasal 81 (2)",
+      ],
+      jawabanBenar: "c.	Pasal 80 (1)",
+    },
+    //   J
+    {
+      soal: "Undang-Undang Nomor 35 Tahun 2014 Pasal 76C berbunyi...",
+      jawaban: [
+        "a.	Setiap Anak dilarang melakukan atau menyuruh melakukan kekerasan",
+        "b.	Setiap Orang dilarang menempatkan, membiarkan, melakukan, menyuruh melakukan, atau turut serta melakukan kekerasan terhadap anak",
+        "c.	Setiap Anak dilarang melakukan kekerasan terhadap sesama",
+        "d.	Setiap Orang dilarang melakukan atau membiarkan anak melakukan kekerasan",
+      ],
+      jawabanBenar:
+        "b.	Setiap Orang dilarang menempatkan, membiarkan, melakukan, menyuruh melakukan, atau turut serta melakukan kekerasan terhadap anak",
+    }, // K
+    {
+      soal: "Apa semboyan bangsa Indonesia?",
+      jawaban: [
+        "a.	Bersekutu Bertambah Mutu",
+        "b.	In God We Trust",
+        "c.	Bhinneka Tunggal Ika",
+        "d.	Liberté, égalité, fraternité",
+      ],
+      jawabanBenar: "c.	Bhinneka Tunggal Ika",
+    },
+    //   L
+    {
+      soal: "Bullying yang dilakukan dengan didasari pada prasangka pelaku terhadap seseorang dari ras, agama, atau suku dinamakan?",
+      jawaban: [
+        "a.	Bullying medsos ",
+        "b.	Cyberbullying",
+        "c.	Prejudice bullying",
+        "d.	Cybercrime",
+      ],
+      jawabanBenar: "c.	Prejudice bullying",
+    },
+    //   M
+    {
+      soal: 'Pada UUD 1945, pasal berapa yang berbunyi "Setiap anak berhak atas kelangsungan hidup, tumbuh, dan berkembang serta berhak atas perlindungan dari kekerasan dan diskriminasi."',
+      jawaban: [
+        "a.	pasal 28B ayat 2 ",
+        "b.	pasal 27B ayat 2 ",
+        "c.	pasal 28B ayat 1",
+        "d.	pasal 27B ayat 2 ",
+      ],
+      jawabanBenar: "a.	pasal 28B ayat 2 ",
+    },
+    //   N
+    {
+      soal: "Sebagai makhluk sosial, apa yang harus kita lakukan jika kita melihat tindakan bullying di sekitar kita?",
+      jawaban: [
+        "a. Membiarkan bullying terjadi",
+        "b. Ikut membully",
+        "c. Bantu ketawa",
+        "d. Melerai dan melapor kepada orang dewasa",
+      ],
+      jawabanBenar: "d. Melerai dan melapor kepada orang dewasa",
+    },
+    //   O
+    {
+      soal: "Kasus bullying atau perundungan terhadap penyandang disabilitas kembali terjadi. Sekelompok remaja berseragam SMA tanpa ampun melakukan kekerasan fisik pada korban. Mereka menekan-nekan punggung korban dengan sepatu, lalu menginjak-injak pundak korban. Berkaitan dengan kasus diatas, apakah itu termasuk Bullying yang berbau SARA?",
+      jawaban: [
+        "a. Tidak, karena penyandang disabilitas adalah orang yang sehat",
+        "b. Ya, karena penyandang disabilitas termasuk golongan di dalam SARA",
+        "c. Tidak, karena penyandang disabilitas tidak termasuk golongan di dalam SARA",
+        "d. Ya, karena penyandang disabilitas merupakan orang hebat",
+      ],
+      jawabanBenar:
+        "b. Ya, karena penyandang disabilitas termasuk golongan di dalam SARA",
+    },
+  ];
+
+  videoSrc.src = "Hal yang Harus Kamu Ketahui Tentang BULLYING.mp4";
+  localStorage.setItem("videoExplain", "videoSrc");
+
+  editQuestion.style.display = "none";
+  createButton.style.display = "none";
+  localStorage.setItem("directEditQuestion", "none");
+  localStorage.setItem("createButton", "none");
+  localStorage.setItem("pertanyaan", JSON.stringify(pertanyaan));
+}
+
+function edit() {
+  // Array pertanyaan dan jawaban
+  pertanyaan = [
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+    {
+      soal: "",
+      jawaban: ["", "", "", ""],
+      jawabanBenar: "",
+    },
+  ];
+
+  videoSrc.src = "";
+  localStorage.setItem("videoExplain", "videoSrc");
+
+  editQuestion.style.display = "block";
+  createButton.style.display = "block";
+  localStorage.setItem("directEditQuestion", "block");
+  localStorage.setItem("createButton", "block");
+  localStorage.setItem("pertanyaan", JSON.stringify(pertanyaan));
+}
+
+// Load stored values
+if (localStorage.getItem("directEditQuestion") === "none") {
+  editQuestion.style.display = "none";
+  createButton.style.display = "none";
+  videoSrc.src = "Hal yang Harus Kamu Ketahui Tentang BULLYING.mp4";
+} else {
+  editQuestion.style.display = "block";
+  createButton.style.display = "block";
+  videoSrc.src = "";
+}
+
+const storedPertanyaan = localStorage.getItem("pertanyaan");
+if (storedPertanyaan) {
+  pertanyaan = JSON.parse(storedPertanyaan);
+}
 
 const boxQuestion = document.querySelector(".questionShadow");
 const questionBox = document.querySelector(".questionBox");
@@ -351,6 +552,8 @@ removeVideo.onclick = () => {
   localStorage.setItem("remove1", "removed");
   localStorage.removeItem("remove2");
   localStorage.setItem("remove2", "removed");
+  document.querySelector("#alert-mulai").remove();
+  localStorage.setItem("remove-buttonMulai", "removed");
 };
 
 inputVideo.addEventListener("change", () => {
@@ -522,6 +725,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
   if (savedRemoveVideo === "removed") {
     document.querySelector(".video-explain").remove();
+    document.querySelector("#alert-mulai").remove();
   }
   const savesuccesInputText = localStorage.getItem(`succesInputText`);
   if (savesuccesInputText) {

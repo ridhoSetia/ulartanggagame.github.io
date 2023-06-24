@@ -236,7 +236,7 @@
     </div>
     <span class="menu-reset">
       <button id="reset-permainan">Reset permainan</button>
-      <button id="reset-game-mode">Pilih ulang tipe permainan</button>
+      <button id="reset-game-mode" disabled>Pilih ulang tipe permainan</button>
       <button id="reset-jumlah-pemain">Pilih ulang jumlah pemain</button>
 
       <div class="setting">
@@ -265,7 +265,6 @@
       <div class="edit-content">
         <div class="edit-name">
           <form id="nameForm" onsubmit="editName(event)">
-            <div class="succesInput">Game Storage kosong 🔓</div>
             <label for="player"
               >Player 1 :
               <input type="text" name="teks" data-name="0" required />
@@ -292,9 +291,10 @@
           </form>
           <form id="myForm" onsubmit="editContent(event)">
             <div class="edit-question">
+              <div class="succesInput">Game Storage kosong 🔓</div>
               <div class="editVideo">
                 <label for="input-file-video" class="inputVideo">
-                  Video Penjelasan :
+                  Video Materi :
                   <input type="file" name="video" id="input-file-video" />
                 </label>
                 <div class="removeVideo">X</div>
@@ -796,7 +796,7 @@
           class="explain-video"
           controls
           controlsList="nodownload"
-          src="Hal yang Harus Kamu Ketahui Tentang BULLYING.mp4"
+          src=""
           controls
           type="video/mp4"
         ></video>
