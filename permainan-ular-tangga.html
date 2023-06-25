@@ -140,6 +140,7 @@
             pertanyaan hanya dapat dibuka jika pemain berjalan setelah melempar
             dadu
           </li>
+          <li>Setiap pertanyaan berdurasi 40 detik</li>
           <br /><br />
           <li>
             <p>Jika posisi pemain berada di <b>TANGGA</b>,</p>
@@ -187,6 +188,18 @@
             />
           </li>
           <br />
+          <li>
+            <p>
+              Jika pemain tidak menjawab pertanyaan sampai durasi habis. Maka,
+              pemain <b>diam di tempat</b>
+            </p>
+            <img
+              class="imgPilih"
+              src="img/tidak-menjawab.png"
+              alt="diam di tempat"
+            />
+            <p>Pemain juga tidak berhak untuk membuka kartu bonus</p>
+          </li>
           <br />
           <li>
             <p>
@@ -263,6 +276,9 @@
     </div>
     <div class="user-experience">
       <div class="edit-content">
+        <center>
+          <h2 style="color: #f45050; padding: 5px">Edit Nama</h2>
+        </center>
         <div class="edit-name">
           <form id="nameForm" onsubmit="editName(event)">
             <label for="player"
