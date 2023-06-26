@@ -496,6 +496,24 @@ input[name="trueOption"]:focus {
   background: rgb(255, 255, 255, 1);
   outline: none;
 }
+copy,
+paste {
+  color: #fff;
+  background: #333;
+  margin-left: 5px;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 3px;
+}
+paste {
+  background: #138b13;
+}
+paste:hover {
+  background: #107210;
+}
+copy:hover {
+  background: #1a1a1a;
+}
 
 .editVideo {
   display: flex;
@@ -689,9 +707,7 @@ input[name="trueOption"]:focus {
 .alert-reset button:hover {
   background: #ff0000;
 }
-.menu-reset button:disabled {
-  opacity: 0.3;
-}
+
 .rst {
   position: absolute;
   margin-top: 55vh;

@@ -29,6 +29,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
+    <!-- link box icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="load">
@@ -140,8 +145,8 @@
             pertanyaan hanya dapat dibuka jika pemain berjalan setelah melempar
             dadu
           </li>
-          <li>Setiap pertanyaan berdurasi 40 detik</li>
-          <br /><br />
+          <li>Setiap soal berdurasi 40 detik</li>
+          <br />
           <li>
             <p>Jika posisi pemain berada di <b>TANGGA</b>,</p>
             <img src="img/pemain-di-tangga.png" alt="pemain di tangga" />
@@ -204,7 +209,7 @@
           <li>
             <p>
               Setelah menjawab pertanyaan dan menjalankan hukuman sesuai dengan
-              jawaban benar atau salah,
+              jawaban benar atau salah
             </p>
             <p>Pemain berhak untuk membuka kartu bonus</p>
             <img src="img/lempar-kartu.png" alt="buka kartu bonus" />
@@ -219,7 +224,10 @@
               alt="kartu bonus belakang"
             />
           </li>
-          <li>kartu hanya dapat dibuka jika jika pemain mendapat pertanyaan</li>
+          <li>
+            kartu hanya dapat dibuka jika pemain mendapat pertanyaan lalu
+            menjawabnya
+          </li>
           <br />
           <li>
             Jika pemain sudah mencapai garis finish. Maka, pemain harus
@@ -249,7 +257,7 @@
     </div>
     <span class="menu-reset">
       <button id="reset-permainan">Reset permainan</button>
-      <button id="reset-game-mode" disabled>Pilih ulang tipe permainan</button>
+      <button id="reset-game-mode">Pilih ulang tipe permainan</button>
       <button id="reset-jumlah-pemain">Pilih ulang jumlah pemain</button>
 
       <div class="setting">
@@ -322,22 +330,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option="0" />
+                    <copy onclick="copyToClipboard(0)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option="1" />
+                    <copy onclick="copyToClipboard(1)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option="2" />
+                    <copy onclick="copyToClipboard(2)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
-                    <input type="text" name="option" data-option="3" /></p
-                ></label>
+                    <input type="text" name="option" data-option="3" />
+                    <copy onclick="copyToClipboard(3)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
+                  </p>
+                </label>
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="0" />
+                  <paste onclick="pasteFromClipboard(0)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
               <label for="question"
@@ -347,22 +371,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option2="0" />
+                    <copy onclick="copyToClipboard(4)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option2="1" />
+                    <copy onclick="copyToClipboard(5)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option2="2" />
+                    <copy onclick="copyToClipboard(6)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
-                    <input type="text" name="option" data-option2="3" /></p
-                ></label>
+                    <input type="text" name="option" data-option2="3" />
+                    <copy onclick="copyToClipboard(7)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
+                  </p>
+                </label>
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="1" />
+                  <paste onclick="pasteFromClipboard(1)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
               <label for="question"
@@ -372,22 +412,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option3="0" />
+                    <copy onclick="copyToClipboard(8)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option3="1" />
+                    <copy onclick="copyToClipboard(9)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option3="2" />
+                    <copy onclick="copyToClipboard(10)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
-                    <input type="text" name="option" data-option3="3" /></p
-                ></label>
+                    <input type="text" name="option" data-option3="3" />
+                    <copy onclick="copyToClipboard(11)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
+                  </p></label
+                >
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="2" />
+                  <paste onclick="pasteFromClipboard(2)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
               <label for="question"
@@ -397,22 +453,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option4="0" />
+                    <copy onclick="copyToClipboard(12)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option4="1" />
+                    <copy onclick="copyToClipboard(13)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option4="2" />
+                    <copy onclick="copyToClipboard(14)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
-                    <input type="text" name="option" data-option4="3" /></p
-                ></label>
+                    <input type="text" name="option" data-option4="3" />
+                    <copy onclick="copyToClipboard(15)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
+                  </p></label
+                >
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="3" />
+                  <paste onclick="pasteFromClipboard(3)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
               <label for="question"
@@ -422,22 +494,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option5="0" />
+                    <copy onclick="copyToClipboard(16)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option5="1" />
+                    <copy onclick="copyToClipboard(17)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option5="2" />
+                    <copy onclick="copyToClipboard(18)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
-                    <input type="text" name="option" data-option5="3" /></p
-                ></label>
+                    <input type="text" name="option" data-option5="3" />
+                    <copy onclick="copyToClipboard(19)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
+                  </p></label
+                >
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="4" />
+                  <paste onclick="pasteFromClipboard(4)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
               <label for="question"
@@ -447,22 +535,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option6="0" />
+                    <copy onclick="copyToClipboard(20)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option6="1" />
+                    <copy onclick="copyToClipboard(21)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option6="2" />
+                    <copy onclick="copyToClipboard(22)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
-                    <input type="text" name="option" data-option6="3" /></p
-                ></label>
+                    <input type="text" name="option" data-option6="3" />
+                    <copy onclick="copyToClipboard(23)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
+                  </p></label
+                >
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="5" />
+                  <paste onclick="pasteFromClipboard(5)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
               <label for="question"
@@ -472,22 +576,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option7="0" />
+                    <copy onclick="copyToClipboard(24)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option7="1" />
+                    <copy onclick="copyToClipboard(25)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option7="2" />
+                    <copy onclick="copyToClipboard(26)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
-                    <input type="text" name="option" data-option7="3" /></p
-                ></label>
+                    <input type="text" name="option" data-option7="3" />
+                    <copy onclick="copyToClipboard(27)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
+                  </p></label
+                >
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="6" />
+                  <paste onclick="pasteFromClipboard(6)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
               <label for="question"
@@ -497,22 +617,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option8="0" />
+                    <copy onclick="copyToClipboard(28)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option8="1" />
+                    <copy onclick="copyToClipboard(29)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option8="2" />
+                    <copy onclick="copyToClipboard(30)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
-                    <input type="text" name="option" data-option8="3" /></p
-                ></label>
+                    <input type="text" name="option" data-option8="3" />
+                    <copy onclick="copyToClipboard(31)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
+                  </p></label
+                >
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="7" />
+                  <paste onclick="pasteFromClipboard(7)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
               <label for="question"
@@ -522,22 +658,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option9="0" />
+                    <copy onclick="copyToClipboard(32)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option9="1" />
+                    <copy onclick="copyToClipboard(33)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option9="2" />
+                    <copy onclick="copyToClipboard(34)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
-                    <input type="text" name="option" data-option9="3" /></p
-                ></label>
+                    <input type="text" name="option" data-option9="3" />
+                    <copy onclick="copyToClipboard(35)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
+                  </p></label
+                >
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="8" />
+                  <paste onclick="pasteFromClipboard(8)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
               <label for="question"
@@ -547,23 +699,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option10="0" />
+                    <copy onclick="copyToClipboard(36)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option10="1" />
+                    <copy onclick="copyToClipboard(37)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option10="2" />
+                    <copy onclick="copyToClipboard(38)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
                     <input type="text" name="option" data-option10="3" />
+                    <copy onclick="copyToClipboard(39)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                 </label>
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="9" />
+                  <paste onclick="pasteFromClipboard(9)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
               <label for="question"
@@ -573,22 +740,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option11="0" />
+                    <copy onclick="copyToClipboard(40)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option11="1" />
+                    <copy onclick="copyToClipboard(41)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option11="2" />
+                    <copy onclick="copyToClipboard(42)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
-                    <input type="text" name="option" data-option11="3" /></p
-                ></label>
+                    <input type="text" name="option" data-option11="3" />
+                    <copy onclick="copyToClipboard(43)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
+                  </p></label
+                >
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="10" />
+                  <paste onclick="pasteFromClipboard(10)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
               <label for="question"
@@ -598,22 +781,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option12="0" />
+                    <copy onclick="copyToClipboard(44)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option12="1" />
+                    <copy onclick="copyToClipboard(45)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option12="2" />
+                    <copy onclick="copyToClipboard(46)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
-                    <input type="text" name="option" data-option12="3" /></p
-                ></label>
+                    <input type="text" name="option" data-option12="3" />
+                    <copy onclick="copyToClipboard(47)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
+                  </p></label
+                >
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="11" />
+                  <paste onclick="pasteFromClipboard(11)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
               <label for="question"
@@ -623,22 +822,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option13="0" />
+                    <copy onclick="copyToClipboard(48)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option13="1" />
+                    <copy onclick="copyToClipboard(49)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option13="2" />
+                    <copy onclick="copyToClipboard(50)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
-                    <input type="text" name="option" data-option13="3" /></p
-                ></label>
+                    <input type="text" name="option" data-option13="3" />
+                    <copy onclick="copyToClipboard(51)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
+                  </p></label
+                >
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="12" />
+                  <paste onclick="pasteFromClipboard(12)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
               <label for="question"
@@ -648,22 +863,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option14="0" />
+                    <copy onclick="copyToClipboard(52)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option14="1" />
+                    <copy onclick="copyToClipboard(53)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option14="2" />
+                    <copy onclick="copyToClipboard(54)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
-                    <input type="text" name="option" data-option14="3" /></p
-                ></label>
+                    <input type="text" name="option" data-option14="3" />
+                    <copy onclick="copyToClipboard(55)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
+                  </p></label
+                >
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="13" />
+                  <paste onclick="pasteFromClipboard(13)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
               <label for="question"
@@ -673,22 +904,38 @@
                   <p>
                     A
                     <input type="text" name="option" data-option15="0" />
+                    <copy onclick="copyToClipboard(56)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     B
                     <input type="text" name="option" data-option15="1" />
+                    <copy onclick="copyToClipboard(57)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     C
                     <input type="text" name="option" data-option15="2" />
+                    <copy onclick="copyToClipboard(58)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
                   </p>
                   <p>
                     D
-                    <input type="text" name="option" data-option15="3" /></p
-                ></label>
+                    <input type="text" name="option" data-option15="3" />
+                    <copy onclick="copyToClipboard(59)"
+                      ><i class="bx bx-copy"></i> Salin</copy
+                    >
+                  </p></label
+                >
                 <label for="select" id="select">
                   Jawaban yang benar :
                   <input type="text" name="trueOption" data-trueOption="14" />
+                  <paste onclick="pasteFromClipboard(14)"
+                    ><i class="bx bx-paste"></i> Tempel</paste
+                  >
                 </label>
               </label>
             </div>

@@ -236,6 +236,22 @@ closeCard.onclick = () => {
   card.classList.remove("flip");
 };
 
+function copyToClipboard(option) {
+  var inputElements = document.getElementsByName("option");
+  var targetElement = inputElements[option];
+  targetElement.select();
+  document.execCommand("copy");
+}
+
+function pasteFromClipboard(option) {
+  const inputElements = document.querySelectorAll('[name="trueOption"]');
+  const targetElement = inputElements[option];
+
+  navigator.clipboard.readText().then((text) => {
+    targetElement.value = text;
+  });
+}
+
 // Mengambil semua elemen input
 const progressInput = document.querySelectorAll('input[type="text"]');
 const questionInput = document.querySelectorAll('textarea[name="pertanyaan"]');
