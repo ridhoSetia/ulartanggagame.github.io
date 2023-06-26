@@ -903,6 +903,13 @@ input[name="trueOption"]:focus {
   background-repeat: no-repeat;
   background-size: 95%;
 }
+.choose6 {
+  background: transparent;
+  background-image: url(img/bidak6.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 95%;
+}
 
 .skin.pick {
   background-size: 120%;
@@ -948,13 +955,12 @@ input[name="trueOption"]:focus {
   background-color: #fff;
   color: #333;
   border-radius: 1px;
-  width: 10px;
-  height: 10px;
+  padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 8px;
-  margin: 0 5px;
+  font-size: 10px;
+  margin: 0 2px;
   cursor: pointer;
 }
 
