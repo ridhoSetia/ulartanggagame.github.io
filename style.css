@@ -311,7 +311,7 @@ footer h2 {
   }
   header .navbar {
     position: fixed;
-    top: 50px;
+    top: 55px;
     left: 48%;
     right: 52%;
     display: flex;
@@ -320,8 +320,8 @@ footer h2 {
     justify-content: space-between;
     background: #feeee7;
     transition: 0.2s;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     overflow: hidden;
     border-radius: 0 0 100px 100px;
   }
