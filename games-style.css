@@ -720,6 +720,24 @@ copy:hover {
   cursor: pointer;
 }
 
+.rssst {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -10%;
+}
+
+.rssst button,
+.rssst a {
+  color: #fff;
+  background: #f45050;
+  border-radius: 3px;
+  font-size: 14px;
+  margin: 0 5px;
+  padding: 5px;
+}
+
 .alert-reset {
   width: 100%;
   height: 100%;
@@ -1165,6 +1183,8 @@ copy:hover {
   height: 200px;
   margin: 0 5px;
   display: flex;
+  position: relative;
+  top: 20px;
 }
 .congratulations .line {
   position: absolute;
@@ -1209,6 +1229,8 @@ copy:hover {
   align-items: center;
   color: #f45050;
   font-size: 40px;
+  position: relative;
+  top: 10px;
 }
 .quotes-day {
   display: flex;
@@ -1216,6 +1238,7 @@ copy:hover {
   align-items: center;
   font-size: 20px;
   margin: 0 10%;
+  margin-top: -30px;
 }
 
 .video-explain {
@@ -1233,8 +1256,8 @@ copy:hover {
 }
 
 .video-explain video {
-  width: 75%;
-  height: auto;
+  width: 80%;
+  height: 80%;
 }
 
 .mulai-permainan {

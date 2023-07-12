@@ -297,6 +297,13 @@ const showGame = document.querySelector(".gameShowUlarTangga");
 showGame.classList.add("active");
 document.querySelector("html").classList.add("showEdit");
 
+document.querySelector(".video-explain video").onplay = () => {
+  alertMulai.style.display = "none";
+};
+document.querySelector(".video-explain video").onpause = () => {
+  alertMulai.style.display = "block";
+};
+
 buttonCloseGame.onclick = () => {
   pop();
   showGame.classList.remove("active");
@@ -305,9 +312,6 @@ buttonCloseGame.onclick = () => {
   document.querySelector(".box-panduan").classList.toggle("active");
   document.querySelector("html").classList.toggle("showEdit");
 
-  playBacksoundMusic();
-  audioOnOff.classList.toggle("fa-volume-mute");
-  audioOnOff.classList.toggle("fa-volume-up");
   // Menyimpan status pengaturan ke localStorage
   localStorage.setItem("closeShowGame", "true");
 };
@@ -358,6 +362,9 @@ belum.onclick = () => {
   document.querySelector(".mulai-permainan").style.display = "none";
 };
 mulai.onclick = () => {
+  playBacksoundMusic();
+  audioOnOff.classList.toggle("fa-volume-mute");
+  audioOnOff.classList.toggle("fa-volume-up");
   alertMulai.style.display = "none";
   document.querySelector(".mulai-permainan").style.display = "none";
   document.querySelector(".video-explain").style.display = "none";

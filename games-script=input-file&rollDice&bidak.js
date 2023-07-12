@@ -458,8 +458,6 @@ const randomQuotes = [
   '"Kekuatan sejati tidak terletak pada kemampuan kita untuk merendahkan orang lain berdasarkan perbedaan mereka, tetapi dalam menerima keberagaman dan membangun jembatan persaudaraan. Bersama-sama, kita bisa menghentikan bullying berbau sara dan mengabadikan kedamaian."',
   '"Untuk menjadi seorang pemenang, kamu tidak selalu harus menindas yang kalah."',
   '"Bijaklah dalam bermedia sosial, kadang kita tidak tahu dampak dari apa yang kita tulis pada seseorang."',
-  '"Kita semua adalah bagian dari keindahan lukisan kehidupan ini, dengan warna-warna yang berbeda dan nuansa yang unik. Mari kita tinggalkan jejak persatuan dan memadamkan api bullying berbau sara dengan kekuatan cinta, pengertian, dan menghormati perbedaan satu sama lain."',
-  '"Kita tidak perlu memiliki pandangan yang sama atau kepercayaan yang serupa untuk hidup berdampingan dengan damai. Marilah kita menghentikan bullying berbau sara dengan berdiri bersama sebagai satu, menghormati perbedaan, dan menjalin ikatan yang lebih kuat melalui keragaman."',
   '"Keberanian sejati bukanlah melukai orang lain, melainkan berdiri teguh dan membela mereka yang lemah. Jadilah pelindung, bukan perundung."',
   '"Kita semua berbeda, tetapi kita semua berharga. Mari hentikan bullying dan menjadikan dunia ini tempat yang lebih aman dan indah untuk semua orang."',
   '"Berhenti dari tindakan keji, hargai diri yang berarti. Bullying tak akan membuatmu hebat, tapi kebaikan hati akan membawamu terbang tinggi."',
