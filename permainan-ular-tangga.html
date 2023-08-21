@@ -38,9 +38,12 @@
     />
     <!-- library font awesome -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
     <!-- link box icon -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -56,6 +59,18 @@
         <div id="square4"></div>
         <div id="square5"></div>
       </div>
+    </div>
+
+    <div class="before-header">
+      <header>
+        <a href="index.html" class="logo"
+          ><img
+            src="img/logo-taman.png"
+            alt="logo takes"
+            width="185px"
+            height="auto"
+        /></a>
+      </header>
     </div>
 
     <!-- gameShow Pop Up -->
@@ -79,17 +94,6 @@
             <img src="img/direct-game.png" alt="img ular tangga" />
           </div>
           <h3>Tema: <mark>Bullying Part 01</mark></h3>
-          <p>
-            Langsung mulai bermain dengan soal-soal pemahaman tentang bullying
-          </p>
-          <input type="radio" name="pickTypeGame" />
-        </div>
-
-        <div class="boxUlarTangga" onclick="direct2()">
-          <div class="imgUlarTangga">
-            <img src="img/direct-game.png" alt="img ular tangga" />
-          </div>
-          <h3>Tema: <mark>Bullying Part 02</mark></h3>
           <p>
             Langsung mulai bermain dengan soal-soal pemahaman tentang bullying
           </p>
@@ -308,7 +312,7 @@
     <div class="user-experience">
       <div class="edit-content">
         <center>
-          <h2 style="color: #f45050; padding: 5px">Edit Nama</h2>
+          <h2 style="color: #7a9d54; padding: 5px">Edit Nama</h2>
         </center>
         <div class="edit-name">
           <form id="nameForm" onsubmit="editName(event)">
@@ -1077,6 +1081,40 @@
 
     <button class="open" onclick="openFullscreen()">Mulai</button>
     <div class="board" onload="openFullscreen()">
+      <div class="alert-bonus">
+        <img src="img/mini-games.png" alt="mini games" />
+        <img class="bonus-img" src="img/bonus.png" alt="bonus box" />
+        <div class="box-turn-player">
+          <div class="text">
+            <h1>Pemain yang akan memainkan mini games :</h1>
+            <h1 class="pemain"></h1>
+          </div>
+        </div>
+        <div class="mini-games">
+          <div class="alertGameOver">
+            <div class="boxGameOver">
+              <h3>Lain Kali Hati-hati</h3>
+              <p>Mundur 2 Langkah!</p>
+              <button>OKE</button>
+            </div>
+          </div>
+          <div class="show-food"></div>
+          <div class="wrapper">
+            <div class="game-details">
+              <span class="score">0</span>
+            </div>
+
+            <div class="play-board"></div>
+          </div>
+
+          <div class="controls">
+            <i data-key="ArrowLeft" class="fa-solid fa-arrow-left-long"></i>
+            <i data-key="ArrowUp" class="fa-solid fa-arrow-up-long"></i>
+            <i data-key="ArrowRight" class="fa-solid fa-arrow-right-long"></i>
+            <i data-key="ArrowDown" class="fa-solid fa-arrow-down-long"></i>
+          </div>
+        </div>
+      </div>
       <div class="checkFinish"></div>
       <div class="finish"></div>
       <div class="rotate-smartphone">
@@ -1105,7 +1143,7 @@
       <button class="exit" onclick="exitFullscreen()">
         <i class="fas fa-arrow-left"></i>
       </button>
-
+      <i class="fa fa-gift"></i>
       <div class="rollDice">
         <img
           id="dice"

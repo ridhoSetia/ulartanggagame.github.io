@@ -7,7 +7,7 @@
   <meta name="description" content="Web Game TAMAN - Tangga Pertemanan Anti Bullying">
   <meta name="keywords" content="game, TAMAN, taman, website game, web game, game web, game ular tangga, permainan ular tangga, pertemanan, anti bullying, anti perundungan, web game TAMAN anti bullying, web game TAMAN, web game taman, anti bullying berbasis SARA, sara, anti bullying berbasis sara, web game edukasi, edukasi game, game edukasi, web game quiz, quiz web game, web game soal interaktif, interaktif soal web game, web game sadar hukum">
   <meta name="author" content="Ridho Setiawan, komunitas taman, Aisya Meylina Putri">
-  <title>TAMAN</title>
+  <title>TAKES</title>
     <!-- aos cdn -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -34,6 +34,7 @@
   </head>
   <body>
 
+<div class="before-header">
     <header>
       <a href="index.html" class="logo"><img src="img/logo-taman.png" alt=""></a>
       <div class="bx bx-menu" id="menu-icon"></div>
@@ -41,17 +42,18 @@
       <ul class="navbar">
         <li><a href="#home">Home</a></li>
         <li><a href="#games">Games</a></li>
-        <li><a href="materi-bullying.html">Materi Bullying</a></li>
+        <li><a href="materi-bullying.html">Materi Stunting</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#community">Community</a></li>
       </ul>
     </header>
-
+</div>
     <!-- home start -->
 
-    <section class="home" id="home" data-aos="fade-down">
-      <div class="home-text">
-        <h1>Taman Website</h1>
+    <section class="home" id="home">
+      <div class="home-text" data-aos="fade-right" data-aos-delay="500"
+      data-aos-duration="500">
+        <h1>Takes Web Game</h1>
         <h2>
           Mainkan Game nya <br />
           dapat kan experience nya
@@ -60,24 +62,27 @@
       </div>
 
       <div class="home-img">
-        <img src="img/board-game.png" alt="home-img" />
+        <img src="img/board-game.png" alt="home-img" data-aos="fade-left" data-aos-delay="1000"
+        data-aos-duration="500"/>
       </div>
     </section>
 
     <!-- games menu start -->
     <section class="menu" id="games">
-      <div class="heading">
+      <div class="heading" data-aos="fade-up" data-aos-delay="0"
+      data-aos-duration="500">
         <span>Our Game</span>
         <h2>Education game</h2>
       </div>
 
       <div class="menu-container">
-        <div class="box">
+        <div class="box" data-aos="fade-up" data-aos-delay="300"
+        data-aos-duration="500">
           <div class="box-img">
             <img src="img/snakes.png" alt="menu-game" />
           </div>
-          <h2>Game TAMAN</h2>
-          <h3>Tangga Pertemanan Anti Bullying</h3>
+          <h2>game TAKES</h2>
+          <h3>Tangga Kesehatan</h3>
           <span><button><a href="permainan-ular-tangga.html">Play Now</a></button></span>
           <i class="fa fa-gamepad" aria-hidden="true"></i>
         </div>
@@ -88,11 +93,13 @@
 
     <!-- about us start -->
     <section class="about" id="about">
-      <div class="about-img">
+      <div class="about-img" data-aos="fade-up" data-aos-delay="300"
+      data-aos-duration="500">
         <img src="img/board-game1.png" alt="about-img" />
       </div>
 
-      <div class="about-text">
+      <div class="about-text" data-aos="fade-up" data-aos-delay="0"
+      data-aos-duration="500">
         <span>About Us</span>
         <h2>
           Assalamualaikum wr. wb. <br />
@@ -107,25 +114,27 @@
           masalah jika tidak dikelola dengan baik. Terkadang, perbedaan etnis
           dan budaya ini bisa berujung pada tindakan diskriminasi dan bahkan
           bullying di lingkungan sekolah.</p>
-          <div class="learn-more"></div>
         <a href="about.html" class="btn">Learn More</a>
       </div>
     </section>
 
 
 <!-- call action -->
-<section class="cta" id="community">
-  <h2>We create simples games for education </h2>
+<section class="cta" id="community" data-aos="fade-up" data-aos-delay="0"
+data-aos-duration="500">
+  <h2>We create simples games for education</h2>
   <!-- <a href="https://discord.gg/tWXyzzMG" target="_blank" class="btn">Let's Talk<i class="fab fa-discord"></i></a> -->
   <a href="https://chat.whatsapp.com/GEjAaghlE8cIURvwx2mOin" target="_blank" class="btn">Let's Talk<i class="fab fa-whatsapp"></i></a>
 </section>
 
 <footer>
-  <h2>Taman Website</h2>
+  <h2>TAKES Web Game</h2>
   <div class="social-media">
+    <a href="https://www.man2kukar.sch.id/" target="_blank"><img src="img/logo MAN 2 Kukar.png" alt="Logo MAN 2" width="40px" height="40px"></a>
     <a href="https://instagram.com/komunitas.taman?igshid=MzNlNGNkZWQ4Mg==" target="_blank" rel="noopener noreferrer">
       <i class="fab fa-instagram"></i>
     </a>
+    <a href="https://litbang.kaltimprov.go.id/" target="_blank"><img src="img/Logo Provinsi Kalimantan Timur.png" alt="Logo Provinsi Kalimantan Timur" width="30px" height="auto"></a>
   </div>
   <p class="copyright">
     &copy; copyrigth 2023 Taman. All rights reserved.
@@ -150,6 +159,27 @@ window.onscroll = () => {
   navbar.classList.remove("open");
   bx.classList.remove("bx-x");
 };
+
+// function scrollDetect(){
+//   var lastScroll = 0;
+
+//   window.onscroll = function() {
+//       let currentScroll = document.documentElement.scrollTop || document.body.scrollTop; // Get Current Scroll Value
+//       const ifScrollUpDown = document.querySelector("header")
+
+//       if (currentScroll > 0 && lastScroll <= currentScroll){
+//         lastScroll = currentScroll;
+//         console.log("scroll down")
+//         ifScrollUpDown.classList.add("ifScrollUpDown")
+//       } else{
+//         lastScroll = currentScroll;
+//         console.log("scroll up")
+//         ifScrollUpDown.classList.remove("ifScrollUpDown")
+//       }
+//   };
+// }
+
+// scrollDetect();
     </script>
 
 </body>
