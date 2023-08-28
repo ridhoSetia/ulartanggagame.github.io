@@ -127,7 +127,7 @@ function playBacksoundMusic() {
   if (backsound.paused) {
     backsound.loop = true;
     backsound.play();
-    backsound.volume = 0.1;
+    backsound.volume = 0.5;
   } else {
     backsound.pause();
   }
@@ -361,6 +361,7 @@ alertMulai.onclick = () => {
 belum.onclick = () => {
   document.querySelector(".mulai-permainan").style.display = "none";
 };
+
 mulai.onclick = () => {
   playBacksoundMusic();
   audioOnOff.classList.toggle("fa-volume-mute");
@@ -455,3 +456,237 @@ resetGameMode.onclick = () => {
   localStorage.removeItem("closeShowGame");
   window.location.reload();
 };
+
+// snake mini games program
+document.addEventListener("DOMContentLoaded", () => {
+  const playBoard = document.querySelector(".play-board");
+  const scoreElement = document.querySelector(".score");
+  const controls = document.querySelectorAll(".controls i");
+
+  const eatSfx = new Audio("sfx/eating-chips.mp3");
+  eatSfx.volume = 0.7;
+
+  // Buat sebuah variabel yang menandakan apakah suara sedang dimainkan atau tidak
+  let isSfxPlaying = false;
+
+  // Function untuk memutar suara belok
+  const playEatSfx = () => {
+    if (!isSfxPlaying) {
+      isSfxPlaying = true;
+      eatSfx.currentTime = 0; // Mengembalikan suara ke awal sebelum memutarnya lagi
+      eatSfx.play().then(() => {
+        isSfxPlaying = false; // Mengatur isSfxPlaying menjadi false setelah suara selesai dimainkan
+      });
+    }
+  };
+
+  const turnSfx = new Audio("sfx/belok.mp3");
+
+  // Function untuk memutar suara belok
+  const playTurnSfx = () => {
+    if (!isSfxPlaying) {
+      isSfxPlaying = true;
+      turnSfx.currentTime = 0; // Mengembalikan suara ke awal sebelum memutarnya lagi
+      turnSfx.play().then(() => {
+        isSfxPlaying = false; // Mengatur isSfxPlaying menjadi false setelah suara selesai dimainkan
+      });
+    }
+  };
+
+  let gameOver = false;
+  let foodX, foodY;
+  let junkX, junkY;
+  let snakeX = 7,
+    snakeY = 7;
+  let velocityX = 0,
+    velocityY = 0;
+  let snakeBody = [];
+  let setIntervalid;
+  let score = 0;
+
+  // pass a random between 1 and 30 as food position
+
+  const updateFoodPosition = () => {
+    foodX = Math.floor(Math.random() * 15) + 1;
+    foodY = Math.floor(Math.random() * 15) + 1;
+  };
+
+  const updateJunkPosition = () => {
+    junkX = Math.floor(Math.random() * 15) + 1;
+    junkY = Math.floor(Math.random() * 15) + 1;
+  };
+
+  const boxHandleGameOver = document.querySelector(".alertGameOver");
+  const buttonHandleGameOver = document.querySelector(".boxGameOver button");
+
+  const handleGameOver = () => {
+    clearInterval(setIntervalid);
+    boxHandleGameOver.style.display = "flex";
+  };
+
+  buttonHandleGameOver.onclick = () => {
+    setTimeout(() => {
+      document.querySelector(".alert-bonus").remove();
+    }, 500);
+  };
+
+  // change velocity value based on key press
+
+  const changeDirection = (e) => {
+    if (e.key === "ArrowUp" && velocityY != 1) {
+      velocityX = 0;
+      velocityY = -1;
+      playTurnSfx();
+    } else if (e.key === "ArrowDown" && velocityY != -1) {
+      velocityX = 0;
+      velocityY = 1;
+      playTurnSfx();
+    } else if (e.key === "ArrowLeft" && velocityX != 1) {
+      velocityX = -1;
+      playTurnSfx();
+      velocityY = 0;
+    } else if (e.key === "ArrowRight" && velocityX != -1) {
+      velocityX = 1;
+      velocityY = 0;
+      playTurnSfx();
+    }
+  };
+
+  // change direction on each key click
+
+  controls.forEach((button) =>
+    button.addEventListener("click", () =>
+      changeDirection({
+        key: button.dataset.key,
+      })
+    )
+  );
+
+  let randomJunk1 = Math.floor(Math.random() * 2) + 2; // Rentang: 2 - 3
+  let randomJunk2 = Math.floor(Math.random() * 2) + 4; // Rentang: 4 - 5
+  let randomJunk3 = Math.floor(Math.random() * 2) + 6; // Rentang: 6 - 7
+  let randomJunk4 = Math.floor(Math.random() * 2) + 8; // Rentang: 8 - 9
+  let randomJunk5 = Math.floor(Math.random() * 2) + 10; // Rentang: 10 - 11
+
+  console.log(randomJunk1);
+  console.log(randomJunk2);
+  console.log(randomJunk3);
+  console.log(randomJunk4);
+  console.log(randomJunk5);
+
+  let html2 = ""; // Initialize html2 as an empty string
+
+  const showFood = document.querySelector(".show-food");
+
+  let gizi = [`gizi1`, `gizi2`, `gizi3`, `gizi4`, `gizi5`, `gizi6`, `gizi7`];
+  let nGizi = [`junk1`, `junk2`, `junk3`, `junk4`, `junk5`];
+
+  let randomFood = Math.floor(Math.random() * gizi.length);
+
+  let randomJunk = Math.floor(Math.random() * nGizi.length);
+
+  const boxGame = document.querySelector(".boxGameOver h3");
+
+  const initGame = () => {
+    if (gameOver) return handleGameOver();
+
+    let html = `<div class="food" style="grid-area: ${foodY} / ${foodX}; background-image: url(img/${gizi[randomFood]}.jpeg)"></div>`;
+
+    //  when snake eat food
+    if (snakeX === foodX && snakeY === foodY) {
+      updateFoodPosition();
+      updateJunkPosition();
+
+      showFood.style.backgroundImage = `url(img/${gizi[randomFood]}.jpeg)`;
+
+      showFood.classList.add("on");
+      setTimeout(() => {
+        showFood.classList.remove("on");
+      }, 400);
+
+      randomFood = Math.floor(Math.random() * gizi.length);
+
+      randomJunk = Math.floor(Math.random() * nGizi.length);
+
+      console.log("New randomFood:", randomFood); // Log the new randomFood value
+
+      html = `<div class="food" style="grid-area: ${foodY} / ${foodX}; background-image: url(img/${gizi[randomFood]}.jpeg)"></div>`;
+      console.log("Updated HTML:", html); // Log the updated HTML
+
+      snakeBody.push([foodY, foodX]); // add food to snake body array
+      score++;
+
+      playEatSfx();
+
+      scoreElement.innerText = `${score}`;
+    }
+
+    // Update Snake Head
+    snakeX += velocityX;
+    snakeY += velocityY;
+
+    // Shifting forward values of elements in snake body by one
+
+    for (let i = snakeBody.length - 1; i > 0; i--) {
+      snakeBody[i] = snakeBody[i - 1];
+    }
+
+    snakeBody[0] = [snakeX, snakeY];
+
+    // check snake body is out of wall or no
+    // if it comes out, it will appear again on the opposite fence
+
+    if (snakeX <= 0 || snakeX > 15 || snakeY <= 0 || snakeY > 15) {
+      return (gameOver = true);
+    }
+
+    if (snakeBody.length == 11) {
+      setTimeout(() => {
+        handleGameOver();
+        boxGame.textContent = "Bagus! Gizi Kamu Terpenuhi";
+        document.querySelector(".boxGameOver p").textContent =
+          "Maju 3 Langkah!";
+      }, 100);
+    }
+
+    // add div for each part of snake body
+    for (let i = 0; i < snakeBody.length; i++) {
+      if (
+        i !== 0 &&
+        snakeBody[0][1] === snakeBody[i][1] &&
+        snakeBody[0][0] === snakeBody[i][0]
+      ) {
+        gameOver = true; // Collision with self ends the game
+      }
+
+      if (
+        snakeBody.length == randomJunk1 ||
+        snakeBody.length == randomJunk2 ||
+        snakeBody.length == randomJunk3 ||
+        snakeBody.length == randomJunk4 ||
+        snakeBody.length == randomJunk5
+      ) {
+        if (snakeX === junkX && snakeY === junkY) {
+          boxGame.textContent = "Pilih Makanan Yang Bener Ya!";
+          return (gameOver = true);
+        }
+        html2 = `<div class="junk" style="grid-area: ${junkY} / ${junkX}; background-image: url(img/${nGizi[randomJunk]}.jpeg);"></div>`;
+        html += html2;
+      } else {
+        html2 = `<div class="junk" style="grid-area: ${0} / ${0}"></div>`;
+      }
+      if (foodX == junkX && foodY == junkY) {
+        updateFoodPosition();
+      }
+
+      html += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
+    }
+    console.log(html2);
+
+    playBoard.innerHTML = html;
+  };
+
+  updateFoodPosition();
+  setIntervalid = setInterval(initGame, 160);
+  document.addEventListener("keyup", changeDirection);
+});

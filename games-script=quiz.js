@@ -120,126 +120,126 @@ function direct() {
   pertanyaan = [
     // A
     {
-      soal: "Dani merupakan siswa yang biasanya memiliki banyak teman, tetapi pada suatu hari ia di kucilkan teman-temannya karena manipulatif atau fitnah dari seseorang. Hal yang di alami Dani termasuk Bullying? ",
+      soal: "Apakah vitamin dapat mencegah stunting pada anak?",
       jawaban: [
-        "a. Bullying prejudice ",
-        "b. Bullying fisik",
-        "c. Bullying verbal",
-        "d. Bullying agresi relasional",
+        "a) Tidak ada yang dapat mencegah stunting",
+        "b) Vitamin hanya berpengaruh pada warna kulit",
+        "c) Vitamin bisa menjadi salah satu usaha untuk mencegah stunting",
+        "d) Hanya vitamin D yang berpengaruh",
       ],
-      jawabanBenar: "d. Bullying agresi relasional",
+      jawabanBenar: "c) Vitamin bisa menjadi salah satu usaha untuk mencegah stunting",
     },
     //   B
     {
-      soal: "Budi merupakan siswa dari SMA 7, setiap hari ia sering diejek oleh teman-temannya hanya karena menganut agama yang berbeda. Jika hal semacam ini dilakukan secara terus menerus maka dapat mengakibatkan...",
+      soal: "Sebagai remaja, mulai dari sekarang kita bisa mencegah terjadinya stunting dikemudian hari, salah satu caranya adalah?",
       jawaban: [
-        "a. Semakin akrab nya pertemanan",
-        "b. Bullying yang awalnya berupa kata-kata bisa menjadi lebih parah, seperti memukul",
-        "c. Munculnya sifat saling menyayangi",
-        "d. Timbulnya sikap nasionalisme",
+        "a) Selalu mencukupi gizi yang dibutuhkan oleh tubuh",
+        "b) Olahraga berlebihan",
+        "c) Menjaga pola tidur yang buruk",
+        "d) Makan makanan sayur saja",
       ],
       jawabanBenar:
-        "b. Bullying yang awalnya berupa kata-kata bisa menjadi lebih parah, seperti memukul",
+        "a) Selalu mencukupi gizi yang dibutuhkan oleh tubuh",
     },
     //   C
     {
-      soal: "Sarah merupakan seorang siswi baru di SMA 9, suatu hari dia mendapatkan komentar SARA di media sosial nya. Sarah merasa terpukul dan mulai merasa cemas dan tertekan.\n Apa yang bisa dilakukan Sarah untuk mengatasi hal yang dialaminya?",
+      soal: "Apakah stunting setelah usia 2 tahun sudah lewat 1000 hari pertama kehidupan sama sekali tidak bisa diperbaiki?",
       jawaban: [
-        "a. Membalas dengan komentar yang sama jahatnya kepada pelaku",
-        "b. Mengabaikan komentar tersebut dan menghindari media sosial",
-        "c. Melaporkan komentar tersebut ke pihak sekolah dan meminta bantuan dari guru atau orang tua",
-        "d. Berdiam diri dan tidak melakukan apapun",
+        "a) Bisa diperbaiki dengan operasi",
+        "b) Pertumbuhan otak sangat pesat terjadi pada 2 tahun pertama sehingga setelah usia 2 tahun, tidak bisa diperbaiki",
+        "c) Hanya bisa diperbaiki dengan obat-obatan khusus",
+        "d) Bisa diperbaiki dengan menghindari aktivitas fisik",
       ],
       jawabanBenar:
-        "c. Melaporkan komentar tersebut ke pihak sekolah dan meminta bantuan dari guru atau orang tua",
+        "b) Pertumbuhan otak sangat pesat terjadi pada 2 tahun pertama sehingga setelah usia 2 tahun, tidak bisa diperbaiki",
     },
     //   D
     {
-      soal: "Siapa pengaduan terdekat di sekolah jika kita mengalami bullying?",
+      soal: "Apakah stunting dapat dicegah atau dikoreksi?",
       jawaban: [
-        "a.	Pedagang kantin",
-        "b.	Satpam",
-        "c.	Teman sebaya",
-        "d.	Bimbingan Konselling",
+        "a) Tidak bisa sama sekali",
+        "b) Hanya bisa dikoreksi pada masa remaja",
+        "c) Selama periode emas atau pada 1000 Hari Pertama Kehidupan s/d usia 2 tahun",
+        "d) Hanya bisa dicegah sebelum usia 1 tahun",
       ],
-      jawabanBenar: "d.	Bimbingan Konselling",
+      jawabanBenar: "c) Selama periode emas atau pada 1000 Hari Pertama Kehidupan s/d usia 2 tahun",
     },
     //   E
     {
-      soal: "Bullying merupakan salah satu contoh dari? mengapa?",
+      soal: "Apa dampak dari masalah gizi kronis selain stunting?",
       jawaban: [
-        "a.	Perilaku terpuji, karena membuat kita senang",
-        "b.	Perilaku tercela, karena dapat merenggut masa depan seseorang ",
-        "c.	Perilaku mulia, karena bisa menyelamatkan masa deoan",
-        "d. Perilaku tercela, karena membuat kita merasa keren",
+        "a) Warna rambut berubah",
+        "b) Gangguan pada perkembangan kognitif, motorik, dan sistem kekebalan tubuh",
+        "c) Menjadi lebih kuat secara fisik",
+        "d) Tidur lebih nyenyak",
       ],
       jawabanBenar:
-        "b.	Perilaku tercela, karena dapat merenggut masa depan seseorang ",
+        "b) Gangguan pada perkembangan kognitif, motorik, dan sistem kekebalan tubuh",
     },
     // F
     {
-      soal: "Di era modern ini, kita harus bijak dalam menggunakan social media, jangan sampai kita melakukan cyber bullying. Apa sih yang dimaksud dengan cyberbullying?",
+      soal: "Peran remaja dalam menurunkan angka stunting adalah dengan cara?",
       jawaban: [
-        "a.	Penindasan secara online",
-        "b.	Penindasan secara langsung",
-        "c.	Penindasan berkelanjutan",
-        "d.	Penindasan tercela",
+        "a) Menghindari makanan daging",
+        "b) Tidur sepanjang hari",
+        "c) Mengonsumsi makanan bergizi seimbang",
+        "d) Menjauhi teman sebaya",
       ],
-      jawabanBenar: "a.	Penindasan secara online",
+      jawabanBenar: "c) Mengonsumsi makanan bergizi seimbang",
     },
     //   G
     {
-      soal: "Bullying memiliki dampak yang sangat besar bagi korban, efek dari bullying yang paling sering terjadi adalah?",
+      soal: "Selain faktor genetika, Faktor lain apa yang dapat mempengaruhi terjadinya stunting pada anak?",
       jawaban: [
-        "a.	Membuat korban menjadi Bahagia",
-        "b.	Meningkatkan kepercayaan diri",
-        "c.	Korban dapat mengalami trauma dan takut bersosialisasi",
-        "d.	Mendapat ketidakadilan hukum",
+        "a) Banyak bermain video game",
+        "b) Faktor lingkungan dan pelayanan kesehatan",
+        "c) Kelebihan tidur",
+        "d) Konsumsi buah dan sayur",
       ],
-      jawabanBenar: "c.	Korban dapat mengalami trauma dan takut bersosialisasi",
+      jawabanBenar: "b) Faktor lingkungan dan pelayanan kesehatan",
     },
     //   H
     {
-      soal: "Salah satu contoh perilaku prejudice bullying adalah?",
+      soal: "Mengapa dikatakan makanan yang tidak seimbang dapat memengaruhi pertumbuhan anak dan meningkatkan risiko stunting?",
       jawaban: [
-        "a.	Amin sering memukul Andi tanpa sebab.",
-        "b.	Di sekolah, Pano sering mengolok-olok dan mengancam siswa lain berdasarkan ras atau agama mereka.",
-        "c.	Didi diketahui menyebarkan rumor palsu tentang siswa lain di media sosial dan di sekolah untuk merusak reputasi mereka.",
-        "d.	Rati sering mengintimidasi siswa di sekolahannya.",
+        "a) Karena anak kurang suka makan",
+        "b) Di karenakan ibu kurang mengerti tentang konsep gizi sebelum, saat, dan setelah melahirkan",
+        "c) Ibu terlalu banyak berolahraga",
+        "d) Di karenakan kurang nya uang",
       ],
       jawabanBenar:
-        "b.	Di sekolah, Pano sering mengolok-olok dan mengancam siswa lain berdasarkan ras atau agama mereka.",
+        "b) Di karenakan ibu kurang mengerti tentang konsep gizi sebelum, saat, dan setelah melahirkan",
     },
     //   I
     {
-      soal: "Pidana bagi orang yang melanggar pasal 76C berada dalam Undang-Undang nomor 35 Tahun 2014 Pasal berapa?",
+      soal: "Keterbatasan akses pada air bersih juga akan mempertinggi risiko stunting pada anak, Hal ini merupakan faktor?",
       jawaban: [
-        "a.	Pasal 79 (1)",
-        "b. Pasal 54 (2)",
-        "c.	Pasal 80 (1)",
-        "d.	Pasal 81 (2)",
+        "a) Faktor kelalaian",
+        "b) Faktor sanitasi",
+        "c) Keberadaan hewan peliharaan",
+        "d) Ketersediaan hiburan",
       ],
-      jawabanBenar: "c.	Pasal 80 (1)",
+      jawabanBenar: "b) Faktor sanitasi",
     },
     //   J
     {
-      soal: "Undang-Undang Nomor 35 Tahun 2014 Pasal 76C berbunyi...",
+      soal: "Dalam jangka panjang, dampak stunting adalah?",
       jawaban: [
-        "a.	Setiap Anak dilarang melakukan atau menyuruh melakukan kekerasan",
-        "b.	Setiap Orang dilarang menempatkan, membiarkan, melakukan, menyuruh melakukan, atau turut serta melakukan kekerasan terhadap anak",
-        "c.	Setiap Anak dilarang melakukan kekerasan terhadap sesama",
-        "d.	Setiap Orang dilarang melakukan atau membiarkan anak melakukan kekerasan",
+        "a) Peningkatan tinggi badan",
+        "b) Kecerdasan tinggi",
+        "c) Kesulitan belajar",
+        "d) Kemampuan atletik lebih baik",
       ],
       jawabanBenar:
-        "b.	Setiap Orang dilarang menempatkan, membiarkan, melakukan, menyuruh melakukan, atau turut serta melakukan kekerasan terhadap anak",
+        "c) Kesulitan belajar",
     }, // K
     {
-      soal: "Apa semboyan bangsa Indonesia?",
+      soal: "Untuk mencegah stunting, tidak butuh biaya yang besar, salah satu contoh nya adalah?",
       jawaban: [
-        "a.	Bersekutu Bertambah Mutu",
-        "b.	In God We Trust",
-        "c.	Bhinneka Tunggal Ika",
-        "d.	Liberté, égalité, fraternité",
+        "a) Konsumsi tempe, tahu, sayur kangkung, nasi, secara teratur",
+        "b) Membeli ayam goreng di pasar",
+        "c) Konsumsi daging, sayur-sayuran, nasi goreng, setiap hari",
+        "d) Makan makanan yang murah seperti sosis",
       ],
       jawabanBenar: "c.	Bhinneka Tunggal Ika",
     },
@@ -296,177 +296,6 @@ function direct() {
   editQuestion.style.display = "none";
   createButton.style.display = "none";
   localStorage.setItem("directEditQuestion", "none");
-  localStorage.setItem("createButton", "none");
-  localStorage.setItem("pertanyaan", JSON.stringify(pertanyaan));
-}
-
-function direct2() {
-  // Array pertanyaan dan jawaban
-  pertanyaan = [
-    {
-      soal: "Apa definisi bullying",
-      jawaban: [
-        "a. Tindakan agresif yang merendahkan individu atau kelompok",
-        "b. Tindakan diskriminasi terhadap individu atau kelompok",
-        "c. Tindakan yang dilakukan secara berulang-ulang",
-        "d. Semua jawaban di atas benar",
-      ],
-      jawabanBenar: "d. Semua jawaban di atas benar",
-    },
-    {
-      soal: "Apa yang dimaksud dengan bullying berbasis SARA?",
-      jawaban: [
-        "a. Bullying yang dilakukan secara berulang-ulang",
-        "b. Bullying yang dilakukan oleh individu yang merasa berkuasa",
-        "c. Bullying yang berdasarkan prasangka dan diskriminasi terhadap identitas individu atau kelompok",
-        "d. Bullying yang merendahkan orang yang dianggap lebih lemah",
-      ],
-      jawabanBenar:
-        "c. Bullying yang berdasarkan prasangka dan diskriminasi terhadap identitas individu atau kelompok",
-    },
-    {
-      soal: "Bullying berbasis SARA termasuk dalam jenis bullying yang apa?",
-      jawaban: [
-        "a. Physical bullying",
-        "b. Verbal bullying",
-        "c. Prejudice bullying",
-        "d. Social bullying",
-      ],
-      jawabanBenar: "c. Prejudice bullying",
-    },
-    {
-      soal: "Apa contoh perilaku bullying berbasis SARA?",
-      jawaban: [
-        "a. Mengolok-olok seseorang karena rasnya",
-        "b. Mengambil barang milik orang lain secara paksa",
-        "c. Menyebarkan rumor palsu tentang seseorang",
-        "d. Semua jawaban di atas benar",
-      ],
-      jawabanBenar: "a. Mengolok-olok seseorang karena rasnya",
-    },
-    {
-      soal: "Mengapa penting untuk tidak menjadi pelaku bullying berbasis SARA?",
-      jawaban: [
-        "a. Karena bisa membuat korban merasa sakit hati",
-        "b. Karena bisa menciptakan lingkungan yang tidak aman",
-        "c. Karena tindakan tersebut melanggar hukum",
-        "d. Semua jawaban di atas benar",
-      ],
-      jawabanBenar: "d. Semua jawaban di atas benar",
-    },
-    {
-      soal: "Apa salah satu contoh cara agar tidak menjadi pelaku bullying berbasis SARA?",
-      jawaban: [
-        "a. Selalu mengolok-olok teman-teman",
-        "b. Sadar akan hukum dan menjadi contoh yang baik",
-        "c. Menyebarkan rumor tentang seseorang",
-        "d. Memilih teman berdasarkan ras dan agama mereka",
-      ],
-      jawabanBenar: "b. Sadar akan hukum dan menjadi contoh yang baik",
-    },
-    {
-      soal: "Apa yang dapat kita lakukan untuk mencegah bullying berbasis SARA?",
-      jawaban: [
-        "a. Mengucilkan korban dan menghindari mereka",
-        "b. Membela korban dan menyadarkan orang lain tentang bahayanya",
-        "c. Bergabung dengan kelompok yang melakukan bullying",
-        "d. Menyebarkan prasangka dan diskriminasi lebih lanjut",
-      ],
-      jawabanBenar:
-        "b. Membela korban dan menyadarkan orang lain tentang bahayanya",
-    },
-    {
-      soal: "Mengapa sering kali bullying berbasis SARA dianggap sebagai hal biasa?",
-      jawaban: [
-        "a. Karena korban terlalu lemah untuk melawan",
-        "b. Karena lingkungan sekitar tidak memedulikan tindakan tersebut",
-        "c. Karena tindakan tersebut tidak melanggar hukum",
-        "d. Semua jawaban di atas benar",
-      ],
-      jawabanBenar:
-        "b. Karena lingkungan sekitar tidak memedulikan tindakan tersebut",
-    },
-    {
-      soal: "Dibawah ini adalah hal yang dapat terjadi jika bullying berbasis SARA dilakukan secara terus menerus, kecuali?",
-      jawaban: [
-        "a. Korban dapat merasa sakit hati",
-        "b. Korban dapat mengalami masalah kesehatan mental",
-        "c. Korban dapat merasa senang",
-        "d. Korban dapat mengalami isolasi sosial",
-      ],
-      jawabanBenar: "c. Korban dapat merasa senang",
-    },
-    {
-      soal: "Mengapa lingkungan yang baik dapat tercipta melalui kesadaran individu?",
-      jawaban: [
-        "a. Karena individu dapat menjadi contoh yang baik bagi orang lain",
-        "b. Karena individu dapat mengingatkan dan menyadarkan orang lain",
-        "c. Karena individu dapat mencegah terjadinya bullying berbasis SARA",
-        "d. Semua jawaban di atas benar",
-      ],
-      jawabanBenar: "d. Semua jawaban di atas benar",
-    },
-    {
-      soal: "Apa tujuan dari pelaku bullying berbasis SARA?",
-      jawaban: [
-        "a. Mengolok-olok orang yang dianggap lebih lemah",
-        "b. Membuat korban merasa sakit hati",
-        "c. Mengucilkan individu atau kelompok berdasarkan identitas mereka",
-        "d. Semua jawaban di atas salah",
-      ],
-      jawabanBenar:
-        "c. Mengucilkan individu atau kelompok berdasarkan identitas mereka",
-    },
-    {
-      soal: "Mengapa penting bagi pelajar untuk tidak menjadi pelaku bullying berbasis SARA?",
-      jawaban: [
-        "a. Karena mereka akan dipuji oleh teman",
-        "b. Karena mereka bisa menjadi contoh buruk bagi teman-teman mereka",
-        "c. Karena mereka akan kehilangan teman-teman mereka",
-        "d. Karena mereka akan menjadi populer di sekolah",
-      ],
-      jawabanBenar:
-        "b. Karena mereka bisa menjadi contoh buruk bagi teman-teman mereka",
-    },
-    {
-      soal: "Apa yang dapat kita lakukan sebagai pelajar agar tidak menjadi pelaku bullying berbasis SARA?",
-      jawaban: [
-        "a. Menjadi contoh yang baik bagi teman-teman lain",
-        "b. Mengucilkan teman-teman yang berbeda dari kita",
-        "c. Membuat lelucon tentang ras dan agama seseorang",
-        "d. Semua jawaban di atas benar",
-      ],
-      jawabanBenar: "a. Menjadi contoh yang baik bagi teman-teman lain",
-    },
-    {
-      soal: "Apa yang dimaksud dengan prejudice bullying?",
-      jawaban: [
-        "a. Tindakan agresif yang dilakukan secara berulang-ulang",
-        "b. Tindakan yang merendahkan individu atau kelompok",
-        "c. Tindakan yang didasarkan pada prasangka dan diskriminasi",
-        "d. Tindakan yang dilakukan oleh individu yang merasa berkuasa",
-      ],
-      jawabanBenar:
-        "c. Tindakan yang didasarkan pada prasangka dan diskriminasi",
-    },
-    {
-      soal: "Mengapa sadar akan hukum penting dalam mencegah bullying berbasis SARA?",
-      jawaban: [
-        "a. Karena pelaku bullying berbasis SARA bisa dihukum oleh hukum",
-        "b. Karena hukum melarang prasangka dan diskriminasi",
-        "c. Karena hukum dapat menyadarkan pelaku tentang kesalahannya",
-        "d. Semua jawaban di atas benar",
-      ],
-      jawabanBenar: "d. Semua jawaban di atas benar",
-    },
-  ];
-
-  videoMateri.src = "Bullying Berbasis SARA.mp4";
-  localStorage.setItem("videoExplain", "videoMateri");
-
-  editQuestion.style.display = "none";
-  createButton.style.display = "none";
-  localStorage.setItem("directEditQuestion", "none2");
   localStorage.setItem("createButton", "none");
   localStorage.setItem("pertanyaan", JSON.stringify(pertanyaan));
 }
@@ -566,10 +395,6 @@ if (localStorage.getItem("directEditQuestion") === "none") {
   editQuestion.style.display = "none";
   createButton.style.display = "none";
   videoMateri.src = "Hal yang Harus Kamu Ketahui Tentang BULLYING.mp4";
-} else if (localStorage.getItem("directEditQuestion") === "none2") {
-  editQuestion.style.display = "none";
-  createButton.style.display = "none";
-  videoMateri.src = "Bullying Berbasis SARA.mp4";
 } else {
   editQuestion.style.display = "block";
   createButton.style.display = "block";
