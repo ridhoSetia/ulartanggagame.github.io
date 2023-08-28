@@ -548,6 +548,7 @@ function editName(event) {
     words[index] = replacementText;
     nameSkinPlayer[index].textContent = replacementText;
     cursorName[index].textContent = replacementText;
+    randomPlayer[index] = replacementText;
     localStorage.setItem(`replacementText${index}`, replacementText);
   });
   userEdit.classList.remove("fa-times");
@@ -581,6 +582,7 @@ window.addEventListener("DOMContentLoaded", () => {
       words[i] = storedText;
       nameSkinPlayer[i].textContent = storedText;
       cursorName[i].textContent = storedText;
+      randomPlayer[i] = storedText;
     }
   }
 });
