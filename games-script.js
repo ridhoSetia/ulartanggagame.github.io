@@ -362,39 +362,6 @@ belum.onclick = () => {
   document.querySelector(".mulai-permainan").style.display = "none";
 };
 
-<<<<<<< HEAD
-=======
-let randomPlayer = ["Player1", "Player2", "Player3", "Player4", "Player5"];
-
-function rollTurn() {
-  return Math.floor(Math.random() * randomPlayer.length);
-}
-
-const pemain = document.querySelector(".pemain");
-
-function turnPlayer() {
-  // Mengulangi animasi dadu selama 108 frame dengan interval 50 ms
-  var frames = 72;
-  var interval = 60;
-  var currentFrame = 0;
-  var rollInterval = setInterval(function () {
-    // Mengubah gambar dadu secara acak setiap frame
-    var value = rollTurn();
-    pemain.textContent = randomPlayer[value];
-
-    console.log(randomPlayer[value]);
-    // Meningkatkan frame saat ini
-    currentFrame++;
-
-    // Menghentikan animasi setelah 108 frame
-    if (currentFrame === frames) {
-      clearInterval(rollInterval);
-      pemain.classList.add("on");
-    }
-  }, interval);
-}
-
->>>>>>> d528883ac8d010a865b78e481c8edbaf19493a98
 mulai.onclick = () => {
   playBacksoundMusic();
   audioOnOff.classList.toggle("fa-volume-mute");
@@ -415,27 +382,6 @@ mulai.onclick = () => {
       removeBidak.style.transition = "none";
     }, 2000);
   });
-};
-
-const bonusActive = document.querySelector(".fa-gift");
-
-bonusActive.onclick = () => {
-  bonusActive.disabled = true;
-  bonusActive.style.opacity = "0.5";
-  // let randomBonus = Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000;
-  let randomBonus = Math.floor(Math.random() * 3000) + 1;
-
-  setTimeout(() => {
-    document.querySelector(".alert-bonus").style.display = "flex";
-  }, randomBonus);
-
-  setTimeout(() => {
-    turnPlayer();
-  }, randomBonus + 3000);
-
-  setTimeout(() => {
-    document.querySelector(".mini-games").classList.add("on");
-  }, randomBonus + 10000);
 };
 
 const savedremoveBidak = localStorage.getItem("removeBidak");
@@ -743,8 +689,4 @@ document.addEventListener("DOMContentLoaded", () => {
   updateFoodPosition();
   setIntervalid = setInterval(initGame, 160);
   document.addEventListener("keyup", changeDirection);
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> d528883ac8d010a865b78e481c8edbaf19493a98
